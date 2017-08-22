@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+
+<!--
+        
+    HerbyW 2015
+
+-->
+
+<system name="gear water ground position">
+
+  
+<channel name="gear position">
+  
+<switch  name="gear unit z-position0">
+                <default value="-209.448819216"/>
+                <test  logic="AND" value="-110">
+                    simulation/terrain_sw == 0
+                </test>
+		<output>gear/unit/z-position</output>
+</switch>
+
+<switch  name="gear unit z-position1">
+                <default value="-211.811023944"/>
+                <test  logic="AND" value="-112">
+                    simulation/terrain_sw == 0
+                </test>
+		<output>gear/unit[1]/z-position</output>
+</switch>
+
+<switch  name="gear unit z-position2">
+                <default value="-211.811023944"/>
+                <test  logic="AND" value="-112">
+                    simulation/terrain_sw == 0
+                </test>
+		<output>gear/unit[2]/z-position</output>
+</switch>
+
+</channel>
+
+
+</system>

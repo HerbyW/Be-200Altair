@@ -1,0 +1,350 @@
+<?xml version="1.0"?>
+<!--
+      
+copyright Herbert Wagner 2015-2016
+
+-->
+
+
+<PropertyList>
+
+    
+
+    <path>Gears200-28.ac</path>
+
+
+    <animation>
+    <type>select</type>
+    
+    <condition>
+      
+      <!--<property>sim/multiplay/generic/float[0]</property>-->
+      <property>gear/gear[0]/position-norm</property>
+        
+    </condition>
+  </animation>
+  
+ 
+   <!-- Rentré des roues et la porte1 -->
+  <animation>
+    <name>EnsembleRoueAvant</name>
+    <object-name>roueAG</object-name>
+    <object-name>roueAD</object-name>
+    <object-name>tempAB</object-name>
+    <object-name>tempAH</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>EnsembleRoueAvant</object-name>
+    <property>gear/gear[0]/position-norm</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep> -90 </dep></entry>
+      <entry><ind> 0.1 </ind><dep>  -90 </dep></entry>
+      <entry><ind> 1 </ind><dep>    0 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> -14.607 </x-m>
+      <y-m>  0.0 </y-m>
+      <z-m>  -3.968 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>translate</type>
+    <object-name>EnsembleRoueAvant</object-name>
+    <property>gear/gear[0]/position-norm</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep> -0.53 </dep></entry>
+      <entry><ind> 0.1 </ind><dep>  -0.53 </dep></entry>
+      <entry><ind> 1 </ind><dep>    0 </dep></entry>
+    </interpolation>
+    
+    <axis>
+      <x> -1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <name>EnsembleRoueGauche</name>
+    <object-name>roue1G</object-name>
+    <object-name>roue2G</object-name>
+    <object-name>tempHG</object-name>    
+    <object-name>tempG</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>EnsembleRoueGauche</object-name>
+    <property>gear/gear[1]/position-norm</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep> 97 </dep></entry>
+      <entry><ind> 0.1 </ind><dep>  97 </dep></entry>
+      <entry><ind> 1 </ind><dep>   0 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m>  2.257 </x-m>
+      <y-m> -1.973 </y-m>
+      <z-m> -1.460 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <name>EnsembleRoueDroite</name>
+    <object-name>roue1G.001</object-name>
+    <object-name>roue2G.001</object-name>
+    <object-name>tempHG.001</object-name>    
+    <object-name>tempG.001</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>EnsembleRoueDroite</object-name>
+    <property>gear/gear[2]/position-norm</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep> 97 </dep></entry>
+      <entry><ind> 0.1 </ind><dep>  97 </dep></entry>
+      <entry><ind> 1 </ind><dep>   0 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m>  2.257 </x-m>
+      <y-m>  1.973 </y-m>
+      <z-m> -1.460 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+   
+
+  <!-- Compression -->
+  <animation>
+    <name>SousRoueAvant</name>
+    <object-name>roueAG</object-name>
+    <object-name>roueAD</object-name>
+    <object-name>tempAB</object-name>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>SousRoueAvant</object-name>
+    <property>gear/gear[0]/compression-norm</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep> 0.00 </dep></entry>
+      <entry><ind> 1 </ind><dep> 0.49 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <name>SousRoueGauche</name>
+    <object-name>roue1G</object-name>
+    <object-name>roue2G</object-name>
+    <object-name>tempG</object-name>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>SousRoueGauche</object-name>
+    <property>gear/gear[1]/compression-norm</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep> 0.00 </dep></entry>
+      <entry><ind> 1 </ind><dep> 0.49 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <name>SousRoueDroite</name>
+    <object-name>roue1G.001</object-name>
+    <object-name>roue2G.001</object-name>
+    <object-name>tempG.001</object-name>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>SousRoueDroite</object-name>
+    <property>gear/gear[2]/compression-norm</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep> 0.00 </dep></entry>
+      <entry><ind> 1 </ind><dep> 0.49 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+
+  <!-- Rotation des roues avant en fonction de la gouverne de direction -->
+  <animation>
+    <name>TrainAvant</name>
+    <object-name>roueAG</object-name>
+    <object-name>roueAD</object-name>
+    <object-name>tempAB</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>TrainAvant</object-name>
+    <property>sim/multiplay/generic/float[1]</property>
+    <factor> -1 </factor>
+    <center>
+      <x-m> -14.607 </x-m>
+      <y-m>  0.0 </y-m>
+      <z-m>  -3.998 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+
+  <!-- Rotation des roues -->
+  <animation>
+    <type>spin</type>
+    <object-name>roue1G</object-name>
+    <condition>
+      <not-equals>
+        <property>gear/gear[1]/compression-norm</property>
+        <value> 0 </value>
+      </not-equals>
+    </condition>
+    <property>velocities/uBody-fps</property>
+    <factor> -1.5 </factor>
+    <center>
+      <x-m>  2.063 </x-m>
+      <y-m> -1.90 </y-m>
+      <z-m> -4.723 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>spin</type>
+    <object-name>roue2G</object-name>
+    <condition>
+      <not-equals>
+        <property>gear/gear[1]/compression-norm</property>
+        <value> 0 </value>
+      </not-equals>
+    </condition>
+    <property>velocities/uBody-fps</property>
+    <factor> -3 </factor>
+    <center>
+      <x-m>  2.063 </x-m>
+      <y-m> -1.90 </y-m>
+      <z-m> -4.723 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>spin</type>
+    <object-name>roue1G.001</object-name>
+    <condition>
+      <not-equals>
+        <property>gear/gear[2]/compression-norm</property>
+        <value> 0 </value>
+      </not-equals>
+    </condition>
+    <property>velocities/uBody-fps</property>
+    <factor> -3 </factor>
+    <center>
+      <x-m>  2.063 </x-m>
+      <y-m>  1.90 </y-m>
+      <z-m> -4.723 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>spin</type>
+    <object-name>roue2G.001</object-name>
+    <condition>
+      <not-equals>
+        <property>gear/gear[2]/compression-norm</property>
+        <value>0</value>
+      </not-equals>
+    </condition>
+    <property>velocities/uBody-fps</property>
+    <factor> -3 </factor>
+    <center>
+      <x-m>  2.063 </x-m>
+      <y-m>  1.90 </y-m>
+      <z-m> -4.723 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <name>RoueAvant</name>
+    <object-name>roueAG</object-name>
+    <object-name>roueAD</object-name>
+  </animation>
+
+  <animation>
+    <type>spin</type>
+    <object-name>RoueAvant</object-name>
+    <condition>
+      <not-equals>
+        <property>gear/gear[0]/compression-norm</property>
+        <value>0</value>
+      </not-equals>
+    </condition>
+    <property>velocities/uBody-fps</property>
+    <factor> -3 </factor>
+    <center>
+      <x-m> -14.600 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -4.891 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  
+</PropertyList>

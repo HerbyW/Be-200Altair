@@ -1,0 +1,450 @@
+<?xml version="1.0"?>
+ 
+<!--
+        
+    HerbyW 2015
+
+--> 
+ 
+<PropertyList>
+
+ <fx>
+
+  <engine>
+   <name>engine0</name>
+   <path>Aircraft/Be-200Altair/Sounds/Dl.wav</path>
+   <mode>looped</mode>
+   <condition>
+	<greater-than>
+          <property>engines/engine[0]/n1</property>
+          <value>1</value>
+        </greater-than>
+      </condition> 
+   <volume>
+    <property>/engines/engine[0]/n1</property>
+    <type>log</type>    
+    <factor>0.8</factor> <!-- 10-100% rpm == 0.1 - 1 factor -->
+   </volume>
+  </engine>
+
+  <engine>
+   <name>engine1</name>
+   <path>Aircraft/Be-200Altair/Sounds/Dl.wav</path>
+   <mode>looped</mode>
+   <condition>
+	<greater-than>
+          <property>engines/engine[1]/n1</property>
+          <value>1</value>
+        </greater-than>
+      </condition> 
+   <volume>
+    <property>/engines/engine[1]/n1</property>
+    <type>log</type>
+    <factor>0.8</factor> <!-- 10-100% rpm == 0.1 - 1 factor -->
+   </volume>
+  </engine>
+
+  <engine>
+   <name>whine0</name>
+   <path>Aircraft/Be-200Altair/Sounds/whine.wav</path>
+   <mode>looped</mode>
+   <condition>
+	<greater-than>
+          <property>engines/engine[0]/n1</property>
+          <value>1</value>
+        </greater-than>
+      </condition> 
+   <pitch>
+    <property>/engines/engine[0]/n1</property>    
+    <factor>.008</factor>
+   </pitch>
+   <volume>
+    <property>/engines/engine[0]/n1</property>
+    <type>log</type>
+    <offset>-0.7</offset>
+    <factor>0.8</factor> <!-- 10-100% rpm == 0.1 - 1 factor -->
+   </volume>
+  </engine>
+
+  <engine>
+   <name>whine1</name>
+   <path>Aircraft/Be-200Altair/Sounds/whine.wav</path>
+   <mode>looped</mode>
+   <condition>
+	<greater-than>
+          <property>engines/engine[1]/n1</property>
+          <value>1</value>
+        </greater-than>
+      </condition> 
+   <pitch>
+    <property>/engines/engine[1]/n1</property>    
+    <factor>.008</factor>
+   </pitch>
+   <volume>
+    <property>/engines/engine[1]/n1</property>
+    <type>log</type>
+    <offset>-0.7</offset>
+    <factor>0.8</factor> <!-- 10-100% rpm == 0.1 - 1 factor -->
+   </volume>
+  </engine>
+
+  <reverser>
+    <name>Reverse</name>	
+    <mode>looped</mode>
+    <path>Aircraft/Be-200Altair/Sounds/reverse.wav</path>
+    <condition>
+      <or>
+	<property>/engines/engine[0]/running</property>
+	<property>/engines/engine[1]/running</property>   
+      </or>
+      <property>/engines/engine[0]/reversed</property>
+    </condition>
+    <volume>
+      <property>/controls/engines/engine[0]/throttle</property>
+      <factor>1</factor>
+    </volume>
+  </reverser>
+  
+  <rumble>
+   <name>rumble</name>
+   <mode>looped</mode>
+   <path>Aircraft/Be-200Altair/Sounds/rumble.wav</path>
+   <condition>
+    <or>
+     <property>/gear/gear[0]/wow</property>
+     <property>/gear/gear[1]/wow</property>
+     <property>/gear/gear[2]/wow</property>
+    </or>
+   </condition>
+   <volume>
+    <property>/velocities/airspeed-kt</property>    
+    <factor>0.006</factor>
+   </volume>
+  </rumble>
+  
+  <touchwater>
+   <name>touch</name>
+   <mode>looped</mode>
+   <path>Aircraft/Be-200Altair/Sounds/water.wav</path>
+   <condition>    
+     <property>/gear/gear[9]/wow</property>
+   </condition>
+   <volume>
+    <property>/velocities/airspeed-kt</property>    
+        <factor>0.06</factor>
+        <min>0.6</min>
+        <max>1.0</max>
+   </volume>
+  </touchwater>
+
+
+  <gear>
+   <name>gear</name>
+   <mode>in-transit</mode>
+   <path>Aircraft/Be-200Altair/Sounds/gear.wav</path>
+   <property>/gear/gear[0]/position-norm</property>
+   <pitch>
+    <internal>dt_play</internal>
+    <offset>1.0</offset>
+    <factor>-0.001</factor>
+   </pitch>
+  </gear>
+
+  <gear>
+   <name>gear-lock</name>
+   <mode>once</mode>
+   <path>Aircraft/Be-200Altair/Sounds/gear-lck.wav</path>
+   <condition>
+    <equals>
+     <property>/gear/gear[0]/position-norm</property>
+     <value>0</value>
+    </equals>
+   </condition>
+   <volume>
+        <factor>0.5</factor>
+      </volume>
+      <reference-dist>500</reference-dist>
+      <max-dist>2000</max-dist>
+  </gear>
+
+  <squeal>
+   <name>squeal1</name>
+   <path>Aircraft/Be-200Altair/Sounds/squeal.wav</path>
+   <condition>    
+     <property>/gear/gear[0]/wow</property>    
+   </condition>
+   <volume>
+        <property>/velocities/speed-down-fps</property>
+        <factor>0.5</factor>
+        <max>1.0</max>
+      </volume>
+      <volume>
+        <property>/velocities/airspeed-kt</property>
+        <factor>0.01</factor>
+	<min>0.7</min>
+        <max>1.0</max>
+      </volume>      
+      <pitch>
+        <property>/velocities/airspeed-kt</property>
+        <factor>0.0025</factor>
+        <offset>0.5</offset>
+	<min>0.9</min>
+        <max>1.0</max>
+      </pitch>
+      <reference-dist>1000</reference-dist>
+      <max-dist>5000</max-dist>
+  </squeal>
+  
+  <squeal>
+   <name>squeal2</name>
+   <path>Aircraft/Be-200Altair/Sounds/squeal.wav</path>
+   <condition>
+    <or>     
+     <property>/gear/gear[1]/wow</property>
+     <property>/gear/gear[2]/wow</property>
+    </or>
+   </condition>
+   <volume>
+        <property>/velocities/speed-down-fps</property>
+        <factor>0.5</factor>
+        <max>1.0</max>
+      </volume>
+      <volume>
+        <property>/velocities/airspeed-kt</property>
+        <factor>0.01</factor>
+	<min>0.7</min>
+        <max>1.0</max>
+      </volume>      
+      <pitch>
+        <property>/velocities/airspeed-kt</property>
+        <factor>0.0025</factor>
+        <offset>0.5</offset>
+	<min>0.9</min>
+        <max>1.0</max>
+      </pitch>
+      <reference-dist>1000</reference-dist>
+      <max-dist>5000</max-dist>
+  </squeal>
+ 
+  <flap>
+   <name>flaps</name>
+   <mode>in-transit</mode>
+   <path>Aircraft/Be-200Altair/Sounds/flaps.wav</path>
+   <property>/surface-positions/flap-pos-norm</property>
+     <volume>
+        <factor>0.35</factor>
+      </volume>
+      <reference-dist>500</reference-dist>
+      <max-dist>2000</max-dist>
+  </flap>
+
+  <wind>
+   <name>wind</name>
+   <mode>looped</mode>
+   <path>Sounds/wind.wav</path>
+   <condition>
+   <property>/velocities/airspeed-kt</property>
+</condition>
+   <volume>
+    <property>/position/altitude-ft</property>
+    <factor>-0.000015</factor>
+    <offset>1.0</offset>
+    <min>0.1</min>
+    <max>1.0</max>
+   </volume>
+   <volume>
+     <property>/velocities/airspeed-kt</property>
+     <factor>0.0015</factor>
+     <min>0.03</min>
+     <max>0.25</max>
+   </volume>
+   <pitch>
+    <property>/velocities/airspeed-kt</property>
+    <factor>0.01</factor>
+    <offset>1.25</offset>
+   </pitch>
+  </wind>
+
+  <!-- Stall -->
+ 
+ <stall>
+   <name>stall</name>
+   <mode>looped</mode>
+   <path>Aircraft/Be-200Altair/Sounds/stall.wav</path>
+   <condition>
+     <and>
+       <property>/instrumentation/alerts/stall</property>
+       <greater-than>
+	 <property>/sim/time/elapsed-sec</property>
+	 <value>100</value>
+       </greater-than>
+     </and>
+   </condition>    
+   <volume>
+     <property>/instrumentation/alerts/stall</property>
+     <max>1.0</max>
+   </volume>
+   <reference-dist>10</reference-dist>
+   <max-dist>100</max-dist>
+ </stall>
+  
+     <!-- Rain -->    
+    <rain>
+      <name>rain</name>
+      <mode>looped</mode>
+      <path>Aircraft/Be-200Altair/Sounds/rain_canopy.wav</path>
+      <condition>
+        <greater-than>
+          <property>/environment/metar/rain-norm</property>
+          <value>0.2</value>
+        </greater-than>
+      </condition>
+      <volume>
+        <property>/environment/metar/rain-norm</property>
+        <factor>1.00</factor>
+        <offset>-0.2</offset>
+        <min>0.0</min>
+        <max>0.6</max>
+      </volume>
+      <pitch>
+        <property>/velocities/airspeed-kt</property>
+        <factor>0.001</factor>
+        <offset>0.50</offset>
+      </pitch>
+      <reference-dist>10</reference-dist>
+      <max-dist>100</max-dist>
+    </rain>
+ 
+ <!-- Speed Warning -->
+    <speedwarn>
+      <name>warn1</name>
+      <mode>looped</mode>
+      <path>Aircraft/Be-200Altair/Sounds/dinamik_pr2.wav</path>
+      <condition>
+        <greater-than>
+          <property>instrumentation/airspeed-indicator/true-speed-kt</property>
+          <value>405</value>
+        </greater-than>
+      </condition> 
+      <volume>
+        <offset>1.0</offset>
+        <min>1.0</min>
+        <max>1.0</max>
+      </volume>
+      <reference-dist>10</reference-dist>
+      <max-dist>100</max-dist>
+    </speedwarn>
+
+     <!-- Decision Height Warning -->
+    <decision>
+      <name>decision</name>
+      <mode>once</mode>
+      <path>Aircraft/Be-200Altair/Sounds/omi_1.wav</path>
+      <condition>
+        <less-than>
+          <property>/position/altitude-agl-ft</property>
+          <property>/instrumentation/altimeter/decision-height</property>      
+        </less-than>
+      </condition>
+      <volume>
+        <min>1.0</min>
+        <max>1.0</max>
+      </volume>
+      <reference-dist>10</reference-dist>
+      <max-dist>100</max-dist>
+    </decision>
+
+        <!-- ADF-MorseCode, see txt file -->
+    <ADF>
+      <name>ADF1</name>
+      <mode>looped</mode>
+      <path>Aircraft/Be-200Altair/Sounds/Morse.wav</path>
+      <condition>        
+        <property>/instrumentation/adf[0]/in-range</property>         
+      </condition>
+      <volume>
+        <property>/instrumentation/adf[0]/volume</property>  
+        <min>0.00</min>
+        <max>1.0</max>
+      </volume>      
+      <reference-dist>10</reference-dist>
+      <max-dist>100</max-dist>
+    </ADF>
+    
+    <ADF>
+      <name>ADF2</name>
+      <mode>looped</mode>
+      <path>Aircraft/Be-200Altair/Sounds/Morse.wav</path>
+      <condition>        
+        <property>/instrumentation/adf[1]/in-range</property>        
+      </condition>
+      <volume>  
+        <property>/instrumentation/adf[1]/volume</property>
+        <min>0.00</min>
+        <max>1.0</max>
+      </volume>      
+      <reference-dist>10</reference-dist>
+      <max-dist>100</max-dist>
+    </ADF>
+    
+        <!-- Doors -->
+  
+    <door>
+      <name>CargodoorT</name>
+      <mode>in-transit</mode>
+      <path>Aircraft/Be-200Altair/Sounds/door_close.wav</path>
+      <condition>
+       <and>
+	<greater-than>
+          <property>sim/multiplay/generic/float[2]</property>
+          <value>0.01</value>
+        </greater-than>
+	<less-than>
+          <property>sim/multiplay/generic/float[2]</property>
+          <value>0.99</value>
+        </less-than>
+       </and>
+      </condition>
+      <volume>
+        <factor>0.11</factor>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>2000</max-dist>
+    </door>
+    
+    <door>
+      <name>Cargodoor</name>
+      <path>Aircraft/Be-200Altair/Sounds/door_closed.wav</path>
+      <condition>
+        <equals>
+          <property>sim/multiplay/generic/float[2]</property>
+          <value>0.0</value>
+        </equals>
+      </condition>
+      <volume>
+        <factor>0.35</factor>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>2000</max-dist>
+    </door>
+
+            <!-- Gear Warning -->
+ 
+    <decision>
+      <name>gearwarning</name>
+      <mode>looped</mode>
+      <path>Aircraft/Be-200Altair/Sounds/sirena.wav</path>
+      <condition>    
+      <property>/gear/warning</property>
+      </condition>
+      <volume>
+        <min>0.8</min>
+        <max>0.8</max>
+      </volume>
+      <reference-dist>10</reference-dist>
+      <max-dist>100</max-dist>
+    </decision>
+    
+</fx>
+ 
+</PropertyList>

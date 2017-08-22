@@ -1,0 +1,23 @@
+By HerbyW 10-2015
+ 
+For Version 3.4.0 and 3.4.1 of Flightgear:
+
+Copy
+     wildfire.nas
+                        >>>>>into fgdata/Nasal
+                        
+Copy 
+     fire.xml
+     smoke.xml
+     wildfire.xml
+                        >>>>>>into fgdata/Models/Effects/Wildfire
+                        
+The nas-file will give you some information from the copilot: If there is a fire around you and if you have deleted it.
+
+The 3 other files make the wildfire a little bit less consuming your framerate,
+so that it should be possible to fight fire until 20 fires are comming up,
+then you have to deactivate the wildfire settings and enable them again.
+
+Maybe in the future I try to adjust the nas-file to a much more less consuming version.
+The problem is, then it will only work if every player has this version!
+

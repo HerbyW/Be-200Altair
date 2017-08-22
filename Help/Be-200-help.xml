@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<!--
+    Usable with FlightGear
+    Property of Gerard Robin
+    
+    modified by HerbyW 2015
+
+-->
+<PropertyList>
+
+        <title>Be-200Altair  Water dropping Jet Aircraft</title>
+        
+        <key>
+	  <name>d</name>
+	  <desc>Cargo Door open/close</desc>
+	</key>
+        <key>
+	  <name>D</name>
+	  <desc>close water tank doors</desc>
+	</key>
+	<key>
+	  <name>s</name>
+	  <desc>Autostart</desc>
+	</key>
+	<key>
+	  <name>f</name>
+	  <desc>Floats Up/Down</desc>
+	</key>
+	<key>
+	  <name>F</name>
+	  <desc>Anchor</desc>
+	</key>
+	<key>
+	  <name>l (like "l"etter) </name>
+	  <desc>release water over your target (water bombing)</desc>
+	</key>
+	<key>
+	  <name>L</name>
+	  <desc>water loading pipes</desc>
+	</key>
+	<key>
+	  <name>B</name>
+	  <desc>toggle ON/OFF Brake Parking</desc>
+	</key>        
+	<key>
+	  <name>Delete</name>
+	  <desc>Reverser on/off</desc>
+	</key>
+	<key>
+	  <name>&lt;</name>
+	  <desc>Change Pilot Engineer View</desc>
+	</key>
+	<key>
+	  <name>~</name>
+	  <desc>Nose Wheel Steering</desc>
+	</key>
+<text>
+WATER BOMBER Be-200 Altair Version: 3.0.1 by Herbert Wagner (HerbyW) 2015-2016
+
+Press s for autostart.
+
+Manual start up:
+-all electrics on, 3 switches in upper position at middle panel
+-all radios and instruments on, in overhead panel.
+-press starter button and wait till green lamp is on,then switch engine on
+-repeat with second engine
+-set reference compass to marker position, at engineer panel
+
+Filling of the water tank ( 12000 liters):
+=> on water, the floats come automaticaly DOWN  (key"f")
+=> prepare the filling before watering (command key  "L")
+=> a speed minimum of 45 kts, 120 is fine
+=> push gently the elevator, just enough to keep the aircraft sliding in the water
+=> landing and starting on water with 3 or more flaps
+=> hold the speed at 110-130 with nose in the air
+=> The filling duration time is 18 sec.
+
+Control your speed which must be more than 45 kts (if less it does not fill), more is better.
+During the filling, the aircraft is getting more and more heavy.
+When loaded  the weight of the aircraft is heavier of 12000 kg , remember it at take off,
+you wants patience, and smooth piloting. Before climb, you must get the maximum of speed
+with the help of the groundeffect, which is your friend.
+
+For landing in water set 3 flaps, reducing speed to 110-130 kts.
+
+Now you may simulate a water bombing
+=> At a low agl, 200-500 ft, over the target which is supposed to be bombed,
+=> release the water (command key 'l" like "l"etter)
+The water can be seen falling down.
+    
+The  aircraft is right now 12000 kg less, it will jump upper in the sky, be prepared for it.
+When empty don't forget to close the water tank doors ( key"D")
+You may again, go back on the sea  and fill again, that process is repeatable as long as you wish it.
+
+There are 3 placards in the middle panel: red, blue, white with description, so you do not need the shortcuts :)
+    
+Make fire in MP-Modus:
+Activate all buttons in the Wildfire settings, to see the wildfire
+(in this model is it done at startup automatically, for multiplayer each player has to set it to see it).
+Press: Strg + Shift + click on the ground to make a fire, be aware that each fire gets bigger in time.
+
+Refulling can only be done at ground, open the menue: Refuel
+
+Liveboat control at the ramp panel with open cargo door.
+
+Additional rudder-function in water.
+
+All animations in multiplayer!
+
+Have fun! HerbyW 2016
+</text>
+
+</PropertyList>

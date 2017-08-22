@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+
+<!--
+
+HerbyW 2015
+
+-->
+
+
+<PropertyList>
+  <particlesystem>
+    <name>Waterbomb</name>
+    
+    <texture>white.png</texture>
+    
+    <condition>
+      <and>
+	<greater-than>
+	  <property>sim/multiplay/generic/float[16]</property>
+	  <value>8001</value>
+	</greater-than>
+	<less-than>
+	  <property>sim/multiplay/generic/float[16]</property>
+	  <value>12000</value>
+	</less-than>
+	<equals>
+	  <property>sim/multiplay/generic/float[17]</property>
+	  <value>1</value>
+	</equals>
+	<equals>
+	  <property>sim/multiplay/generic/int[4]</property>
+	  <value>1</value>
+	</equals>
+      </and>
+    </condition>
+    
+    <emissive>false</emissive>
+    <lighting>false</lighting>
+    <align>billboard</align>
+    <attach>world</attach>
+    <placer>
+      <type>point</type>
+    </placer>
+    <shooter>
+      <theta-min-deg>85</theta-min-deg>
+      <theta-max-deg>95</theta-max-deg>
+      <phi-min-deg>-5</phi-min-deg>
+      <phi-max-deg> 5</phi-max-deg>
+      <speed-mps>
+	<value>10</value>
+	<spread>2</spread>
+      </speed-mps>
+      <rotation-speed>
+	<x-min-deg-sec>0</x-min-deg-sec>
+	<y-min-deg-sec>0</y-min-deg-sec>
+	<z-min-deg-sec>0</z-min-deg-sec>
+	<x-max-deg-sec>5</x-max-deg-sec>
+	<y-max-deg-sec>0</y-max-deg-sec>
+	<z-max-deg-sec>0</z-max-deg-sec>
+      </rotation-speed>
+    </shooter>
+    <counter>
+      <particles-per-sec>
+	<value>20</value>
+	<spread>5</spread>
+      </particles-per-sec>
+    </counter>
+    <particle>
+      <start>
+	<color>
+	  <red><value>1</value></red>
+	  <green><value>0</value></green>
+	  <blue><value>0</value></blue>
+	  <alpha><value>1</value></alpha>
+	</color>
+	<size>
+	  <value>1</value>
+	</size>
+      </start>
+      <end>
+	<color>
+	  <red><value>1</value></red>
+	  <green><value>0</value></green>
+	  <blue><value>0</value></blue>
+	  <alpha><value>0.7</value></alpha>
+	</color>
+	<size>
+	  <value>150</value>
+	</size>
+      </end>
+      <life-sec>
+	<value>40</value>
+      </life-sec>
+      <mass-kg>1000</mass-kg>
+      <radius-m>1</radius-m>
+    </particle>
+    <program>
+      <fluid>air</fluid>
+      <gravity>true</gravity>
+      <wind>true</wind>
+    </program>
+  </particlesystem>
+</PropertyList>

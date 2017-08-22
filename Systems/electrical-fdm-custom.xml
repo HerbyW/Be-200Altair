@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<!--
+    usable with flightgear or JSBSim stand-alone
+    COPYRIGHT gerard robin  23-03-2010
+    under license:  GPL v2
+
+
+    Replace FlightGear_generic-electric.xml file
+-->
+
+<system name="electrical-custom">
+
+    <property value="0">electrical/supplier/emergency-on</property>
+     <property value="0">electrical/supplier/external-power</property>
+     <property value="0">electrical/ignition/master-switch</property>
+     <property value="0">electrical/propulsion/engine[0]/fuel-pump</property>
+     <property value="0">electrical/propulsion/engine[1]/fuel-pump</property>
+    
+    <property value="0">electrical/switch/battery</property>
+    <property value="0">electrical/switch/alternator</property>
+
+<channel name="electrical-custom">
+
+
+	
+	<!--<switch name="electric master switch">
+            <default value="0"/>
+            <test  logic="OR" value="1">
+		electrical/switch/master == 1
+            </test>
+        </switch>-->
+       <!-- =====================================-->
+
+
+       <!--switches-->
+       <switch name="electrical/supplier/battery-on">
+           <default value="0"/>
+           <test  logic="AND" value="1">
+              electrical/switch/battery   == 1
+           </test>
+           <output>electrical/propulsion/engine[0]/master-bat</output>
+           <output>electrical/propulsion/engine[1]/master-bat</output>
+        </switch>
+
+        <switch name="electrical/supplier/alternator-on">
+            <default value="0"/>
+            <test  logic="AND" value="1">
+               propulsion/engine/set-running == 1
+               systems/crash-detect/crashed != 1
+            </test>
+            <output>electrical/propulsion/engine[0]/master-alt</output>
+            <output>electrical/propulsion/engine[1]/master-alt</output>
+        </switch>
+	
+	<!--Main Alternators Amperes   a guess-->
+	<scheduled_gain name="electrical/supplier/alternator/amp0">
+            <input>electrical/propulsion/engine[0]/master-alt</input>
+            <table>
+		<independentVar>propulsion/engine[0]/thrust-lbs</independentVar>
+                <tableData>
+                    0.00	        0.00
+		    400		0.00
+                    1000              20
+                    25000	        120
+                </tableData>
+            </table>
+        </scheduled_gain>
+	
+	<scheduled_gain name="electrical/supplier/alternator/amp1">
+            <input>electrical/propulsion/engine[1]/master-alt</input>
+            <table>
+		<independentVar>propulsion/engine[1]/thrust-lbs</independentVar>
+                <tableData>
+                    0.00	        0.00
+		    400		0.00
+                    1000              20
+                    25000	        120
+                </tableData>
+            </table>
+        </scheduled_gain>
+	
+
+        <switch name="electrical/supplier/external-on">
+            <default value="0"/>
+            <test  logic="AND" value="1">
+                electrical/supplier/external-power  == 1
+                electrical/supplier/alternator-on == 0
+                electrical/supplier/emergency-on == 0
+            </test>
+        </switch>
+
+    </channel>
+
+</system>

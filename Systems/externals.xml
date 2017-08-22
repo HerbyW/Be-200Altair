@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+
+<!--
+        
+    modified by HerbyW 2015
+
+-->
+
+<system name="External Components">
+
+    <property>fcs/canopy-control</property>
+    <property>fcs/blister-cmd-norm</property>
+    <property>fcs/cowl-flap-cmd-norm</property>
+    <property>systems/animations/start-smoke-out</property>
+    <property>systems/animations/engine-start</property>
+    <property>systems/gear/gear[1]/tyre-smoke</property>
+    <property>systems/gear/gear[2]/tyre-smoke</property>
+
+
+    <channel name="Externals">
+       
+        <!--effets de  fumée sur le train-->
+        <summer name="systems/gear/gear[1]/wheel-speed-diff">
+            <input>velocities/u-fps</input>
+            <input>-gear/unit[1]/wheel-speed-fps</input>
+        </summer>
+
+        <switch name="systems/gear/gear[1]/tyre-smoke-on-sw">
+            <default value="systems/gear/gear[1]/tyre-smoke-on"/>
+            <test  logic="AND" value="1">
+                systems/gear/gear[1]/wheel-speed-diff gt 0.4
+                gear/unit[1]/WOW == 1
+            </test>
+            <test  logic="AND" value="0">
+                systems/gear/gear[1]/tyre-smoke-on == 1
+                systems/gear/gear[1]/tyre-smoke == 1
+            </test>
+            <output>systems/gear/gear[1]/tyre-smoke-on</output>
+        </switch>
+
+        <kinematic name="systems/gear/gear[1]/tyre-smoke-timer">
+            <input>systems/gear/gear[1]/tyre-smoke-on</input>
+            <traverse>
+                <setting>
+                    <position>0</position>
+                    <time>0</time>
+                </setting>
+                <setting>
+                    <position>1</position>
+                    <time>1.5</time>
+                </setting>
+            </traverse>
+            <output>systems/gear/gear[1]/tyre-smoke</output>
+        </kinematic>
+
+        <summer name="systems/gear/gear[2]/wheel-speed-diff">
+            <input>velocities/u-fps</input>
+            <input>-gear/unit[2]/wheel-speed-fps</input>
+        </summer>
+
+        <switch name="systems/gear/gear[2]/tyre-smoke-on-sw">
+            <default value="systems/gear/gear[2]/tyre-smoke-on"/>
+            <test  logic="AND" value="1">
+                systems/gear/gear[2]/wheel-speed-diff gt 0.4
+                gear/unit[2]/WOW == 1
+            </test>
+            <test  logic="AND" value="0">
+                systems/gear/gear[2]/tyre-smoke-on == 1
+                systems/gear/gear[2]/tyre-smoke == 1
+            </test>
+            <output>systems/gear/gear[2]/tyre-smoke-on</output>
+        </switch>
+
+
+        <kinematic name="systems/gear/gear[2]/tyre-smoke-timer">
+            <input>systems/gear/gear[2]/tyre-smoke-on</input>
+            <traverse>
+                <setting>
+                    <position>0</position>
+                    <time>0</time>
+                </setting>
+                <setting>
+                    <position>1</position>
+                    <time>1.5</time>
+                </setting>
+            </traverse>
+            <output>systems/gear/gear[2]/tyre-smoke</output>
+            </kinematic>
+
+     </channel>
+
+</system>

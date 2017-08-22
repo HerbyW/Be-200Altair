@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<!--
+    Usable with FlightGear
+    Copyright Gerard Robin  31-08-2009
+        
+    modified by HerbyW 2015
+
+-->
+
+
+<system name="bellydrag">
+
+  <channel name="cpbelly">
+      
+<!--0.76 et 0.79 pour un air penché-->
+        <switch name="systems/cpbelly/cp0-position">
+            <default value="-79.358"/>
+            <test  logic="AND" value="-158">
+                fcs/drag-terrain-factor-switch == 1
+          </test>
+          <output>gear/unit[16]/z-position</output>
+      </switch>
+      <switch name="systems/cpbelly/cp1-position">
+          <default value="-79.358"/>
+          <test  logic="AND" value="-158">
+              fcs/drag-terrain-factor-switch == 1
+          </test>
+          <output>gear/unit[17]/z-position</output>
+      </switch>
+
+     <switch name="systems/cpbelly/cpready">
+          <default value="0"/>
+          <test  logic="AND" value="1">
+              gear/unit[16]/WOW == 1
+              fcs/drag-terrain-factor-switch == 1
+          </test>
+          <test  logic="AND" value="1">
+              fcs/drag-terrain-factor-switch == 1
+              gear/unit[17]/WOW == 1
+          </test>
+     </switch>
+
+     <switch name="systems/cpbelly/rollspeed">
+         <default value="0"/>
+         <test  logic="OR" value="gear/unit[16]/wheel-speed-fps">
+             gear/unit[16]/WOW == 1
+         </test>
+         <test  logic="OR" value="gear/unit[17]/wheel-speed-fps">
+             gear/unit[17]/WOW == 1
+         </test>
+     </switch>
+
+     <scheduled_gain name="systems/cpbelly/cp1belly-decel-multiplier">
+         <input>systems/cpbelly/cpready</input>
+         <table>
+             <independentVar lookup="row">systems/cpbelly/rollspeed</independentVar>
+             <tableData>
+                 0     0.00
+                 5    30.00
+                 7    15.00
+                 80    8.00
+		 160   2.00
+             </tableData>
+         </table>
+     </scheduled_gain>
+
+     <pure_gain name="systems/cpbelly/cp1belly-decel-force">
+         <input>systems/cpbelly/cp1belly-decel-multiplier</input>
+        <gain>inertia/weight-lbs</gain>
+     </pure_gain>
+
+     <summer name="systems/cpdrag/cp1-force">
+         <input>systems/cpbelly/cp1belly-decel-force</input>
+        <output>external_reactions/cp1-bellydragx/magnitude</output>
+     </summer>
+
+  </channel>
+
+</system>

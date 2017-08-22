@@ -1,0 +1,238 @@
+<?xml version="1.0"?>
+
+<!--
+        
+    modified by HerbyW 2015
+
+-->
+
+<system name="Hull_Force">
+
+<property value="1">animation/wakes-coeff</property>
+
+
+    <channel name="hull_in_water">
+
+        <fcs_function name="systems/function/kSHump">
+            <description>Pressure_Coefficient_On_Hump_Surface</description>
+            <function>
+                <product>
+                    <sum>
+                        <property>gear/unit[3]/compression-ft</property>
+                        <property>gear/unit[5]/compression-ft</property>
+                        <property>gear/unit[6]/compression-ft</property>
+                    </sum>
+                    <value>35</value><!-- 350 35-->
+                </product>
+            </function>
+        </fcs_function>
+
+
+        <fcs_function name="systems/function/ReW">
+            <description>Re_in_water</description>
+                <function>
+                    <product>
+                        <property>velocities/u-fps</property>
+                        <value>29026550.24</value><!-- 29026550.24 -->
+                    </product>
+                </function>
+        </fcs_function>
+
+        
+        <summer name="fcs/rn-water">
+            <input>systems/function/ReW</input>
+            <clipto>
+                <min>10</min>
+                <max>100000000000000000</max>
+            </clipto>
+            <output>hydro/function/ReW</output>
+        </summer>
+ 
+        <fcs_function name="systems/function/wqbar-psf">
+             <description>Pressure_Coefficient_In_Water</description>
+             <function>
+                 <quotient>
+                     <pow>
+                         <property>velocities/u-fps</property>
+                         <value>2</value><!-- 2 -->
+                     </pow>
+                     <value>2</value>
+                 </quotient>
+             </function>
+        </fcs_function>
+
+        <fcs_function name="systems/coefficient/CLHull">
+            <description>Change_in_lift_due_to_hull</description>
+            <function>
+                <product>
+                    <property>systems/function/kSHump</property>
+                    <property>systems/function/wqbar-psf</property>
+                    <value>2</value><!-- 0.1  3 -->
+                </product>
+            </function>
+        </fcs_function>
+
+
+        <pure_gain name="systems/hull_l/magnitudez">
+            <input>systems/coefficient/CLHull</input>
+            <gain>0.6</gain><!-- 0.35 -->
+            <output>external_reactions/hull_l/magnitude</output>
+        </pure_gain>
+
+        <pure_gain name="systems/hull_r/magnitudez">
+            <input>systems/coefficient/CLHull</input>
+            <gain>0.6</gain><!-- 0.35 -->
+            <output>external_reactions/hull_r/magnitude</output>
+        </pure_gain>
+
+        <pure_gain name="systems/hull_arl/magnitudez">
+            <input>systems/coefficient/CLHull</input>
+            <gain>0.5</gain><!-- 0.15 -->
+            <output>external_reactions/hull_arl/magnitude</output>
+        </pure_gain>
+
+        <pure_gain name="systems/hull_arr/magnitudez">
+            <input>systems/coefficient/CLHull</input>
+            <gain>0.5</gain><!-- 0.15 -->
+            <output>external_reactions/hull_arr/magnitude</output>
+        </pure_gain>
+
+
+        <switch name="systems/hull/c_wow">
+            <default value="0"/>
+            <test  logic="OR" value="1">
+                gear/unit[5]/WOW  == 1
+                gear/unit[6]/WOW  == 1
+            </test>
+        </switch>
+
+        <summer name="systems/hull/mooring_thrust">
+            <input>propulsion/engine[0]/thrust-lbs</input>
+            <input>propulsion/engine[1]/thrust-lbs</input>
+        </summer>
+	
+	 <fcs_function name="systems/hull/mooring1_thrust">
+            <function>
+                <product>
+		    <property>aero/qbar-psf</property>
+                    <value>-10500</value><!-- 130 -->
+                </product>
+            </function>
+        </fcs_function>
+
+        <switch name="systems/hull/mooring">
+            <default value="0"/>
+            <test  logic="AND" value="1">
+                systems/hull/c_wow == 1
+               fcs/brake-parking-cmd-norm   == 1
+            </test>
+        </switch>
+	 <switch name="systems/hull/mooring1">
+            <default value="0"/>
+            <test  logic="AND" value="1">
+                systems/hull/c_wow == 1
+		fcs/mooring-cmd-norm  == 1
+            </test>	    
+        </switch>
+	
+<!--Rear Center Brake Anchor-->
+        <pure_gain name="systems/hull/mooring_magnitude">
+            <input>systems/hull/mooring_thrust</input>
+            <gain>systems/hull/mooring</gain>
+            <output>external_reactions/mooring/magnitude</output>
+        </pure_gain>
+	
+<!--Anker Mooring-->
+	<pure_gain name="systems/hull/mooring1_magnitude">
+            <input>systems/hull/mooring1_thrust</input>
+            <gain>systems/hull/mooring1</gain>
+            <output>external_reactions/mooring1/magnitude</output>
+        </pure_gain>
+
+    </channel>
+
+    <!--Pour l' animation des sillages sur l'eau-->
+
+    <channel name="Wake Trigger">
+      
+        <switch name="Left Wake Trigger">
+            <default value="0"/>
+            <test logic="AND" value="1">
+                simulation/sim-time-sec gt 2
+               gear/unit[11]/WOW   == 1
+                velocities/vc-kts gt 7
+                fcs/water-bombing-cmd-norm == 0
+                environment/terrain-solid  == 0
+            </test>
+	    <test logic="AND" value="1">
+                simulation/sim-time-sec gt 2
+               gear/unit[6]/WOW   == 1
+                velocities/vc-kts gt 7
+                fcs/water-bombing-cmd-norm == 0
+                environment/terrain-solid  == 0
+            </test>
+        </switch>
+
+        <kinematic name="Left Wake Control">
+            <input>fcs/left-wake-trigger</input>
+            <traverse>
+                <setting>
+                    <position>0</position>
+                    <time>0</time>
+                </setting>
+                <setting>
+                    <position>1</position>
+                    <time>1</time>
+                </setting>
+            </traverse>
+        </kinematic>
+
+
+        <switch name="Right Wake Trigger">
+            <default value="0"/>
+            <test logic="AND" value="1">
+                simulation/sim-time-sec gt 2
+               gear/unit[10]/WOW   == 1
+                velocities/vc-kts gt 7
+                fcs/water-bombing-cmd-norm == 0
+                environment/terrain-solid  == 0
+            </test>
+	    <test logic="AND" value="1">
+                simulation/sim-time-sec gt 2
+               gear/unit[5]/WOW   == 1
+                velocities/vc-kts gt 7
+                fcs/water-bombing-cmd-norm == 0
+                environment/terrain-solid  == 0
+            </test>
+        </switch>
+
+        <kinematic name="Right Wake Control">
+            <input>fcs/right-wake-trigger</input>
+            <traverse>
+                <setting>
+                    <position>0</position>
+                    <time>0</time>
+                </setting>
+                <setting>
+                    <position>1</position>
+                    <time>1</time>
+                </setting>
+            </traverse>
+        </kinematic>
+
+        <scheduled_gain name="animation/sea-wake">
+            <input>animation/wakes-coeff</input>
+            <table>
+                <independentVar>/sim/time/sun-angle-rad</independentVar>
+                <tableData>
+                    0.00	1.00
+                    2.0	        0.0
+                </tableData>
+            </table>
+        </scheduled_gain>
+
+    </channel>
+
+
+
+</system>

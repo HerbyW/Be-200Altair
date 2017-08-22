@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<!--
+        
+    modified by HerbyW 2015
+
+-->
+
+<system name="Crash">
+  
+    <property>contact/unit[13]/wow</property>
+    <property>contact/unit[14]/wow</property>
+    <property>gear/unit[16]/wow</property>
+    <property>gear/unit[17]/wow</property>
+
+    <channel name="crash">
+            
+            <switch name="systems/crash/fire-on-crash">
+                <default value="1"/>
+                <test  value="1">
+                    /environment/wildfire/fire-on-crash == 1
+                </test>
+                <output>/environment/wildfire/fire-on-crash</output>
+            </switch>
+           <switch name="systems/crash/switch_b-right">
+               <default value="0"/>
+               <test  logic="AND" value="1">
+                   gear/unit[16]/compression-ft gt 0.08
+                   gear/unit[16]/wow == 1
+                   environment/terrain-solid != 0
+               </test>
+               <output>systems/crash/cpw1</output>
+            </switch>
+            <switch name="systems/crash/switch_b-left">
+                <default value="0"/>
+                <test  logic="AND" value="1">
+                    gear/unit[17]/compression-ft gt 0.08
+                    gear/unit[17]/wow == 1
+                    environment/terrain-solid != 0
+                </test>
+                <output>systems/crash/cpw2</output>
+            </switch>
+            <switch name="systems/crash/switch_w-right">
+                <default value="0"/>
+                <test  logic="AND" value="1">
+                    contact/unit[13]/compression-ft gt 0.08
+                    contact/unit[13]/wow == 1
+                </test>
+                <output>systems/crash/cpw3</output>
+            </switch>
+            <switch name="systems/crash/switch_w-left">
+                <default value="0"/>
+                <test  logic="AND" value="1">
+                    contact/unit[14]/compression-ft gt 0.08
+                    contact/unit[14]/wow == 1
+                </test>
+                <output>systems/crash/cpw4</output>
+            </switch>
+
+
+            <switch name="systems/crash/switch-sw">
+                <default value="systems/crash/switch"/>
+                <test  logic="OR" value="1">
+                    systems/crash/switch_b-right == 1
+                    systems/crash/switch_w-left == 1
+                    systems/crash/switch_w-right == 1
+                    systems/crash/switch_b-left == 1
+                    systems/crash-detect/crashed-on == 1
+                </test>
+                <test logic="AND" value="0">
+                    simulation/sim-time-sec lt 2.0
+                </test>
+                <output>systems/crash/switch</output>
+            </switch>
+
+            <kinematic name="Crash Control">
+                <input>systems/crash/switch</input>
+                <traverse>
+                    <setting>
+                        <position>0</position>
+                        <time>0</time>
+                    </setting>
+                    <setting>
+                        <position>1</position>
+                        <time>3</time>
+                    </setting>
+                </traverse>
+                <output>systems/crash/switch_timer</output>
+           </kinematic>
+
+
+<!--
+            <switch name="systems/crash/switch_electric">
+                <default value="electrical/switch/master"/>
+                <test  logic="AND" value="0">
+                    systems/crash/switch_timer  == 1
+                </test>
+		<output>electrical/switch/master</output>
+            </switch>
+
+
+            <switch name="systems/magneto1">
+                <default value="propulsion/engine[0]/magnetos"/>
+                <test logic="OR" value="0">
+                    systems/crash/switch_timer  == 1
+                </test>
+                <output>propulsion/engine[0]/magnetos</output>
+            </switch>
+            <switch name="systems/magneto2">
+                <default value="propulsion/engine[1]/magnetos"/>
+                <test logic="OR" value="0">
+                    systems/crash/switch_timer  == 1
+                </test>
+                <output>propulsion/engine[1]/magnetos</output>
+            </switch>
+
+            -->
+
+
+
+
+
+    </channel>
+
+
+
+
+
+</system>

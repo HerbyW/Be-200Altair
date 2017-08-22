@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!--
+    Usable with FlightGear
+    Gerard Robin  14-01-2009
+    Copyright GPL v2
+          
+    modified by HerbyW 2015
+-->
+
+<PropertyList>
+    <default>
+        <menu n="10">
+            <label>Beriev-200Altair</label>
+            <enabled type="bool">true</enabled>
+	  <!--   <item>
+		<label>Help to  Start</label>
+		<binding>
+		    <command>nasal</command>
+                    <script>
+		   var easystart = gui.Dialog.new("/sim/gui/dialogs/Be-200Altair/menu/easystart/dialog",
+                        "Aircraft/Be-200Altair/Inputs/easy_start.xml");                        
+                        easystart.open();               
+                    </script>		    
+                </binding>
+                </item>  -->
+	     <item>
+		<label>Refuel</label>
+		<binding>
+		    <command>nasal</command>
+                    <script>
+		   var refuel = gui.Dialog.new("/sim/gui/dialogs/Be-200Altair/menu/refuel/dialog",
+                        "Aircraft/Be-200Altair/Inputs/refuel.xml");                        
+                        refuel.open();               
+                    </script>		    
+                </binding>
+            </item>
+	  <!--  <item>
+		<label>Propulsion Control Mode</label>
+	    <binding>
+		    <command>nasal</command>
+                    <script>
+		   var propulsion = gui.Dialog.new("/sim/gui/dialogs/Be-200Altair/menu/propulsion/dialog",
+                        "Aircraft/Be-200Altair/Inputs/propulsion.xml");                        
+                        propulsion.open();               
+                    </script>		    
+                </binding>
+                </item> -->
+            <item>
+                <label>Reload Water</label>
+                <binding>
+                    <command>property-assign</command>
+                    <property>/sim/model/waterloading</property>
+                    <value>1</value>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>/sim/model/bomb-signal</property>
+                    <value>0</value>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>/sim/model/waterbombing</property>
+                    <value>0</value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>fdm/jsbsim/fcs/water-intake-cmd-norm</property>
+                <value>1</value>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>
+                    var water = gui.Dialog.new("/sim/gui/dialogs/Be-200Altair/menu/dialog",
+                    "Aircraft/Be-200Altair/Inputs/water_loading.xml");
+                    water.open();
+                </script>
+                </binding>
+            </item>
+        </menu>
+    </default>
+</PropertyList>

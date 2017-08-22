@@ -1,0 +1,198 @@
+<?xml version="1.0"?>
+
+<!--
+        
+    modified by HerbyW 2015
+
+--> 
+
+<system name="Water">
+
+    <property>fcs/water-loaded-pos</property>
+   <!-- <property value="10000">systems/water_tank</property>-->
+   <property value="0">fcs/water-door-cmd-norm</property>
+   <property>fcs/water-switch</property>
+   <property>/sim/model/waterbombing</property>
+
+        <channel name="Water Bomb">
+
+            <kinematic name="Water Door Pos Norm">
+                <input>fcs/water-door-cmd-norm</input>
+                <traverse>
+                    <setting>
+                        <position>0</position>
+                        <time>0</time>
+                    </setting>
+                    <setting>
+                        <position>1</position>
+                        <time>1</time>
+                    </setting>
+                </traverse>
+                <output>/surface-positions/water-door-position</output>
+            </kinematic>
+
+	<!--les conditions requisent pour effectuer l'acte de remplissage-->
+	<!--loading the water under conditions-->
+
+
+	    <switch name="fcs/water-tank-reload">
+                <default value="0"/>
+                <test logic="AND" value="1">
+                    /sim/model/waterloading  == 1
+                    fcs/water-switch == 0
+                    position/h-agl-ft lt 8
+                     gear/unit[9]/WOW   == 1
+		    systems/gear/gear-pos-norm  == 0
+                    velocities/vc-kts gt 45
+		    fcs/water-door-cmd-norm == 0
+                </test>
+            </switch>
+
+	    <!--Pour gérer les interruptions , et reprendre en cours de remplissage jusqu'au maxi-->
+	    <!--Process the loading of the water tank, part by part if required-->
+
+	    <switch name="fcs/waterloading-cmd-norm">
+                <default value="fcs/water-loaded-pos"/>
+                <test logic="OR" value="1">
+                    fcs/water-tank-reload == 1
+                </test>
+                <test logic="OR" value="0">
+                    /sim/model/waterloading  == 0
+                </test>
+                <test logic="AND" value="0">
+                    /sim/model/waterloading  == 1
+                    fcs/water-switch == 1
+                </test>
+            </switch>
+
+            <kinematic name="Water Reload Position">
+                <input>fcs/waterloading-cmd-norm</input>
+                <traverse>
+                    <setting>
+                        <position>0</position>
+                        <time>0</time>
+                    </setting>
+                    <setting>
+                        <position>1</position>
+                        <time>18</time>
+                    </setting>
+                </traverse>
+                <output>fcs/water-loaded-pos</output>
+            </kinematic>
+
+            <pure_gain name="Water Tank Capacity">
+                <input>fcs/water-reload-position</input>
+                <gain>26455</gain>
+            </pure_gain>
+
+
+
+            <!--On libère l'eau -->
+
+	     <switch name="Water bombing Cmd Norm">
+                <default value="0"/>
+                <test logic="AND" value="1">
+                    /sim/model/bomb-signal == 1
+                    fcs/water-tank-capacity gt 1
+                </test>
+            </switch>
+
+            <kinematic name="Water Bombing Timing">
+                <input>fcs/water-bombing-cmd-norm</input>
+                <traverse>
+                    <setting>
+                        <position>0</position>
+                        <time>0</time>
+                    </setting>
+                    <setting>
+                        <position>1</position>
+                        <time>4</time>
+                    </setting>
+                </traverse>
+            </kinematic>
+
+
+
+            <pure_gain name="Water Tank Unload">
+                <input>fcs/water-tank-capacity</input>
+                <gain>fcs/water-bombing-timing</gain>
+            </pure_gain>
+
+            <summer name="Water Tank Unload Capacity">
+                <input>fcs/water-tank-capacity</input>
+                <input>-fcs/water-tank-unload</input>
+            </summer>
+
+           <!-- On met à jour le "pointmass" remplissage ou vidage-->
+
+            <switch name="Water Tank Load">
+                <default value="0"/>
+                <test logic="AND" value="fcs/water-tank-capacity">
+                    fcs/waterloading-cmd-norm gt 0
+                    /sim/model/bomb-signal == 0
+                    fcs/water-switch == 0
+                </test>
+                <test logic="AND" value="fcs/water-tank-unload-capacity">
+                    fcs/water-bombing-timing gt 0
+                    /sim/model/waterbombing == 1
+                </test>
+                <output>inertia/pointmass-weight-lbs[0]</output>
+            </switch>
+
+            <pure_gain name="Water Qty Liters">
+                <input>inertia/pointmass-weight-lbs[0]</input>
+                <gain>0.45359237</gain>
+            </pure_gain>
+
+            <switch name="systems/water-tank-filled">
+                <default value="0000"/>
+                <test logic="AND" value="11990">
+                    fcs/water-qty-liters  gt  11990
+                </test>
+            </switch>
+
+	    <switch name="Water SW">
+                <default value="fcs/water-switch"/>
+                <test logic="AND" value="1">
+                    fcs/water-bombing-cmd-norm  == 1
+		    fcs/water-switch == 0
+                </test>
+		<test logic="AND" value="0">
+		    fcs/water-reload-position == 0
+		    fcs/water-switch == 1
+                </test>
+                <output>fcs/water-switch</output>
+            </switch>
+
+           <!-- Pour l' animation du lachage d'eau-->
+
+	    <switch name="Water Trigger">
+                <default value="0"/>
+                <test logic="AND" value="1">
+                    fcs/water-bombing-timing gt 0
+                </test>
+            </switch>
+
+	    <pure_gain name="Water Count">
+                <input>fcs/water-reload-position</input>
+                <gain>3</gain>
+            </pure_gain>
+
+            <switch name="Water Bombing Count ">
+                <default value="0"/>
+                <test logic="AND" value="fcs/water-count">
+                    fcs/water-bombing-cmd-norm gt 0
+                    fcs/water-bombing-timing lt 1
+                    /sim/model/waterbombing == 1
+                </test>
+                <test logic="AND" value="/ai/submodels/submodel/count">
+                    fcs/water-bombing-timing == 1
+                    /sim/model/waterbombing == 1
+                </test>
+                <output>/ai/submodels/submodel/count</output>
+            </switch>
+
+        </channel>
+
+
+</system>

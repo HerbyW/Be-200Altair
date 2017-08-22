@@ -1,0 +1,185 @@
+<?xml version="1.0"?>
+<!--
+Usable with FlightGear
+Property of Gerard Robin
+
+modified by HerbyW 2015
+
+-->
+
+<PropertyList>
+  
+  <keyboard>
+    
+    <key n="115">
+      <name>s</name>
+      <desc>Autostart</desc>
+      <binding>
+	<command>property-toggle</command>
+	<property>controls/autostart</property>
+	<value>true</value>
+      </binding>
+    </key>
+    
+    <key n="60">
+      <name> > </name>
+      <desc>Change Pilot Engineer View</desc>
+      <binding>
+	<command>property-cycle</command>
+	<property>sim/current-view/view-number</property>  
+	<value>0</value>
+	<value>9</value>
+      </binding>
+    </key>
+    
+    <key n="100">
+      <name>d</name>
+      <desc>Cargo Door</desc>      
+      <binding>
+	<command>nasal</command>
+	<script>doors.cargo.toggle();</script>
+      </binding>     
+    </key>
+    
+    <key n="68">
+      <name>D</name>
+      <desc>Close water-door</desc>
+      <binding>
+	<command>property-assign</command>
+	<property>fdm/jsbsim/fcs/water-door-cmd-norm</property>
+	<value>0</value>
+      </binding>
+    </key>
+    
+    <key n="102">
+      <name>f</name>
+      <desc>Floats</desc>
+      <binding>
+	<command>property-toggle</command>
+	<property>fdm/jsbsim/fcs/float-down-cmd-norm</property>
+      </binding>
+    </key>
+    
+    <key n="70">
+      <name>F</name>
+      <desc>Anchor</desc>
+      <binding>
+	<command>property-toggle</command>
+	<property>fdm/jsbsim/fcs/mooring-cmd-norm</property>
+      </binding>
+    </key>
+    
+    <key n="108">
+      <name>l</name>
+      <desc>water bombing</desc>
+      <binding>
+	<command>property-assign</command>
+	<property>/sim/model/bomb-signal</property>
+	<value>1</value>
+      </binding>
+      <binding>
+	<command>property-assign</command>
+	<property>/sim/model/waterbombing</property>
+	<value>1</value>
+      </binding>
+      <binding>
+	<command>property-assign</command>
+	<property>/sim/model/waterloading</property>
+	<value>0</value>
+      </binding>
+      <binding>
+	<command>property-assign</command>
+	<property>fdm/jsbsim/fcs/water-door-cmd-norm</property>
+	<value>1</value>
+      </binding>
+      <binding>
+	<command>property-assign</command>
+	<property>fdm/jsbsim/fcs/water-intake-cmd-norm</property>
+	<value>0</value>
+      </binding>
+    </key>
+    
+    <key n="76">
+      <name>L</name>
+      <desc>water loading</desc>
+      <binding>
+	<command>property-assign</command>
+	<property>/sim/model/waterloading</property>
+	<value>1</value>
+      </binding>
+      <binding>
+	<command>property-assign</command>
+	<property>/sim/model/waterbombing</property>
+	<value>1</value>
+      </binding>
+      <binding>
+	<command>property-assign</command>
+	<property>/sim/model/bomb-signal</property>
+	<value>0</value>
+      </binding>
+      <binding>
+	<command>property-assign</command>
+	<property>fdm/jsbsim/fcs/water-intake-cmd-norm</property>
+	<value>1</value>
+      </binding>
+    </key>
+    
+    <key n="126">
+      <name>~</name>
+      <desc>Nose Wheel Steering</desc>
+      <binding>
+	<command>property-toggle</command>
+	<property>fdm/jsbsim/gear/NWS/engaged</property>
+	<value>0</value>
+      </binding>
+    </key>
+    
+    <key n="127">
+      <name>Delete</name>
+      <desc>Toggle Reversers</desc>
+      <binding>
+	<command>nasal</command>
+	<script>reversethrust.togglereverser();</script>
+      </binding>  
+    </key>
+    
+    <!-- set 12.5% flap adjustment with each detent -->
+    <key n="91">
+      <name>[</name>
+      <desc>Decrease flaps.</desc>
+      <binding>
+	<command>property-adjust</command>
+	<property>/controls/flight/flaps</property>
+	<step type="double">-0.16667</step>
+      </binding>
+    </key>
+    
+    <key n="93">
+      <name>]</name>
+      <desc>Increase flaps.</desc>
+      <binding>
+	<command>property-adjust</command>
+	<property>/controls/flight/flaps</property>
+	<step type="double">0.16667</step>
+      </binding>
+    </key>
+    
+    <key n="9">
+      <name>Tab</name>
+      <desc>switch autobrake</desc>
+      <binding>
+	<command>property-cycle</command>
+	<property>/controls/gear/autobrakes</property>
+	<value>0</value>
+	<value>1</value>
+	<value>2</value>
+	<value>3</value>
+	<value>4</value>
+	<value>5</value>
+      </binding>
+    </key>
+    
+    </keyboard>
+    
+    
+    </PropertyList>

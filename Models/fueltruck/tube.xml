@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--###################################################################################
+		Lake of Constance Hangar :: M.Kraus
+		Boeing 707 for Flightgear February 2014
+		This file is licenced under the terms of the GNU General Public Licence V2 or later
+		###################################################################################
+extracted and modified by HerbyW 07-2015
+		-->
+<PropertyList>
+  <path>tube.ac</path>
+  
+  <animation>
+    <type>select</type>
+    
+    
+      <condition>
+	<greater-than>
+	  <property>sim/multiplay/generic/float[19]</property>
+	  <value>0.90</value>
+	</greater-than>
+      </condition>
+    </animation>
+    
+    </PropertyList>

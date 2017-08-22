@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+    Usable with FlightGear
+    Copyright Gerard Robin  31-03-2009
+    Under License:  GPLv2
+   
+    modified by HerbyW 2015
+
+-->
+<PropertyList>
+
+            <jsbsim>
+		<gear>
+		    <NWS>
+			<engaged type="bool">1</engaged>
+		    </NWS>
+		</gear>
+		<systems>
+		    <gear>
+			<gear-cmd-norm alias="/controls/gear/gear-down"/>
+			<left-brake-cmd-norm alias="/controls/gear/brake-left"/>
+			<right-brake-cmd-norm alias="/controls/gear/brake-right"/>
+		     </gear>
+                </systems>
+		<fcs>
+		    <brake-parking-cmd-norm alias="/controls/gear/brake-parking"/>
+		</fcs>
+		
+		<electrical>
+		    <outputs>
+			<adf alias="/systems/electrical/outputs/adf"/>
+			<radar alias="/systems/electrical/outputs/radar"/>
+			<hsi alias="/systems/electrical/outputs/hsi"/>
+			<nav n='0' alias="/systems/electrical/outputs/nav[0]"/>
+			<nav n='1' alias="/systems/electrical/outputs/nav[1]"/>
+			<dme alias="/systems/electrical/outputs/dme"/>
+			<tacan alias="/systems/electrical/outputs/tacan"/>
+			<transponder alias="/systems/electrical/outputs/transponder"/>
+			<comm n='0' alias="/systems/electrical/outputs/comm[0]"/>
+			<comm n='1' alias="/systems/electrical/outputs/comm[1]"/>
+			<gps alias="/systems/electrical/outputs/gps"/>
+			<turn-coordinator alias="/systems/electrical/outputs/turn-coordinator"/>
+			<fuel-pump alias="/systems/electrical/outputs/fuel-pump"/>
+			<instrument-lights alias="/systems/electrical/outputs/instrument-lights"/>
+		    </outputs>
+		</electrical>
+            </jsbsim>
+
+
+</PropertyList>

@@ -1,0 +1,1011 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="http://jsbsim.sourceforge.net/JSBSim.xsl"?>
+<fdm_config name="Berijew-200Altair" version="2.0" release="ALPHA"
+	    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	    xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
+  
+  <!--Be-200 , FDM by HerbyW
+  
+  Quelle der Informationen: https://de.wikipedia.org/wiki/Berijew_Be-200
+  
+  Berijew Be-200 Altair (russ. Бериев Бе-200; ICAO-Code: BER2) ist ein russisches Amphibienflugzeug
+  
+  Länge 	        32,05 m
+  Spannweite 	32,78 m
+  Höhe 	         8,90 m
+  Flügelfläche   117,44 m²
+  Kabinenmaße (L×B×H) 	18,7 m × 2,4 m × 1,8 m
+  Triebwerk 	2 Turbofans Iwtschenko Progress D-436TP mit je 73,6 kN
+  Leergewicht 	        25.120 kg
+  Einsatzleermasse 	27.600 kg
+  Startgewicht 	   max. 37.200 kg von Land   = 82011 lbs
+                        43.000 kg vom Wasser = 94798 lbs
+  Höchstgeschwindigkeit 	750 km/h in 7.000 m
+  Reisegeschwindigkeit 	550–610 km/h
+  Landegeschwindigkeit 	185 km/h
+  Landestrecke 	         1.050 m Land
+  1.300 m Wasser
+  Startgeschwindigkeit 	220 km/h
+  Startstrecke 	        700 m Land
+  1.000 m Wasser
+  Geschwindigkeit zur Wasseraufnahme 	160–190 km/h
+  Dienstgipfelhöhe 	8.000 m
+  Steigrate 	           14 m/s
+  Reichweite mit 7,5 t Last 	1.700 km
+  Überführungsreichweite 	        3.850 km
+  Besatzung 	2
+  Zuladung 	64 Passagiere oder 30 Krankentragen
+  oder 8.000 kg Frachtgut in der Kabine
+  oder 12 m³ Löschwasser
+  
+  Das Iwtschenko Progress D-436 ist ein Dreiwellen-Turbofantriebwerk mit hohem Nebenstromverhältnis vom ukrainischen Hersteller Iwtschenko
+  
+  D-436TP : Marineversion für die Be-200
+  
+  Typ                               D-436T1/TP
+  Schub (kN)                             73,56
+  Nebenstromverhältnis beim Start        4,9:1
+  Gesamtdruckverhältnis                 22,7:1
+  Fandurchmesser (m)                     1,333
+  Länge (m)                              3,829
+  Trockenmasse (kg)                       1450
+  Zulassung                               2000
+  Eingesetzt bei    Tu-334,Be-200, Jak-42D-100
+  
+  Für Einsätze als Löschflugzeug kann die Be-200 in acht Tanks unter dem Kabinenboden insgesamt 12.000 Liter Wasser aufnehmen.
+  Zusätzlich lassen sich sechs Tanks mit Löschmittelzusätzen in der Kabine installieren.
+  Das Füllen der Tanks kann während des Gleitens über Wasser durch vier Wassereinlässe erfolgen und dauert nur 18 Sekunden.
+  
+  -->   
+  
+  
+  <fileheader>
+    <author> Herbert Wagner </author>
+    <filecreationdate>2016-05-27</filecreationdate>
+    <version>$Revision: 2.1.5 $</version>
+    <description> Berijew Be-200 Altair </description>
+  </fileheader>
+  
+  <!--
+  File:     Berijew-200Altair.xml
+  Inputs:
+  name:          Berijew Be-200 Altair
+  type:          two-engine transonic transport
+  max weight:    82026 lb
+  wing span:     107.55118 ft
+  length:        105.15605 ft
+  wing area:     1264.23701984 sq-ft
+  gear type:     tricycle
+  retractable?:  yes
+  # engines:     2
+  engine type:   turbine
+  engine layout: middle fuselage
+  yaw damper?    yes
+  Outputs:
+  wing loading:  64.88 lb/sq-ft
+  payload:       3915.2 lbs
+  CL-alpha:      4.4 per radian
+  CL-0:          0.2
+  CL-max:        1.2
+  CD-0:          0.02
+  K:             0.043
+  
+  -->
+  
+  <metrics>
+    <wingarea  unit="FT2"> 1264.24 </wingarea>
+    <wingspan  unit="FT" >  107.55 </wingspan>
+    <wing_incidence>          1.03 </wing_incidence>
+    <chord     unit="FT" >   11.75 </chord>
+    <htailarea unit="FT2">  263.77 </htailarea>
+    <htailarm  unit="FT" >   58.53 </htailarm>
+    <vtailarea unit="FT2">  150.42 </vtailarea>
+    <vtailarm  unit="FT" >   52.25 </vtailarm>
+    <location name="AERORP" unit="M"><!--auf flügelmitte -->
+      <x> -0.10 </x><!-- 0.0 -->
+      <y> 0.0 </y><!--  0 -->
+      <z> 0.0 </z><!-- -1.6 -->
+    </location>
+    <location name="EYEPOINT" unit="M"><!--über Pilot im Cockpit -->
+      <x>  -15.37 </x>
+      <y> -0.546 </y>
+      <z>  -0.995 </z>
+    </location>
+    <location name="VRP" unit="M">
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </location>
+  </metrics>
+  
+  <mass_balance>
+    <ixx unit="SLUG*FT2">    878901 </ixx>
+    <iyy unit="SLUG*FT2">    748670 </iyy>
+    <izz unit="SLUG*FT2">   1924278 </izz>
+    <emptywt unit="LBS" >     55390 </emptywt>
+    <location name="CG" unit="M"><!--auf flügelmitte, etwas mehr mittig als AERORP -->
+      <x> 0.50 </x><!--  0.2 -->
+      <y> 0.0 </y><!--  0 -->
+      <z>-1.6 </z><!-- -1.6 -->
+    </location>
+    
+        <pointmass name="Watertank">
+            <weight unit="LBS">00</weight> <!--W-Tank max (10000) 26500-->
+            <location unit="M">
+                <x>  0.50 </x><!--  -0.5 -->
+	        <y>  0.00 </y>
+	        <z>  -3.20 </z>
+            </location>
+        </pointmass>
+	 <pointmass name="MainLeft-tank">
+	    <weight unit="LBS">3000</weight> <!--  Tank number 1 max (2260) 11360-->
+	    <location name="Main Tank" unit="M">
+		<x> 0.48 </x>
+	        <y>-1.98 </y>
+	        <z>-0.72 </z>
+	    </location>
+	</pointmass>
+	<pointmass name="Left-WT-tank">
+	    <weight unit="LBS">3000</weight> <!--  W-Tank number 2 max (3500) 9000-->
+	    <location name="LWT Tank" unit="M"> 
+		<x> 1.50 </x>
+	        <y>-1.00 </y>
+	        <z> -3.2 </z>
+	    </location>
+	</pointmass>
+	<pointmass name="Right-WT-tank">
+	    <weight unit="LBS">3000</weight>  <!--  W-Tank number 3 max (3500) 9000-->
+	    <location name="RWT Tank" unit="M"> 
+		<x> 1.50 </x>
+	        <y> 1.00 </y>
+	        <z> -3.2 </z>
+	    </location>
+	</pointmass>
+	<pointmass name="MainRight-tank"> 
+	    <weight unit="LBS">3000</weight> <!--  Tank number 4 max (2260) 11360-->
+	    <location name="Main Tank" unit="M"> 
+		<x> 0.48 </x>
+	        <y> 1.98 </y>
+	        <z>-0.72 </z>
+	    </location>
+	</pointmass>
+		<pointmass name="Equipment">
+            <weight unit="LBS">1000</weight>
+            <location name="Equipment" unit="IN">
+                <x> 2 </x>
+                <y> 0 </y>
+                <z> -59 </z>
+            </location>
+        </pointmass>
+    </mass_balance>    
+
+   
+    <ground_reactions>
+      
+      <contact type="BOGEY" name="NOSE">
+	<location unit="M">     
+	  <x> -13.71 </x>
+	  <y> 0.0 </y>
+	  <z> -5.32 </z>
+	</location>
+	<static_friction>  0.80 </static_friction>
+	<dynamic_friction> 0.50 </dynamic_friction>
+	<rolling_friction> 0.02 </rolling_friction>
+	<spring_coeff unit="LBS/FT">      83607.80 </spring_coeff>
+	<damping_coeff unit="LBS/FT/SEC"> 18013.00 </damping_coeff>
+	<max_steer unit="DEG"> 50 </max_steer>
+	<brake_group>NONE</brake_group>
+	<retractable>1</retractable>
+      </contact>
+      
+      <contact type="BOGEY" name="LEFT_MAIN">
+	<location unit="M">
+	  <x>  2.28 </x>
+	  <y> -2.00 </y>
+	  <z> -5.38 </z>
+	</location>
+	<static_friction>  0.80 </static_friction>
+	<dynamic_friction> 0.50 </dynamic_friction>
+	<rolling_friction> 0.02 </rolling_friction>
+	<spring_coeff unit="LBS/FT">      87026.00 </spring_coeff>
+	<damping_coeff unit="LBS/FT/SEC"> 19013.00 </damping_coeff>
+	<max_steer unit="DEG">0</max_steer>
+	<brake_group>LEFT</brake_group>
+	<retractable>1</retractable>
+      </contact>
+      
+      <contact type="BOGEY" name="RIGHT_MAIN">
+	<location unit="M">
+	  <x>  2.28 </x>
+	  <y>  2.00 </y>
+	  <z> -5.38 </z>
+	</location>
+	<static_friction>  0.80 </static_friction>
+	<dynamic_friction> 0.50 </dynamic_friction>
+	<rolling_friction> 0.02 </rolling_friction>
+	<spring_coeff unit="LBS/FT">      87026.00 </spring_coeff>
+	<damping_coeff unit="LBS/FT/SEC"> 19013.00 </damping_coeff>
+	<max_steer unit="DEG">0</max_steer>
+	<brake_group>RIGHT</brake_group>
+	<retractable>1</retractable>
+      </contact>
+      
+      <contact type="BOGEY" name="AR-CAREN"><!--3 vordere Wasserkante-wasserstand beim schwimmen-->
+	<location unit="M">
+	  <x> -16.57 </x>
+	  <y> 0 </y>
+	  <z> -3.58</z><!-- -3.0 -->
+	</location>
+	<static_friction> 0.4</static_friction>
+	<dynamic_friction> 0.9 </dynamic_friction>
+	<rolling_friction> 0.1 </rolling_friction>
+	<spring_coeff unit="LBS/FT"> 36000 </spring_coeff><!-- 36000 -->
+	<damping_coeff unit="LBS/FT/SEC"> 7500 </damping_coeff><!-- 7500 -->
+	<max_steer unit="DEG"> 0.0 </max_steer>
+	<brake_group>CENTER</brake_group>
+	<retractable>0</retractable>
+      </contact>
+      
+      <contact type="BOGEY" name="AV-CAREN"><!--4 hintere Wasserkante wasserstand beim schwimmen-->
+	<location unit="M">
+	  <x> 13.40</x>
+	  <y> 0 </y>
+	  <z> -2.67</z><!-- -2.76 -->
+	</location>
+	<static_friction> 0.0 </static_friction>
+	<dynamic_friction> 0.5 </dynamic_friction>
+	<rolling_friction> 0.05</rolling_friction>
+	<spring_coeff unit="LBS/FT"> 72000 </spring_coeff>
+	<damping_coeff unit="LBS/FT/SEC"> 15000 </damping_coeff>
+	<max_steer unit="DEG"> 0.0 </max_steer>
+	<brake_group> NONE </brake_group>
+	<retractable>0</retractable>
+      </contact>
+      
+      <contact type="BOGEY" name="CED-CAREN"><!--5 seitlicher Wasserstand, bei den Radkästen-->
+	<location unit="M">
+	  <x> 7.20</x>
+	  <y> 0.646 </y>
+	  <z> -3.293</z><!-- -3.2 -->
+	</location>
+	<static_friction> 0.8 </static_friction>
+	<dynamic_friction> 0.5 </dynamic_friction>
+	<rolling_friction> 0.06 </rolling_friction>
+	<spring_coeff unit="LBS/FT"> 105000 </spring_coeff>
+	<damping_coeff unit="LBS/FT/SEC"> 21000 </damping_coeff>
+	<max_steer unit="DEG"> 0.0 </max_steer>
+	<brake_group> CENTER</brake_group>
+	<retractable>0</retractable>
+      </contact>
+      
+      <contact type="BOGEY" name="CEG-CAREN"><!--6  seitlicher Wasserstand, bei den Radkästen-->
+	<location unit="M">
+	  <x> 7.20</x>
+	  <y> -0.646 </y>
+	  <z> -3.293</z><!-- -3.2 -->
+	</location>
+	<static_friction> 0.8 </static_friction>
+	<dynamic_friction> 0.5 </dynamic_friction>
+	<rolling_friction> 0.06 </rolling_friction>
+	<spring_coeff unit="LBS/FT"> 105000 </spring_coeff>
+	<damping_coeff unit="LBS/FT/SEC"> 21000 </damping_coeff>
+	<max_steer unit="DEG"> 0.0 </max_steer>
+	<brake_group> CENTER</brake_group>
+	<retractable>0</retractable>
+      </contact>
+      
+      <contact type="BOGEY" name="D-FLOT"><!--7 Schwimmer an der Flügelspitze unten, ausgefahrenes Teil-->
+	<location unit="M">
+	  <x> 3.036 </x>
+	  <y> 13.135 </y>
+	  <z> -2.508 </z>
+	</location>
+	<static_friction> 0.4</static_friction>
+	<dynamic_friction> 0.9 </dynamic_friction>
+	<rolling_friction> 0.04 </rolling_friction>
+	<spring_coeff unit="LBS/FT"> 33000 </spring_coeff>
+	<damping_coeff unit="LBS/FT/SEC"> 1500 </damping_coeff>
+	<max_steer unit="DEG"> 0.0 </max_steer>
+	<brake_group> NONE </brake_group>
+	<retractable>0</retractable>
+      </contact>
+      
+      <contact type="BOGEY" name="G-FLOT"><!--8  Schwimmer an der Flügelspitze unten, ausgefahrenes Teil-->
+	<location unit="M">
+	  <x> 3.036 </x>
+	  <y> -13.135 </y>
+	  <z> -2.508 </z>
+	</location>
+	<static_friction> 0.4</static_friction>
+	<dynamic_friction> 0.9 </dynamic_friction>
+	<rolling_friction> 0.04 </rolling_friction>
+	<spring_coeff unit="LBS/FT"> 33000 </spring_coeff>
+	<damping_coeff unit="LBS/FT/SEC"> 1500 </damping_coeff>
+	<max_steer unit="DEG"> 0.0 </max_steer>
+	<brake_group> NONE</brake_group>
+	<retractable>0</retractable>
+      </contact>
+      
+      <contact type="BOGEY" name="WATER-INTAKE"><!--9 Rumpfunterkante beim Wassereinlass, auf Höhe der Flügelvorderkante-->
+	<location unit="M">
+	  <x> 0.89 </x>
+	  <y> 0 </y>
+	  <z> -4.203</z>
+	</location>
+	<static_friction> 0.2</static_friction>
+	<dynamic_friction> 0.1 </dynamic_friction>
+	<rolling_friction> 1.2 </rolling_friction>
+	<max_steer unit="DEG"> 0.0 </max_steer>
+	<brake_group> NONE</brake_group>
+	<retractable>0</retractable>
+	<spring_coeff unit="LBS/FT"> 300 </spring_coeff>
+	<damping_coeff unit="LBS/FT/SEC"> 60 </damping_coeff>
+      </contact>
+      
+      <contact type="BOGEY" name="DCAREN-SENSOR"><!--10 Sensor außerhalb des Rumpfes-->
+	<location unit="M">
+	  <x> 0.5 </x><!-- -6.90 -->
+	  <y>0.81</y>
+	  <z>-3.95</z>
+	</location>
+	<static_friction> 0.001</static_friction>
+            <dynamic_friction> 0.001 </dynamic_friction>
+            <rolling_friction> 0.001 </rolling_friction>
+            <spring_coeff unit="LBS/FT"> 100 </spring_coeff>
+            <damping_coeff unit="LBS/FT/SEC"> 20 </damping_coeff>
+	<retractable>0</retractable>
+      </contact>
+      
+      <contact type="BOGEY" name="GCAREN-SENSOR"><!--11 Sensor außerhalb des Rumpfes-->
+	<location unit="M">
+	  <x> 0.5 </x><!-- -6.90 -->
+	  <y>-0.81</y>
+	  <z>-3.95</z>
+	</location>
+	<static_friction> 0.001</static_friction>
+            <dynamic_friction> 0.001 </dynamic_friction>
+            <rolling_friction> 0.001 </rolling_friction>
+            <spring_coeff unit="LBS/FT"> 100 </spring_coeff>
+            <damping_coeff unit="LBS/FT/SEC"> 20 </damping_coeff>
+	<retractable>0</retractable>
+      </contact>
+      
+      <contact type="BOGEY" name="NOSE_CAREN"><!--12 über Vorderrad, im Rumpf auf Wasserkantenhöhe-->
+	<location unit="M">
+	  <x> -14.11 </x>
+	  <y> 0 </y>
+	  <z> -3.52</z><!-- -3.1 -->
+	</location>
+	<static_friction> 0.8 </static_friction>
+	<dynamic_friction> 0.5 </dynamic_friction>
+	<rolling_friction> 0.1 </rolling_friction>
+	<spring_coeff unit="LBS/FT"> 102000 </spring_coeff>
+	<damping_coeff unit="LBS/FT/SEC"> 21000 </damping_coeff>
+	<max_steer unit="DEG"> 0 </max_steer>
+	<brake_group> NONE </brake_group>
+	<retractable>0</retractable>
+      </contact>
+      
+      <contact type="STRUCTURE" name="D-AILE"><!--13  Flügelspitze aussen-mittig-->
+	<location unit="M">
+	  <x> 2.97 </x>
+	  <y>16.246</y>
+	  <z> -0.579</z>
+	</location>
+	<static_friction>  0.80 </static_friction>
+	<dynamic_friction> 0.50 </dynamic_friction>
+	<spring_coeff unit="LBS/FT">      3000 </spring_coeff>
+	<damping_coeff unit="LBS/FT/SEC"> 1500 </damping_coeff>
+      </contact>
+      
+      <contact type="STRUCTURE" name="G-AILE"><!--14  Flügelspitze aussen-mittig-->
+	<location unit="M">
+	  <x> 2.97 </x>
+	  <y>-16.246</y>
+	  <z> -0.579</z>
+	</location>
+	<static_friction>  0.80 </static_friction>
+	<dynamic_friction> 0.50 </dynamic_friction>
+	<spring_coeff unit="LBS/FT">      3000 </spring_coeff>
+	<damping_coeff unit="LBS/FT/SEC"> 1500 </damping_coeff>
+      </contact>
+      
+      <contact type="STRUCTURE" name="AR-QUEUE"><!--15 hinten, mittig, unten, beim Seitenruder etwas ausserhalb des Rumpfes-->
+	<location unit="M">
+	  <x> 13.504 </x>
+	  <y> 0 </y>
+	  <z> -2.357 </z>
+	</location>
+	<spring_coeff unit="LBS/FT"> 3000 </spring_coeff>
+	<damping_coeff unit="LBS/FT/SEC"> 1500 </damping_coeff>
+      </contact>
+      
+      <!--  16 AND 17 ONLY IN USE WITH SOLID TERRAIN cpdrag.xml-->
+      
+      <contact type="BOGEY" name="DCAREN"><!--16 Mitte Rumpf, mittig zwischen Wasserkante und oberkante-->
+	<location unit="M">
+	  <x> -6.57 </x>
+	  <y>1.537</y>
+	  <z>-2.0157</z>
+	</location>
+	<static_friction> 0.15 </static_friction>
+	<dynamic_friction> 0.15 </dynamic_friction>
+	<rolling_friction> 0.15 </rolling_friction>
+	<spring_coeff unit="LBS/FT"> 30000 </spring_coeff>
+	<damping_coeff unit="LBS/FT/SEC"> 12000 </damping_coeff>
+	<max_steer unit="DEG"> 0.0 </max_steer>
+	<brake_group> NONE</brake_group>
+	<retractable>0</retractable>
+      </contact>
+      
+      <contact type="BOGEY" name="GCAREN"><!--17 Mitte Rumpf, mittig zwischen Wasserkante und oberkante-->
+	<location unit="M">
+	  <x> -6.57 </x>
+	  <y>-1.537</y>
+	  <z>-2.0157</z>
+	</location>
+	<static_friction> 0.15 </static_friction>
+	<dynamic_friction> 0.15 </dynamic_friction>
+	<rolling_friction> 0.15 </rolling_friction>
+	<spring_coeff unit="LBS/FT"> 30000 </spring_coeff>
+	<damping_coeff unit="LBS/FT/SEC"> 12000 </damping_coeff>
+	<max_steer unit="DEG"> 0.0 </max_steer>
+	<brake_group> NONE</brake_group>
+	<retractable>0</retractable>
+      </contact>
+      
+      <contact type="STRUCTURE" name="TAIL_B"><!--18 hinten, mitte Seitenruder an der Unterkante Rumpf-->
+	<location unit="M">
+	  <x>13.335</x>
+	  <y>0</y>
+	  <z>-2.814</z>
+	</location>
+	<static_friction> 0.15 </static_friction>
+	<dynamic_friction> 0.15 </dynamic_friction>
+	<rolling_friction> 0.15 </rolling_friction>
+	<spring_coeff unit="LBS/FT"> 30000 </spring_coeff>
+	<damping_coeff unit="LBS/FT/SEC"> 60 </damping_coeff>
+	<max_steer unit="DEG"> 0.0 </max_steer>
+	<brake_group> NONE</brake_group>
+	<retractable>0</retractable>
+      </contact>
+      
+      </ground_reactions>
+      
+      
+      
+      <propulsion>
+	
+	<engine file="IwtschenkoProgressD-436TP">
+	  <location unit="M">
+	    <x> 2.668 </x>
+	    <y> -2.587 </y>
+	    <z> 0.564 </z>
+	  </location>
+	  <orient unit="DEG">
+	    <pitch> -6.00 </pitch>
+	    <roll>  0.00 </roll>
+	    <yaw>   0.00 </yaw>
+	  </orient>
+	  <feed>0</feed>
+	  <feed>1</feed>
+	  <feed>2</feed>
+	  <thruster file="direct">
+	    <location unit="M">
+	      <x> 4.806 </x>
+	      <y> -2.567 </y>
+	      <z> 0.438 </z>
+	    </location>
+	    <orient unit="DEG">
+	      <pitch> -6.00 </pitch>
+	      <roll>  0.00 </roll>
+	      <yaw>   0.00 </yaw>
+	    </orient>
+	  </thruster>
+	</engine>
+	
+	<engine file="IwtschenkoProgressD-436TP">
+	  <location unit="M">
+	    <x> 2.668 </x>
+	    <y> 2.587 </y>
+	    <z> 0.564 </z>
+	  </location>
+	  <orient unit="DEG">
+	    <pitch> -6.00 </pitch>
+	    <roll>  0.00 </roll>
+	    <yaw>   0.00 </yaw>
+	  </orient>
+	  <feed>0</feed>
+	  <feed>3</feed>
+	  <feed>4</feed>
+	  <thruster file="direct">
+	    <location unit="M">
+	      <x> 4.806 </x>
+	      <y> 2.567 </y>
+	      <z> 0.438 </z>
+	    </location>
+	    <orient unit="DEG">
+	      <pitch> -6.00 </pitch>
+	      <roll>  0.00 </roll>
+	      <yaw>   0.00 </yaw>
+	    </orient>
+	  </thruster>
+	</engine>
+	
+	<!-- Tank number 0 -->
+        <tank type="FUEL">
+            <location unit="M">
+                <x> 0.48 </x>
+	        <y> 0.0 </y>
+	        <z>-0.72 </z>
+            </location>
+            <capacity unit="LBS"> 1 </capacity>
+            <contents unit="LBS"> 0 </contents>
+        </tank>
+        <!-- Pump number 1 -->
+        <tank type="FUEL">
+            <location unit="M">
+                <x> 0.48 </x>
+	        <y> -1.98 </y>
+	        <z>-0.72 </z>
+            </location>
+            <capacity unit="LBS">100 </capacity>
+            <contents unit="LBS">100 </contents>
+        </tank>
+        <!-- Pump number 2 -->
+        <tank type="FUEL">
+            <location unit="M">
+                <x> 0.48 </x>
+	        <y> -1.98 </y>
+	        <z>-0.72 </z>
+            </location>
+            <capacity unit="LBS"> 100 </capacity>
+            <contents unit="LBS"> 100 </contents>
+        </tank>
+        <!-- Pump number 3 -->
+        <tank type="FUEL">
+            <location unit="M">
+                <x> 0.48 </x>
+	        <y> 1.98 </y>
+	        <z>-0.72 </z>
+            </location>
+            <capacity unit="LBS"> 100 </capacity>
+            <contents unit="LBS"> 100 </contents>
+        </tank>
+        <!-- Pump number 4 -->
+         <tank type="FUEL">
+            <location unit="M">
+                <x> 0.48 </x>
+	        <y> 1.98 </y>
+	        <z>-0.72 </z>
+            </location>
+            <capacity unit="LBS"> 100 </capacity>
+            <contents unit="LBS"> 100 </contents>
+        </tank>
+	
+	</propulsion>
+	
+    <system file="init-at-start"/>
+    <system file="steady-behaviour"/>
+    <system file="crash-detect"/>
+    <system file="crash"/>
+    <system file="landing-gear"/>
+    <system file="braking"/>    
+    <system file="cpdrag"/>
+    <system file="on-water-control"/>
+    <system file="electrical-fdm-custom"/>
+    <system file="electrical-fdm"/>
+    <system file="electrical-lights"/>
+    <system file="water-bomb"/>
+    <system file="hull"/>
+    <system file="floats"/>
+    <system file="fuel-refuel-pump"/>    
+    <system file="externals"/>
+    <!--<system file="instruments"/>-->
+    <system file="gear-water-ground-position"/>
+	
+	<flight_control name="FCS: Berijew-200Altair">
+	  
+	  <channel name="Pitch">
+
+            <summer name="Pitch Trim Sum">
+                <input>fcs/elevator-cmd-norm</input>
+                <input>fcs/pitch-trim-cmd-norm</input>
+                <clipto>
+                    <min>-1</min>
+                    <max>1</max>
+                </clipto>
+            </summer>
+
+            <aerosurface_scale name="Elevator Control">
+                <input>fcs/pitch-trim-sum</input>
+                <range>
+                    <min>-0.35</min>
+                    <max>0.35</max>
+                </range>
+                <output>fcs/elevator-pos-rad</output>
+            </aerosurface_scale>
+            <aerosurface_scale name="elevator normalization">
+                    <input>fcs/elevator-pos-rad</input>
+                    <domain>
+                            <min> -0.35 </min>
+                            <max>  0.35 </max>
+                    </domain>
+                    <range>
+                            <min> -1 </min>
+                            <max>  1 </max>
+                    </range>
+                    <output>fcs/elevator-pos-norm</output>
+            </aerosurface_scale>
+
+        </channel>
+	    
+	    <channel name="Roll">
+            <summer name="Roll Trim Sum">
+
+                <input>fcs/aileron-cmd-norm</input>
+                <input>fcs/roll-trim-cmd-norm</input>
+                <clipto>
+                    <min>-1</min>
+                    <max>1</max>
+                </clipto>
+            </summer>
+
+            <aerosurface_scale name="Left Aileron Control">
+                <input>fcs/roll-trim-sum</input>
+                <range>
+                    <min>-0.35</min>
+                    <max>0.35</max>
+                </range>
+                <output>fcs/left-aileron-pos-rad</output>
+            </aerosurface_scale>
+            <aerosurface_scale name="Right Aileron Control">
+                <input>-fcs/roll-trim-sum</input>
+                <range>
+                    <min>-0.35</min>
+                    <max>0.35</max>
+                </range>
+                <output>fcs/right-aileron-pos-rad</output>
+            </aerosurface_scale>
+
+            <aerosurface_scale name="left aileron normalization">
+                    <input>fcs/left-aileron-pos-rad</input>
+                    <domain>
+                            <min> -0.35 </min>
+                            <max>  0.35 </max>
+                    </domain>
+                    <range>
+                            <min> -1 </min>
+                            <max>  1 </max>
+                    </range>
+                    <output>fcs/left-aileron-pos-norm</output>
+            </aerosurface_scale>
+            <aerosurface_scale name="right aileron normalization">
+                    <input>fcs/right-aileron-pos-rad</input>
+                    <domain>
+                            <min> -0.35 </min>
+                            <max>  0.35 </max>
+                    </domain>
+                    <range>
+                            <min> -1 </min>
+                            <max>  1 </max>
+                    </range>
+                    <output>fcs/right-aileron-pos-norm</output>
+            </aerosurface_scale>
+        </channel>
+	      
+	      
+	      <channel name="Yaw">
+		
+		<summer name="Rudder Command Sum">
+                <input>fcs/rudder-cmd-norm</input>
+                <input>fcs/yaw-trim-cmd-norm</input>
+                <clipto>
+                    <min>-1</min>
+                    <max>1</max>
+                </clipto>
+            </summer>
+	    
+	    <aerosurface_scale name="Rudder Control">
+                <input>fcs/rudder-command-sum</input>
+                <range>
+                    <min>-0.35</min>
+                    <max>0.35</max>
+                </range>
+                <output>fcs/rudder-pos-rad</output>
+            </aerosurface_scale>
+            <aerosurface_scale name="rudder normalization">
+                    <input>fcs/rudder-pos-rad</input>
+                    <domain>
+                            <min> -0.35 </min>
+                            <max>  0.35 </max>
+                    </domain>
+                    <range>
+                            <min> -1 </min>
+                            <max>  1 </max>
+                    </range>
+                    <output>fcs/rudder-pos-norm</output>
+            </aerosurface_scale>
+		
+		<scheduled_gain name="fcs/yaw-damper-rate">
+		  <input>velocities/r-aero-rad_sec</input>
+		  <table>
+		    <independentVar lookup="row">velocities/ve-kts</independentVar>
+		    <tableData>
+		      30     0.00
+		      60     2.00
+		    </tableData>
+		  </table>
+		</scheduled_gain>
+		
+		<scheduled_gain name="fcs/yaw-damper-beta">
+		  <input>aero/beta-rad</input>
+		  <table>
+		    <independentVar lookup="row">velocities/ve-kts</independentVar>
+		    <tableData>
+		      30     0.00
+		      60     0.00
+		    </tableData>
+		  </table>
+		</scheduled_gain>
+		
+		<summer name="fcs/yaw-damper-sum">
+		  <input>fcs/yaw-damper-beta</input>
+		  <input>fcs/yaw-damper-rate</input>
+		  <clipto>
+		    <min> -0.1 </min>
+		    <max>  0.1 </max>
+		  </clipto>
+		</summer>
+		
+		<scheduled_gain name="fcs/yaw-damper-final">
+		  <input>fcs/yaw-damper-sum</input>
+		  <table>
+		    <independentVar lookup="row">velocities/ve-kts</independentVar>
+		    <tableData>
+                         30         0.0
+                         31         1.0
+                    </tableData>
+		  </table>
+		</scheduled_gain>
+		
+		<summer name="fcs/rudder-sum">
+		  <input>fcs/rudder-command-sum</input>
+		  <input>fcs/yaw-damper-final</input>
+		  <clipto>
+		    <min> -1 </min>
+		    <max>  1 </max>
+		  </clipto>
+		</summer>
+		
+		
+		
+		</channel>
+
+		
+		<channel name="Flaps">
+                  <kinematic name="fcs/flaps-control">
+                   <input>fcs/flap-cmd-norm</input>
+		    <traverse>
+		      <setting>
+			<position>  0 </position>
+			<time>      0 </time>
+		      </setting>
+		      <setting>
+			<position> 5 </position>
+			<time>      1 </time>
+		      </setting>
+		      <setting>
+			<position> 10 </position>
+			<time>      1 </time>
+		      </setting>
+		      <setting>
+			<position>  15 </position>
+			<time>      1 </time>
+		      </setting>
+		      <setting>
+			<position>  20 </position>
+			<time>      1 </time>
+		      </setting>
+		      <setting>
+			<position> 25 </position>
+			<time>      1 </time>
+		      </setting>
+		      <setting>
+			<position> 30 </position>
+			<time>      1 </time>
+		      </setting>
+		    </traverse>
+		    <output>fcs/flap-pos-deg</output>
+		  </kinematic>
+		  
+		  
+		  
+		  <aerosurface_scale name="fcs/flap-normalization">
+		    <input>fcs/flap-pos-deg</input>
+		    <domain>
+		      <min>0</min>
+		      <max>30</max>
+		    </domain>
+		    <range>
+		      <min>0</min>
+		      <max>1</max>
+		    </range>
+		    <output>fcs/flap-pos-norm</output>
+		  </aerosurface_scale>
+		  
+		  </channel>
+		  
+		  <channel name="Landing Gear">
+		    <kinematic name="fcs/gear-control">
+		      <input>gear/gear-cmd-norm</input>
+		      <traverse>
+			<setting>
+			  <position> 0 </position>
+			  <time>     0 </time>
+			</setting>
+			<setting>
+			  <position> 1 </position>
+			  <time>     5 </time>
+			</setting>
+		      </traverse>
+		      <output>gear/gear-pos-norm</output>
+		    </kinematic>
+		    
+		    </channel>
+		    
+		    </flight_control>
+		    
+		    
+		    
+	<external_reactions>
+	  
+                      <force name="waterrudder" frame="BODY">
+			<location unit="M"><!--hinten-Rumpf, Unterkante im Wasser, Rudder im  Wasser  -->
+			  <x>13.4 </x>
+			  <y>0 </y>
+			  <z> -2.82 </z>
+			</location>
+			<direction>
+			  <x>0</x>
+			  <y>1</y>
+			  <z>0</z>
+			</direction>
+		      </force>
+	  
+		      <force name="mooring" frame="BODY">
+			<location unit="M"><!--hinten-Rumpf, Unterkante im Wasser, Fake Brems Anker  -->
+			  <x>13.4 </x>
+			  <y>0 </y>
+			  <z> -2.61 </z>
+			</location>
+			<direction>
+			  <x>-1</x>
+			  <y>0</y>
+			  <z>0</z>
+			</direction>
+		      </force>
+		      
+		      <force name="mooring1" frame="BODY">
+			<location unit="M"><!--Anker, hinter Flugzeug -->
+			  <x>30</x>
+			  <y>0 </y>
+			  <z>-3.98 </z>
+			</location>
+			<direction>
+			  <x>1</x>
+			  <y>0</y>
+			  <z>0</z>
+			</direction>
+		      </force>		      
+		      
+		      <force name="cp1-bellydragx" frame="BODY">
+			<location unit="M"><!--mitte Rumpf, innen in Rumpf, vor Wassereinlass  -->
+			  <x> -4.08 </x>
+			  <y>0</y>
+			  <z>-3.82</z>
+			</location>
+			<direction>
+			  <x>-1</x>
+			  <y>0</y>
+			  <z>0</z>
+			</direction>
+		      </force>
+		      
+		      <force name="l_float-drag" frame="BODY">
+			<location unit="M"><!-- linker Floatkörper -->
+			  <x> 3.036 </x>
+			  <y> -13.135 </y>
+			  <z> -2.508 </z>
+			</location>
+			<direction>
+			  <x>-1</x>
+			  <y>0</y>
+			  <z>0</z>
+			</direction>
+		      </force>
+		      
+		      <force name="r_float-drag" frame="BODY">
+			<location unit="M"><!-- rechter Floatkörper -->
+			  <x> 3.036 </x>
+			  <y> 13.135 </y>
+			  <z> -2.508 </z>
+			</location>
+			<direction>
+			  <x>-1</x>
+			  <y>0</y>
+			  <z>0</z>
+			</direction>
+		      </force>
+		      
+		      <force name="hull_lift" frame="BODY">
+			<location unit="M"><!-- mitte Rumpf, innen im Rumpf, mittlig beim Wassereinlass -->
+			  <x> -2.79 </x>
+			  <y>0</y>
+			  <z>-3.82</z>
+			</location>
+			<direction>
+			  <x>0</x>
+			  <y>0</y>
+			  <z>-1</z>
+			</direction>
+		      </force>
+		      
+		      <force name="hull_r" frame="BODY">
+			<location unit="M"><!--mitte Rumpf, rechts aussen, unter Wasserkante  -->
+			  <x>-2.79 </x><!---1.23942-->
+			  <y> 0.964 </y><!--1.38975-->
+			  <z> -3.02 </z><!---1.26904-->
+			</location>
+			<direction>
+			  <x>0</x>
+			  <y>0</y>
+			  <z>-1</z>
+			</direction>
+		      </force>
+		      
+		      <force name="hull_l" frame="BODY">
+			<location unit="M"><!-- mitte Rumpf, links aussen, unter Wasserkante -->
+			  <x>-2.79  </x><!---1.23942-->
+			  <y> -0.964 </y><!---1.38975-->
+			  <z> -3.02 </z><!---1.26904-->
+			</location>
+			<direction>
+			  <x>0</x>
+			  <y>0</y>
+			  <z>-1</z>
+			</direction>
+		      </force>
+		      
+		      <force name="hull_arr" frame="BODY">
+			<location unit="M"><!--mitte Rumpf, rechts aussen, unter Wasserkante, bei den Rädern  -->
+			  <x>1.69  </x><!---1.23942-->
+			  <y> 0.996 </y><!---1.38975-->
+			  <z> -3.22 </z><!---1.26904-->
+			</location>
+			<direction>
+			  <x>0</x>
+			  <y>0</y>
+			  <z>-1</z>
+			</direction>
+		      </force>
+		      
+		      <force name="hull_arl" frame="BODY">
+			<location unit="M"><!-- mitte Rumpf, links aussen, unter Wasserkante, bei den Rädern -->
+			  <x>1.69  </x><!---1.23942-->
+			  <y> -0.996</y><!---1.38975-->
+			  <z> -3.22 </z><!---1.26904-->
+			</location>
+			<direction>
+			  <x>0</x>
+			  <y>0</y>
+			  <z>-1</z>
+			</direction>
+		      </force>		      
+		      
+        </external_reactions>
+		      
+		      <aerodynamics file="Aero/Be-200-aero"/>
+		      
+		      </fdm_config>
+		      

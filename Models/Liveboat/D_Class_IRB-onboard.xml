@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<PropertyList>
+
+ <path>D_Class_IRB.ac</path>
+
+ <animation>
+    <type>select</type>
+    
+    <condition>
+      <not>
+        <property>sim/multiplay/generic/int[14]</property>
+      </not>  
+    </condition>
+  </animation>
+ 
+ <animation>
+  <type>range</type>
+  <min-m>0</min-m>
+  <max-m>600</max-m>
+ </animation>
+
+<animation>
+  <type>scale</type>
+    
+  <property>sim/multiplay/generic/int[17]</property>
+  <offset>1</offset>
+  <x-max>0.9</x-max>
+  <y-max>0.9</y-max>
+  <z-max>0.9</z-max>
+  <x-factor>0.9</x-factor>
+  <y-factor>0.9</y-factor>
+  <z-factor>0.9</z-factor>
+ </animation>
+</PropertyList>

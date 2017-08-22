@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<!--
+    Usable with FlightGear
+    Property of Gerard Robin
+   
+    modified by HerbyW 2015
+-->
+<PropertyList>
+
+ <path>phare-flash3.ac</path>
+
+ <!--landing lights -->
+
+    <effect>
+        <inherits-from>Effects/model-transparent</inherits-from>
+        <object-name>GFlash</object-name>
+        <object-name>DFlash</object-name>
+    </effect>
+
+
+        <animation>
+            <type>flash</type>
+            <object-name>GFlash</object-name>
+            <center>
+                <x-m>-1.3701</x-m>
+                <y-m>-4.8085</y-m>
+                <z-m>2.00312</z-m>
+            </center>
+            <axis>
+                <x>-1</x>
+                <y>0</y>
+                <z>-0.15</z>
+            </axis>
+            <power>1</power>
+            <factor>3</factor>
+            <offset>0</offset>
+            <two-sides type="bool">true</two-sides>
+            <min>1</min>
+            <max>60</max>
+        </animation>
+
+        <animation>
+            <type>flash</type>
+            <object-name>DFlash</object-name>
+            <center>
+                <x-m>-1.3701</x-m>
+                <y-m>4.8085</y-m>
+                <z-m>2.00312</z-m>
+            </center>
+            <axis>
+                <x>-1</x>
+                <y>0</y>
+                <z>-0.15</z>
+            </axis>
+            <power>1</power>
+            <factor>3</factor>
+            <offset>0</offset>
+            <two-sides type="bool">true</two-sides>
+            <min>1</min>
+            <max>60</max>
+        </animation>
+
+        <model>
+            <name>GEnLightenment</name>
+            <path>Aircraft/Be-200Altair/Models/Lights/Landing-Lights_rb.xml</path>
+            <offsets>
+                <pitch-deg>0</pitch-deg>
+                <x-m>-1.3701</x-m>
+                <y-m>-4.8085</y-m>
+                <z-m>2.00312</z-m>
+            </offsets>
+        </model>
+
+
+        <model>
+            <name>DEnLightenment</name>
+            <path>Aircraft/Be-200Altair/Models/Lights/Landing-Lights_rb.xml</path>
+            <offsets>
+                <pitch-deg>0</pitch-deg>
+                <x-m>-1.3701</x-m>
+                <y-m>4.8085</y-m>
+                <z-m>2.00312</z-m>
+            </offsets>
+        </model>
+	
+	
+	<animation>
+            <type>select</type>
+            <object-name>GEnLightenment</object-name>
+	    <object-name>DEnLightenment</object-name>
+            <condition>
+                <and>
+                    <property>sim/rendering/rembrandt/enabled</property>
+                </and>
+            </condition>
+        </animation>
+
+
+
+</PropertyList>

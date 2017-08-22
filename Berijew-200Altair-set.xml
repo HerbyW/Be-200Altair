@@ -1,0 +1,265 @@
+<?xml version="1.0"?>
+
+<PropertyList include="Berijew-200Altair-base.xml">
+  
+  <controls>    
+    <flight>
+      <autospeedbrakes-armed type="string">false</autospeedbrakes-armed>
+    </flight>
+    
+    <autostart type="int">0</autostart>
+    <lighting>
+      <nav-lights type="int">0</nav-lights>
+      <beacon type="bool">false</beacon>
+      <strobe type="bool">false</strobe>
+      <landing-lights type="int">0</landing-lights>
+      <taxi-lights type="int">0</taxi-lights>
+    </lighting>
+    
+    <switches>
+      <startpanel-cover type="double">0</startpanel-cover>
+      <fuel type="float">0</fuel>
+      <gauge-light type="int">0</gauge-light>
+      <adf-1-selector type="double">0</adf-1-selector>
+      <adf-2-selector type="double">0</adf-2-selector>
+      <ushdb-sel-1 type="double">0</ushdb-sel-1>
+      <ushdb-sel-2 type="double">0</ushdb-sel-2>
+      <metar type="bool">0</metar>
+    </switches>
+    
+    <chokes>
+      <activ type="int">0</activ>
+    </chokes>
+    
+    <reverser type="bool">0</reverser>
+    
+    <electric>
+      <master-switch>false</master-switch>
+      <battery-switch>false</battery-switch>
+      <external-power>false</external-power>
+    </electric>
+    
+    <mooring>
+      <automatic type="bool">false</automatic>
+    </mooring>
+    
+    <gear>
+      <autobrakes type="int">0</autobrakes>
+      <!-- 0=off, 1=1, 2=2, 3=3, 4=MAX, 5=RTO -->
+      <runway type="double">0</runway>
+      <brake-parking type="bool">true</brake-parking>
+      <gear-down type="bool">true</gear-down>	  
+    </gear>
+    
+    <engines>
+      <engine n="0">
+	<cutoff type="bool">true</cutoff>
+	<condition type="bool">false</condition>
+      </engine>
+      
+      <engine n="1">
+	<cutoff type="bool">true</cutoff>
+	<condition type="bool">false</condition>
+      </engine>
+    </engines>
+    
+    <watercolor type="bool">false</watercolor>
+    
+    </controls>
+  
+  <sim>
+    <description>Berijew-200Altair</description>
+    <author>HerbyW</author>
+    <status>alpha</status>
+    <aircraft-version>3.0.1</aircraft-version>
+    <rating>	
+      <FDM type="int">3</FDM>
+      <systems type="int">1</systems>
+      <model type="int">3</model>
+      <cockpit type="int">1</cockpit>
+      <MPanimations type="int">4</MPanimations>
+    </rating>
+    <flight-model>jsb</flight-model>
+
+    <aero>Berijew-200Altair</aero>
+    
+    <fuel-fraction>0.65</fuel-fraction>
+    
+    <startup>
+      <splash-texture>Aircraft/Be-200Altair/Be-200.png</splash-texture>
+    </startup>
+    
+    <model>
+      <path>Aircraft/Be-200Altair/Models/Be-200Altair.xml</path>
+      <Be-200Altair><version type="string">3.0.1</version></Be-200Altair>
+      <waterloading>0</waterloading>
+      <bomb-signal>0</bomb-signal>
+      <lighting>
+	<instrument-lights type="double">0.95</instrument-lights>
+      </lighting>      
+    </model>    
+    
+    <virtual-cockpit archive="y">true</virtual-cockpit>
+    <allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>
+  
+    <sound>
+      <path>Aircraft/Be-200Altair/Sounds/Be-200-sound.xml</path>
+    </sound>
+
+    <chase-distance-m>-45</chase-distance-m>
+        
+    
+    <view n="0">
+      <name>Cockpit View</name>
+      <type>lookfrom</type>
+      <internal archive="y">true</internal>
+      <config>
+	<from-model type="bool">true</from-model>
+	<from-model-idx type="int">0</from-model-idx>
+	<ground-level-nearplane-m type="double">0.05f</ground-level-nearplane-m>
+	<default-field-of-view-deg type="double">95.0</default-field-of-view-deg>	
+	<x-offset-m archive="y">-0.66</x-offset-m>
+	<y-offset-m archive="y">-1.31</y-offset-m>
+	<z-offset-m archive="y">-15.31</z-offset-m>
+	<pitch-offset-deg>-9</pitch-offset-deg>
+      </config>
+    </view>
+    
+    <view n="100">
+      <name>Copilot</name>
+      <type>lookfrom</type>
+      <internal archive="y">true</internal>
+      <config>
+	<from-model type="bool">true</from-model>
+	<from-model-idx type="int">0</from-model-idx>
+	<ground-level-nearplane-m type="double">0.05f</ground-level-nearplane-m>
+	<default-field-of-view-deg type="double">95.0</default-field-of-view-deg>	
+	<x-offset-m archive="y">0.69</x-offset-m>
+	<y-offset-m archive="y">-1.36</y-offset-m>
+	<z-offset-m archive="y">-15.31</z-offset-m>
+	<pitch-offset-deg>-9</pitch-offset-deg>
+      </config>
+    </view>
+    
+    <view n="101">
+    <name>Engineer</name>
+    <type>lookfrom</type>
+    <internal archive="y">true</internal>
+    <config>
+      <from-model type="bool">true</from-model>
+      <from-model-idx type="int">0</from-model-idx>
+      <ground-level-nearplane-m type="double">0.01f</ground-level-nearplane-m>
+      <x-offset-m archive="y">   0.75 </x-offset-m> <!-- Right -->
+      <y-offset-m archive="y">  -1.78 </y-offset-m> <!-- Up    -->
+      <z-offset-m archive="y"> -14.22 </z-offset-m> <!-- Back  -->
+      <pitch-offset-deg> 4 </pitch-offset-deg>
+      <default-field-of-view-deg type="double"> 80 </default-field-of-view-deg>
+      <heading-offset-deg type="double">180 </heading-offset-deg>
+    </config>
+  </view>
+  
+  <view n="102">
+    <name>Cargo-Door</name>
+    <type>lookfrom</type>
+    <internal archive="y">true</internal>
+    <config>
+      <from-model type="bool">true</from-model>
+      <from-model-idx type="int">0</from-model-idx>
+      <ground-level-nearplane-m type="double">0.01f</ground-level-nearplane-m>
+      <x-offset-m archive="y">   -0.10 </x-offset-m> <!-- Right -->
+      <y-offset-m archive="y">  -1.50 </y-offset-m> <!-- Up    -->
+      <z-offset-m archive="y"> -11.98 </z-offset-m> <!-- Back  -->
+      <pitch-offset-deg> -6 </pitch-offset-deg>
+      <default-field-of-view-deg type="double"> 100 </default-field-of-view-deg>
+      <heading-offset-deg type="double">-85 </heading-offset-deg>
+    </config>
+  </view>
+      
+      <instrumentation>
+	<path>Aircraft/Be-200Altair/Systems/instrumentation.xml</path>
+      </instrumentation>
+      
+      <multiplay include="Outputs/Be-200-multiplay.xml"/>
+      
+      <flight-recorder include="Aircraft/Be-200Altair/Systems/flightrecorder.xml"/>
+      
+      <mooring type="bool">false</mooring>
+      
+      <menubar include="Inputs/Be-200-menu.xml"/>
+      
+      <help include="Help/Be-200-help.xml"/>
+      
+  <flaps>
+    <setting>0.0</setting>
+    <setting>0.16667</setting>
+    <setting>0.33334</setting>
+    <setting>0.5</setting>
+    <setting>0.66667</setting>
+    <setting>0.83334</setting>
+    <setting>1.0</setting>
+  </flaps>
+  
+  <systems>
+      <autopilot>
+	<name>Autopilot</name>
+	<path>Aircraft/Be-200Altair/Systems/Be-200-autopilot.xml</path>
+      </autopilot>
+    </systems>
+    
+    <import>
+      <path>Huds/Sets/controls.xml</path>
+      <x-offset>-100</x-offset>
+      <y-offset>70</y-offset>
+    </import>
+  
+</sim>
+  
+       <engines>
+	<engine n="0">
+	  <mp-inhg>0</mp-inhg>
+	  <running>false</running> 
+	  <reverser-pos-norm type="double">0</reverser-pos-norm>
+	  <condition>0</condition>
+	</engine>
+	<engine n="1">
+	  <mp-inhg>0</mp-inhg>
+	  <running>false</running> 
+	  <reverser-pos-norm type="double">0</reverser-pos-norm>
+	  <condition>0</condition>
+	</engine>
+      </engines>
+
+	<input include="Inputs/Be-200-input.xml"/>
+	
+	<fdm include="Systems/jsbsim_init.xml"/>
+	
+	<nasal>	  
+	  <instruments>
+	    <file>Aircraft/Be-200Altair/Systems/setprop.nas</file>      
+	  </instruments>
+	  <doors>
+	    <file>Aircraft/Be-200Altair/Systems/doors.nas</file>
+	  </doors>
+	  <help>
+	    <file>Aircraft/Be-200Altair/Systems/km-5-1.nas</file>
+	  </help>
+	  <mapcase>
+	    <file>Aircraft/Be-200Altair/Systems/mapcase.nas</file>
+	  </mapcase> 
+	  <reversethrust>
+	    <file>Aircraft/Be-200Altair/Systems/reverse-thrust.nas</file>
+	  </reversethrust>
+	  <terrain>
+	    <file>Aircraft/Be-200Altair/Systems/terrain.nas</file>
+	  </terrain>
+	  <be200>
+	    <file>Aircraft/Be-200Altair/Systems/autostart.nas</file>
+	    <file>Aircraft/Be-200Altair/Systems/light.nas</file>
+	    <file>Aircraft/Be-200Altair/Systems/autopilot.nas</file>
+	  </be200>
+	  <warning>
+            <file>Aircraft/Be-200Altair/Systems/be200-stall.nas</file>
+          </warning>
+	</nasal>
+	
+	</PropertyList>

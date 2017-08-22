@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+
+<!--ideas from the Dave Culp Hangar  models -->
+<!--
+        
+    modified by HerbyW 2015
+
+-->
+<system name="crash-detect">
+    
+ 
+
+  <channel name="Over-G">
+     <switch name="systems/crash-detect/over-g">
+         <test logic="OR" value="1">
+             accelerations/Nz gt 25.0
+             accelerations/Nz lt -25.0
+         </test>
+     </switch>
+  </channel>
+
+  <channel name="impact-ground">
+     <switch name="systems/crash-detect/impact">
+         <default value="0"/>
+          <test logic="AND" value="1">
+              systems/crash-detect/over-g == 1
+              gear/unit[1]/WOW != 1
+              gear/unit[2]/WOW != 1
+              simulation/sim-time-sec gt 2.0
+              environment/terrain-solid != 0
+              position/h-agl-ft lt 20
+          </test>
+          <test logic="AND" value="1">
+              gear/unit[1]/compression-ft  gt 8
+              simulation/sim-time-sec gt 2.0
+              environment/terrain-solid != 0
+              position/h-agl-ft lt 20
+          </test>
+          <test logic="AND" value="1">
+              gear/unit[2]/compression-ft  gt 8
+              simulation/sim-time-sec gt 2.0
+              environment/terrain-solid != 0
+              position/h-agl-ft lt 20
+          </test>
+          <test logic="AND" value="1">
+              systems/crash-detect/over-g == 1
+              simulation/sim-time-sec gt 2.0
+              environment/terrain-solid == 0
+              position/h-agl-ft lt 20
+              velocities/vc-fps gt 190
+          </test>
+          <output>systems/crash-detect/crashed-on</output>
+     </switch>
+  </channel>
+
+  <channel name="freeze">
+      <switch name="systems/crash-detect/crashed-sw">
+          <default value="systems/crash-detect/crashed-cmd"/>
+          <test logic="AND" value="1">
+              systems/crash-detect/crashed-on == 1
+          </test>
+          <test logic="AND" value="0">
+              simulation/sim-time-sec lt 2.0
+              </test>
+          <output>systems/crash-detect/crashed-cmd</output>
+     </switch>
+
+
+      <kinematic name="systems/crash-detect/crashed">
+          <input>systems/crash-detect/crashed-cmd</input>
+          <traverse>
+              <setting>
+                  <position> 0 </position>
+                  <time>  0 </time>
+              </setting>
+              <setting>
+                  <position> 1 </position>
+                  <time> 1.5</time>
+              </setting>
+          </traverse>
+      </kinematic>
+
+      <!--
+    <switch name="systems/crash-detect/switch1">
+          <default value="simulation/integrator/position/rotational"/>
+          <test value="0">
+                systems/crash-detect/crashed == 1
+          </test>
+          <output>simulation/integrator/position/rotational</output>
+    </switch>
+
+    <switch name="systems/crash-detect/switch3">
+          <default value="simulation/integrator/rate/rotational"/>
+          <test value="0">
+                systems/crash-detect/crashed == 1
+          </test>
+          <output>simulation/integrator/rate/rotational</output>
+    </switch>
+    -->
+    
+    
+   
+
+  </channel>
+
+  <channel name="aero-breakage">
+      <kinematic name="systems/crash-detect/aero">
+          <input>systems/crash-detect/over-g</input>
+          <traverse>
+              <setting>
+                  <position> 0 </position>
+                  <time>  0 </time>
+              </setting>
+              <setting>
+                  <position> 1 </position>
+                  <time> 1.5</time>
+              </setting>
+          </traverse>
+      </kinematic>
+
+      <switch name="systems/crash-detect/aero-sw">
+          <default value="systems/crash-detect/aero-on"/>
+          <test logic="OR" value="0">
+              systems/crash-detect/aero == 1
+              systems/crash-detect/crashed-sw == 1
+          </test>
+          <test logic="AND" value="1">
+              simulation/sim-time-sec lt 2.0
+          </test>
+          <output>systems/crash-detect/aero-on</output>
+      </switch>
+  </channel>
+
+</system>

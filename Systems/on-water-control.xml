@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+
+<!--
+        
+    modified by HerbyW 2015
+
+-->
+<system name="On Water Control">
+
+    <channel name="On Sea">
+
+
+
+    <!--diese controll funktion wird nirgends benutzt!
+        value=0; h-agl-gt 20; terrain abfrage: neu-->
+            <switch name="On Sea Init">
+                <default value="0"/>
+                <test  logic="AND" value="1">
+                    position/h-agl-ft lt 12                    
+		    environment/terrain-solid == 0
+                </test>
+                <output>/sim/model/onsea</output>
+            </switch>
+
+            <!--for a futher implementation of a realistic scenario-->
+            <switch name="Wildfire">
+                <default value="1"/>
+                <test  logic="AND" value="0">
+                    environment/terrain-solid == 0
+                </test>
+                <output>/environment/wildfire/fire-on-crash</output>
+            </switch>
+
+        </channel>
+
+
+
+
+</system>

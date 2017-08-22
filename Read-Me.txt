@@ -1,0 +1,14 @@
+
+Be-200Altair for Flightgear
+====================
+
+Thanks
+======
+
+Gerard Robin 2009 for PBY-Catalina which I took as basics in many files.
+
+Herbert Wagner (HerbyW) Jule-2015-2016 for 3D-Model, MP-animations, FDM, water and ground controls.
+
+LICENSE: This aircraft is released under the GNU GPL v2 License
+
+----------------------------------------------

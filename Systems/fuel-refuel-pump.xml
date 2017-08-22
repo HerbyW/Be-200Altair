@@ -1,0 +1,405 @@
+<?xml version="1.0"?>
+<!--
+        
+    modified by HerbyW 2015
+
+-->
+
+<system name="Fuel-ReFuel">
+	
+
+	<property>propulsion/systems/pump-kinemat-out</property>
+	
+	
+	<channel name="Tank Capacity">
+	    
+	    <switch name="systems/tanks/tank_wings">
+                <default value="11360"/>
+                <test logic="OR" value="3000">
+                    /sim/model/waterloading == 1
+		    fcs/water-tank-capacity gt 1
+                </test>
+		<output>systems/tanks/tank/tank1-capacity-lbs</output>
+		<output>systems/tanks/tank/tank4-capacity-lbs</output>
+            </switch>
+	    
+	    <switch name="systems/tanks/tank_center">
+                <default value="9000"/>
+                <test logic="OR" value="3000">
+                    /sim/model/waterloading == 1
+		    fcs/water-tank-capacity gt 1
+                </test>
+		<output>systems/tanks/tank/tank2-capacity-lbs</output>
+		<output>systems/tanks/tank/tank3-capacity-lbs</output>
+            </switch>
+	    
+	    <summer name="systems/tanks/tank/total-capacity-lbs">
+                <input>systems/tanks/tank/tank1-capacity-lbs</input>
+		<input>systems/tanks/tank/tank2-capacity-lbs</input>
+                <input>systems/tanks/tank/tank3-capacity-lbs</input>
+		<input>systems/tanks/tank/tank4-capacity-lbs</input>
+		<clipto>
+                    <min>0</min>
+		    <max>99999</max>
+                </clipto>
+            </summer>
+	    
+	  </channel>  
+	
+	
+	
+
+        <channel name="Pump-fuel">
+	    
+	    
+	     <switch name="systems/tank-feed-sw">
+                <default value="0"/>
+                <test  logic="OR" value="1">
+                    inertia/pointmass-weight-lbs[2] gt  0
+                    inertia/pointmass-weight-lbs[3] gt  0
+                </test>
+		<output>systems/tank2-feed-cmd</output>
+		<output>systems/tank3-feed-cmd</output>
+	    </switch>
+	    
+	    
+	    <switch name="systems/tank1-feed-cmd">
+                <default value="0"/>
+                <test  logic="OR" value="1">
+                    inertia/pointmass-weight-lbs[2] lt  100
+                    inertia/pointmass-weight-lbs[3] lt  100
+                </test>
+            </switch>
+	    
+	     <switch name="systems/tank4-feed-cmd">
+                <default value="0"/>
+                <test  logic="OR" value="1">
+                    inertia/pointmass-weight-lbs[2] lt  100
+                    inertia/pointmass-weight-lbs[3] lt  100
+                </test>
+            </switch>
+	    
+
+            <!--Un temporisateur  d'injection -->
+            <switch name="pump-sw">
+                <default value="propulsion/systems/pump-kinemat-in"/>
+                <test logic="AND" value="1">
+                    propulsion/systems/pump-kinemat-in == 0
+                    propulsion/systems/pump-kinemat-out == 0
+                </test>
+                <test logic="AND" value="0">
+                    propulsion/systems/pump-kinemat-in == 1
+                    propulsion/systems/pump-kinemat-out == 1
+                </test>
+                <output>propulsion/systems/pump-kinemat-in</output>
+            </switch>
+
+            <kinematic name="blinker-norm-pump">
+                <input>propulsion/systems/pump-kinemat-in</input>
+                <traverse>
+                    <setting>
+                        <position>0</position>
+                        <time>0</time>
+                    </setting>
+                    <setting>
+                        <position>1</position>
+                        <time>1</time>
+                    </setting>
+                </traverse>
+                <output>propulsion/systems/pump-kinemat-out</output>
+            </kinematic>
+
+           <!-- injection sous condition  Tank 1  et Pompe 1-->
+           <switch name="propulsion/systems/tank[1]/pump-flow">
+                <default value="0"/>
+                <test logic="AND" value="1">
+                    propulsion/systems/pump-kinemat-out gt 0.90
+                    propulsion/systems/pump-kinemat-out lt 0.97
+                    systems/tank1-feed-cmd == 1
+                    inertia/pointmass-weight-lbs[1] gt 1
+                    propulsion/tank[1]/contents-lbs lt 50
+                </test>
+            </switch>
+	    <!-- injection sous condition  Tank 2  et Pompe 2-->
+           <switch name="propulsion/systems/tank[2]/pump-flow">
+                <default value="0"/>
+                <test logic="AND" value="1">
+                    propulsion/systems/pump-kinemat-out gt 0.90
+                    propulsion/systems/pump-kinemat-out lt 0.97
+                    systems/tank2-feed-cmd == 1
+                    inertia/pointmass-weight-lbs[2] gt 1
+                    propulsion/tank[2]/contents-lbs lt 50
+                </test>
+            </switch>
+	    
+
+            <!-- injection sous condition  Tank 3  et Pompe 3-->
+            <switch name="propulsion/systems/tank[3]/pump-flow">
+                <default value="0"/>
+                <test logic="AND" value="1">
+                    propulsion/systems/pump-kinemat-out gt 0.90
+                    propulsion/systems/pump-kinemat-out lt 0.97
+                    systems/tank3-feed-cmd == 1
+                    inertia/pointmass-weight-lbs[3] gt 1
+                    propulsion/tank[3]/contents-lbs lt 50
+                </test>
+            </switch>
+	    
+	     <!-- injection sous condition  Tank 4  et Pompe 4-->
+            <switch name="propulsion/systems/tank[4]/pump-flow">
+                <default value="0"/>
+                <test logic="AND" value="1">
+                    propulsion/systems/pump-kinemat-out gt 0.90
+                    propulsion/systems/pump-kinemat-out lt 0.97
+                    systems/tank4-feed-cmd == 1
+                    inertia/pointmass-weight-lbs[4] gt 1
+                    propulsion/tank[4]/contents-lbs lt 50
+                </test>
+            </switch>
+
+            <!--Tank 1================================-->
+
+           <!-- calcul de quantité tampon  tank 1 -->
+            <summer name="propulsion/systems/tank[1]/contents-lbs">
+                <input>propulsion/tank[1]/contents-lbs</input>
+                <input>propulsion/systems/tank[1]/pump-flow</input>
+                <output>propulsion/tank[1]/contents-lbs</output>
+            </summer>
+
+            <!--calcul quantité restant    tank 1-->
+            <summer name="propulsion/systems/tank[1]/main1-pointmass">
+                <input>inertia/pointmass-weight-lbs[1]</input>
+                <input>-propulsion/systems/tank[1]/pump-flow</input>
+                <clipto>
+                    <min>0</min>
+                    <max>systems/tanks/tank/tank1-capacity-lbs</max>
+                </clipto>
+                <output>inertia/pointmass-weight-lbs[1]</output>
+            </summer>
+	    
+	    
+	    <pure_gain name="systems/tanks/fuel/tank1-level-gal_us">
+		<input>inertia/pointmass-weight-lbs[1]</input>
+		<gain>0.15</gain>
+	    </pure_gain>
+	    
+	   
+
+            <!--Tank 2================================-->
+
+            <!-- calcul de quantité tampon  tank 2 -->
+            <summer name="propulsion/systems/tank[2]/contents-lbs">
+                <input>propulsion/tank[2]/contents-lbs</input>
+                <input>propulsion/systems/tank[2]/pump-flow</input>
+                <output>propulsion/tank[2]/contents-lbs</output>
+            </summer>
+
+            <!--calcul quantité restant    tank 2-->
+            <summer name="propulsion/systems/tank[2]/main2-pointmass">
+                <input>inertia/pointmass-weight-lbs[2]</input>
+                <input>-propulsion/systems/tank[2]/pump-flow</input>
+                <clipto>
+                    <min>0</min>
+                    <max>systems/tanks/tank/tank2-capacity-lbs</max>
+                </clipto>
+                <output>inertia/pointmass-weight-lbs[2]</output>
+            </summer>
+	    
+	     <pure_gain name="systems/tanks/fuel/tank2-level-gal_us">
+		<input>inertia/pointmass-weight-lbs[2]</input>
+		<gain>0.15</gain>
+	    </pure_gain>
+	    
+	    <!--Tank 3================================-->
+
+            <!-- calcul de quantité tampon  tank 3 -->
+            <summer name="propulsion/systems/tank[3]/contents-lbs">
+                <input>propulsion/tank[3]/contents-lbs</input>
+                <input>propulsion/systems/tank[3]/pump-flow</input>
+                <output>propulsion/tank[3]/contents-lbs</output>
+            </summer>
+
+            <!--calcul quantité restant    tank 3-->
+            <summer name="propulsion/systems/tank[3]/main3-pointmass">
+                <input>inertia/pointmass-weight-lbs[3]</input>
+                <input>-propulsion/systems/tank[3]/pump-flow</input>
+                <clipto>
+                    <min>0</min>
+                    <max>systems/tanks/tank/tank3-capacity-lbs</max>
+                </clipto>
+                <output>inertia/pointmass-weight-lbs[3]</output>
+            </summer>
+	    
+	     <pure_gain name="systems/tanks/fuel/tank3-level-gal_us">
+		<input>inertia/pointmass-weight-lbs[3]</input>
+		<gain>0.15</gain>
+	    </pure_gain>
+	    
+	    <!--Tank 4================================-->
+
+            <!-- calcul de quantité tampon  tank 4 -->
+            <summer name="propulsion/systems/tank[4]/contents-lbs">
+                <input>propulsion/tank[4]/contents-lbs</input>
+                <input>propulsion/systems/tank[4]/pump-flow</input>
+                <output>propulsion/tank[4]/contents-lbs</output>
+            </summer>
+
+            <!--calcul quantité restant    tank 4-->
+            <summer name="propulsion/systems/tank[4]/main4-pointmass">
+                <input>inertia/pointmass-weight-lbs[4]</input>
+                <input>-propulsion/systems/tank[4]/pump-flow</input>
+                <clipto>
+                    <min>0</min>
+                    <max>systems/tanks/tank/tank4-capacity-lbs</max>
+                </clipto>
+                <output>inertia/pointmass-weight-lbs[4]</output>
+            </summer>
+	    
+	     <pure_gain name="systems/tanks/fuel/tank4-level-gal_us">
+		<input>inertia/pointmass-weight-lbs[4]</input>
+		<gain>0.15</gain>
+	    </pure_gain>
+	    
+        </channel>
+	
+	 <property  value="0.7">systems/tanks/refuel-speed</property>
+	 <property  value="3">systems/tanks/refuel1-k</property>
+	<property  value="0">systems/fuel/refueling1_up-sw</property>
+	 <property  value="5">systems/tanks/refuel2-k</property>
+	<property  value="0">systems/fuel/refueling2_up-sw</property>
+	 <property  value="5">systems/tanks/refuel3-k</property>
+	<property  value="0">systems/fuel/refueling3_up-sw</property>
+	<property  value="3">systems/tanks/refuel4-k</property>
+	<property  value="0">systems/fuel/refueling4_up-sw</property>
+	
+	
+        <channel name="Refueling">    <!--remplissage des reservoir-->
+	
+	    <switch name="Refuel Ground">
+                <default value="0"/>
+                <test  logic="AND" value="1">
+                   systems/behaviour/steady-onground  == 1
+                </test>
+                <output>systems/refueling_ground</output>
+            </switch>
+
+
+           <!--tank 0 + tank 1 + tank 2 + tank 3-->
+            <summer name="propulsion/tanks-pointmass-qty">
+                <input>inertia/pointmass-weight-lbs[1]</input>
+                <input>inertia/pointmass-weight-lbs[2]</input>
+                <input>inertia/pointmass-weight-lbs[3]</input>
+		<input>inertia/pointmass-weight-lbs[4]</input>
+		<clipto>
+                    <min>0</min>
+                    <max>40720</max>
+                </clipto>
+            </summer>
+	    
+	    <pure_gain name="systems/tanks/refuel1-increment">
+                <input>systems/tanks/refuel1-k</input>
+                <gain>systems/tanks/refuel-speed</gain>
+             </pure_gain>
+	    <switch name="systems/fuel/refueling1_add-qty">
+                <default value="0"/>
+                <test logic="AND" value="systems/tanks/refuel1-increment">
+		    systems/fuel/refueling1_up-sw == 1
+		    systems/refueling_ground == 1
+		    inertia/pointmass-weight-lbs[2]  GE systems/tanks/tank/tank2-capacity-lbs
+		</test>
+            </switch>
+	     <summer name="propulsion/systems/tanks/tank1-pointmass">                
+		<input>inertia/pointmass-weight-lbs[1]</input>
+		<input>systems/fuel/refueling1_add-qty</input>
+		<clipto>
+                    <min>0</min>
+                    <max>systems/tanks/tank/tank1-capacity-lbs</max>
+                </clipto>
+		<output>inertia/pointmass-weight-lbs[1]</output>
+            </summer>
+	    
+	    <pure_gain name="systems/tanks/refuel2-increment">
+                <input>systems/tanks/refuel2-k</input>
+                <gain>systems/tanks/refuel-speed</gain>
+             </pure_gain>
+	    <switch name="systems/fuel/refueling2_add-qty">
+                <default value="0"/>
+                <test logic="AND" value="systems/tanks/refuel2-increment">
+		    systems/fuel/refueling2_up-sw == 1
+		    systems/refueling_ground == 1
+		</test>
+            </switch>
+	     <summer name="propulsion/systems/tanks/tank2-pointmass">                
+		<input>inertia/pointmass-weight-lbs[2]</input>
+		<input>systems/fuel/refueling2_add-qty</input>
+		<clipto>
+                    <min>0</min>
+                    <max>systems/tanks/tank/tank2-capacity-lbs</max>
+                </clipto>
+		<output>inertia/pointmass-weight-lbs[2]</output>
+            </summer>
+	    
+	     <pure_gain name="systems/tanks/refuel3-increment">
+                <input>systems/tanks/refuel3-k</input>
+                <gain>systems/tanks/refuel-speed</gain>
+             </pure_gain>
+	    <switch name="systems/fuel/refueling3_add-qty">
+                <default value="0"/>
+                <test logic="AND" value="systems/tanks/refuel3-increment">
+		    systems/fuel/refueling3_up-sw == 1
+		    systems/refueling_ground == 1
+		</test>
+            </switch>
+	     <summer name="propulsion/systems/tanks/tank3-pointmass">                
+		<input>inertia/pointmass-weight-lbs[3]</input>
+		<input>systems/fuel/refueling3_add-qty</input>
+		<clipto>
+                    <min>0</min>
+                    <max>systems/tanks/tank/tank3-capacity-lbs</max>
+                </clipto>
+		<output>inertia/pointmass-weight-lbs[3]</output>
+            </summer>
+	    
+	    <pure_gain name="systems/tanks/refuel4-increment">
+                <input>systems/tanks/refuel4-k</input>
+                <gain>systems/tanks/refuel-speed</gain>
+             </pure_gain>
+	    <switch name="systems/fuel/refueling4_add-qty">
+                <default value="0"/>
+                <test logic="AND" value="systems/tanks/refuel4-increment">
+		    systems/fuel/refueling4_up-sw == 1
+		    systems/refueling_ground == 1
+		     inertia/pointmass-weight-lbs[3]  GE systems/tanks/tank/tank3-capacity-lbs
+		</test>
+            </switch>
+	     <summer name="propulsion/systems/tanks/tank4-pointmass">                
+		<input>inertia/pointmass-weight-lbs[4]</input>
+		<input>systems/fuel/refueling4_add-qty</input>
+		<clipto>
+                    <min>0</min>
+                    <max>systems/tanks/tank/tank4-capacity-lbs</max>
+                </clipto>
+		<output>inertia/pointmass-weight-lbs[4]</output>
+            </summer>
+	   
+           <kinematic name="fueltruck">
+                <input>systems/fuel/refueling1_up-sw</input>
+                <traverse>
+                    <setting>
+                        <position>0</position>
+                        <time>0</time>
+                    </setting>
+                    <setting>
+                        <position>1</position>
+                        <time>10</time>
+                    </setting>
+                </traverse>
+                <output>controls/fueltruck</output>
+            </kinematic>
+
+           
+
+
+    </channel>
+
+</system>

@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<!-- Fuel Truck - short version with lights during night and low vis -->
+
+	<path>Fuel_Truck_Short_VolvoFM.ac</path>
+	
+	<animation>
+	  <type>select</type>
+	  
+	  
+	    <condition>
+	      <greater-than>
+		<property>sim/multiplay/generic/float[19]</property>
+		<value>0.05</value>
+	      </greater-than>
+	    </condition>
+	  </animation>
+	
+	<animation>
+	  <type>translate</type>
+	  
+	  <property>sim/multiplay/generic/float[19]</property>
+	  <interpolation>
+	    <entry><ind> 0.0 </ind><dep> -85 </dep></entry>
+	    <entry><ind> 0.7 </ind><dep>  -5.0 </dep></entry>
+	    <entry><ind> 0.8 </ind><dep>  -0.5 </dep></entry>
+	    <entry><ind> 0.85 </ind><dep>  0.0 </dep></entry>
+	    <entry><ind> 1.0 </ind><dep>  0.0 </dep></entry>
+	  </interpolation>
+	  <axis>
+	    <x>-1 </x>
+	    <y> 0 </y>
+	    <z> 0 </z>
+	  </axis>
+	</animation>
+	
+	<animation>
+		<name>Lights_all</name>
+		<object-name>Lights_front</object-name>
+		<object-name>Lights_rear</object-name>
+		
+	</animation>
+	
+	<!-- Lights illumination -->
+	<animation>
+		<type>material</type> 
+		<object-name>Lights_all</object-name>
+			
+		<emission>	
+			<red>0.7</red>	
+			<green>0.7</green>	
+			<blue>0.5</blue>
+		</emission>
+	</animation>
+	
+
+
+	<animation>
+	  <type>material</type> 
+	<object-name>warning_light_glass</object-name>
+	<object-name>Lights_side</object-name>
+	<condition>
+            <property>sim/multiplay/generic/int[6]</property>
+        </condition>
+	<emission>	
+			<red>1</red>	
+			<green>1</green>	
+			<blue>1</blue>
+		</emission>
+	</animation>
+	-->
+	
+	<!-- LOD -->
+	<animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>3500</max-m>
+	</animation>
+	
+</PropertyList>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!--
+
+HerbyW 2015-2016
+
+-->
+
+<PropertyList>
+  
+  <generic>
+    
+    <float n="1" alias="/fdm/jsbsim/fcs/steer-pos-deg"/>
+    <float n="2" alias="/sim/model/door-positions/cargo/position-norm"/>
+    <float n="3" alias="/fdm/jsbsim/propulsion/engine[0]/thrust-lbs"/>
+    <float n="4" alias="/fdm/jsbsim/propulsion/engine[1]/thrust-lbs"/>
+    <float n="5" alias="/fdm/jsbsim/fcs/water-door-pos-norm"/>
+    <float n="6" alias="/velocities/groundspeed-kt"/>
+    <float n="7" alias="/fdm/jsbsim/animation/floats-pos-norm"/>
+    <float n="8" alias="/fdm/jsbsim/fcs/right-wake-control"/>
+    <float n="9" alias="/fdm/jsbsim/fcs/left-wake-control"/>
+    <float n="10" alias="/sim/time/elapsed-sec"/>
+    <float n="11" alias="/fdm/jsbsim/fcs/mooring-cmd-norm"/>    
+    <float n="12" alias="/fdm/jsbsim/fcs/right-float-wake-control"/>
+    <float n="13" alias="/fdm/jsbsim/fcs/left-float-wake-control"/>
+    <float n="14" alias="/controls/switches/startpanel-cover"/>
+    <float n="15" alias="/controls/gear/runway"> 0 </float>
+    <float n="16" alias="/fdm/jsbsim/fcs/water-qty-liters"/>
+    <float n="17" alias="/fdm/jsbsim/fcs/water-sw"/>
+    <float n="18" alias="/position/altitude-agl-ft"> 0 </float>
+    <float n="19" alias="/fdm/jsbsim/controls/fueltruck"/>
+    
+    
+    <int type="int" n="0" alias="/gear/gear[0]/wow">  0 </int>
+    <int type="int" n="1" alias="/gear/gear[1]/wow">  0 </int>
+    <int type="int" n="2" alias="/gear/gear[2]/wow">  0 </int>
+    <int type="int" n="3" alias="/gear/gear[9]/wow">  0 </int>
+    <int type="int" n="4" alias="/controls/watercolor"/>
+    <int type="int" n="5" alias="/controls/switches/gauge-light"/>
+    <int type="int" n="6" alias="/controls/lighting/beacon-state/state"/>
+    <int type="int" n="7" alias="/controls/lighting/strobe-state/state"/>
+    
+    <int type="int" n="8" alias="/controls/lighting/nav-lights"/>
+    <int type="int" n="9" alias="/fdm/jsbsim/fcs/water-intake-cmd-norm">  0 </int>
+    <int type="int" n="10" alias="/controls/lighting/taxi-lights"/>
+    <int type="int" n="11" alias="/engines/engine/reversed">  0 </int>
+    <int type="int" n="12" alias="/engines/engine[0]/running">  0 </int>
+    <int type="int" n="13" alias="/engines/engine[1]/running">  0 </int>
+    <int type="int" n="14" alias="/controls/switches/liveboat">  0 </int>
+    
+    
+    <int type="int" n="17" alias="/sim/signals/fdm-initialized" />
+    <int type="int" n="18" alias="/controls/lighting/landing-lights">  0 </int>
+    
+    <string  alias="/sim/multiplay/callsign"/>
+    <string n="1" type="string" alias="/sim/model/Be-200Altair/version"/>
+  
+  </generic>
+    
+    </PropertyList>
