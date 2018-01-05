@@ -25,6 +25,21 @@
     <type>log</type>    
     <factor>0.8</factor> <!-- 10-100% rpm == 0.1 - 1 factor -->
    </volume>
+      <position>
+       <x> 4.806 </x>
+       <y> -2.567 </y>
+       <z> 0.438 </z>
+      </position>
+      <orientation>
+         <x> 1 </x>
+         <y> 0 </y>
+         <z> 0 </z>
+         <inner-angle>160</inner-angle>
+         <outer-angle>200</outer-angle>
+         <outer-gain>0.7</outer-gain>
+      </orientation>
+      <reference-dist>100</reference-dist>
+      <max-dist>22000</max-dist>
   </engine>
 
   <engine>
@@ -42,6 +57,21 @@
     <type>log</type>
     <factor>0.8</factor> <!-- 10-100% rpm == 0.1 - 1 factor -->
    </volume>
+      <position>
+       <x> 4.806 </x>
+       <y> 2.567 </y>
+       <z> 0.438 </z>
+      </position>
+      <orientation>
+         <x> 1 </x>
+         <y> 0 </y>
+         <z> 0 </z>
+         <inner-angle>160</inner-angle>
+         <outer-angle>200</outer-angle>
+         <outer-gain>0.7</outer-gain>
+      </orientation>
+      <reference-dist>100</reference-dist>
+      <max-dist>22000</max-dist>
   </engine>
 
   <engine>
@@ -64,6 +94,21 @@
     <offset>-0.7</offset>
     <factor>0.8</factor> <!-- 10-100% rpm == 0.1 - 1 factor -->
    </volume>
+      <position>
+       <x> 4.806 </x>
+       <y> -2.567 </y>
+       <z> 0.438 </z>
+      </position>
+      <orientation>
+         <x> 1 </x>
+         <y> 0 </y>
+         <z> 0 </z>
+         <inner-angle>160</inner-angle>
+         <outer-angle>200</outer-angle>
+         <outer-gain>0.7</outer-gain>
+      </orientation>
+      <reference-dist>100</reference-dist>
+      <max-dist>22000</max-dist>
   </engine>
 
   <engine>
@@ -86,6 +131,21 @@
     <offset>-0.7</offset>
     <factor>0.8</factor> <!-- 10-100% rpm == 0.1 - 1 factor -->
    </volume>
+      <position>
+       <x> 4.806 </x>
+       <y> 2.567 </y>
+       <z> 0.438 </z>
+      </position>
+      <orientation>
+         <x> 1 </x>
+         <y> 0 </y>
+         <z> 0 </z>
+         <inner-angle>160</inner-angle>
+         <outer-angle>200</outer-angle>
+         <outer-gain>0.7</outer-gain>
+      </orientation>
+      <reference-dist>100</reference-dist>
+      <max-dist>22000</max-dist>
   </engine>
 
   <reverser>
@@ -244,31 +304,6 @@
       <reference-dist>500</reference-dist>
       <max-dist>2000</max-dist>
   </flap>
-
-  <wind>
-   <name>wind</name>
-   <mode>looped</mode>
-   <path>Sounds/wind.wav</path>
-   <property>velocities/true-airspeed-kt</property>
-   <volume>
-    <property>position/altitude-ft</property>
-    <factor>-0.000015</factor>
-    <offset>1.0</offset>
-    <min>0.1</min>
-    <max>0.8</max>
-   </volume>
-   <volume>
-     <property>velocities/true-airspeed-kt</property>
-     <factor>0.0015</factor>
-     <min>0.03</min>
-     <max>0.25</max>
-   </volume>
-   <pitch>
-    <property>velocities/true-airspeed-kt</property>
-    <factor>0.01</factor>
-    <offset>1.25</offset>
-   </pitch>
-  </wind>
 
     <!-- Doors -->
   

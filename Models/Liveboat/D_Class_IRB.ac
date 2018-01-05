@@ -1,4 +1,4 @@
-AC3DbS
+AC3Db
 MATERIAL "default" rgb 0.5 0.5 0.5 amb 0.4 0.4 0.4 emis 0 0 0 spec 0.2 0.2 0.2 shi 128 trans 0
 MATERIAL "0137_Black" rgb 0.0000 0.0000 0.0000 amb 0.4 0.4 0.4 emis 0 0 0 spec 0.2 0.2 0.2 shi 128 trans 0.0000
 MATERIAL "0131_Silver" rgb 0.7529 0.7529 0.7529 amb 0.4 0.4 0.4 emis 0 0 0 spec 0.2 0.2 0.2 shi 128 trans 0.0000
@@ -17065,4 +17065,3 @@ refs 3
 9 0 0
 7 0 0
 kids 0
-

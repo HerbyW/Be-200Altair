@@ -71,13 +71,13 @@
     <description>Berijew-200Altair</description>
     <author>HerbyW</author>
     <status>alpha</status>
-    <aircraft-version>3.0.1</aircraft-version>
+    <aircraft-version>3.0.2</aircraft-version>
     <rating>	
-      <FDM type="int">3</FDM>
-      <systems type="int">1</systems>
-      <model type="int">3</model>
-      <cockpit type="int">1</cockpit>
-      <MPanimations type="int">4</MPanimations>
+      <FDM type="int">5</FDM>
+      <systems type="int">5</systems>
+      <model type="int">5</model>
+      <cockpit type="int">5</cockpit>
+      <MPanimations type="int">5</MPanimations>
     </rating>
     <flight-model>jsb</flight-model>
 
@@ -91,7 +91,7 @@
     
     <model>
       <path>Aircraft/Be-200Altair/Models/Be-200Altair.xml</path>
-      <Be-200Altair><version type="string">3.0.1</version></Be-200Altair>
+      <Be-200Altair><version type="string">3.0.2</version></Be-200Altair>
       <waterloading>0</waterloading>
       <bomb-signal>0</bomb-signal>
       <lighting>

@@ -235,7 +235,7 @@ copyright Herbert Wagner 2015-2016
       </not-equals>
     </condition>
     <property>velocities/uBody-fps</property>
-    <factor> -1.5 </factor>
+    <factor> -1.7 </factor>
     <center>
       <x-m>  2.063 </x-m>
       <y-m> -1.90 </y-m>
@@ -258,7 +258,7 @@ copyright Herbert Wagner 2015-2016
       </not-equals>
     </condition>
     <property>velocities/uBody-fps</property>
-    <factor> -3 </factor>
+    <factor> -2.8 </factor>
     <center>
       <x-m>  2.063 </x-m>
       <y-m> -1.90 </y-m>
@@ -281,7 +281,7 @@ copyright Herbert Wagner 2015-2016
       </not-equals>
     </condition>
     <property>velocities/uBody-fps</property>
-    <factor> -3 </factor>
+    <factor> -2.8 </factor>
     <center>
       <x-m>  2.063 </x-m>
       <y-m>  1.90 </y-m>
@@ -304,7 +304,7 @@ copyright Herbert Wagner 2015-2016
       </not-equals>
     </condition>
     <property>velocities/uBody-fps</property>
-    <factor> -3 </factor>
+    <factor> -2.8 </factor>
     <center>
       <x-m>  2.063 </x-m>
       <y-m>  1.90 </y-m>
@@ -333,7 +333,7 @@ copyright Herbert Wagner 2015-2016
       </not-equals>
     </condition>
     <property>velocities/uBody-fps</property>
-    <factor> -3 </factor>
+    <factor> -2.8 </factor>
     <center>
       <x-m> -14.600 </x-m>
       <y-m>  0.000 </y-m>

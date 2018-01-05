@@ -578,6 +578,7 @@
                     <value>0.1200</value><!--  0.1200 -->
                 </product>
             </function>
+	    
             <function name="aero/coefficient/Cnr">
                 <description>Yaw_moment_due_to_yaw_rate</description>
                 <product>
@@ -589,6 +590,7 @@
                     <value>-0.1500</value><!--  -0.1500 -->
                 </product>
             </function>
+	    
             <function name="aero/coefficient/Cndr">
                 <description>Yaw_moment_due_to_rudder</description>
                 <product>
@@ -599,6 +601,7 @@
                     <value>-0.1000</value><!--  -0.100 -->
                 </product>
             </function>
+	    
             <function name="aero/coefficient/Cnda">
                 <description>Adverse_yaw</description>
                 <product>
@@ -609,6 +612,7 @@
                     <value>0.0000</value><!--  0.0000 -->
                 </product>
             </function>
+	    
         </axis>
   
 </aerodynamics>

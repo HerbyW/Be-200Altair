@@ -25,6 +25,21 @@
     <type>log</type>    
     <factor>0.8</factor> <!-- 10-100% rpm == 0.1 - 1 factor -->
    </volume>
+      <position>
+       <x> 4.806 </x>
+       <y> -2.567 </y>
+       <z> 0.438 </z>
+      </position>
+      <orientation>
+         <x> 1 </x>
+         <y> 0 </y>
+         <z> 0 </z>
+         <inner-angle>160</inner-angle>
+         <outer-angle>200</outer-angle>
+         <outer-gain>0.7</outer-gain>
+      </orientation>
+      <reference-dist>100</reference-dist>
+      <max-dist>22000</max-dist>
   </engine>
 
   <engine>
@@ -42,6 +57,21 @@
     <type>log</type>
     <factor>0.8</factor> <!-- 10-100% rpm == 0.1 - 1 factor -->
    </volume>
+      <position>
+       <x> 4.806 </x>
+       <y> 2.567 </y>
+       <z> 0.438 </z>
+      </position>
+      <orientation>
+         <x> 1 </x>
+         <y> 0 </y>
+         <z> 0 </z>
+         <inner-angle>160</inner-angle>
+         <outer-angle>200</outer-angle>
+         <outer-gain>0.7</outer-gain>
+      </orientation>
+      <reference-dist>100</reference-dist>
+      <max-dist>22000</max-dist>
   </engine>
 
   <engine>
@@ -64,6 +94,21 @@
     <offset>-0.7</offset>
     <factor>0.8</factor> <!-- 10-100% rpm == 0.1 - 1 factor -->
    </volume>
+      <position>
+       <x> 4.806 </x>
+       <y> -2.567 </y>
+       <z> 0.438 </z>
+      </position>
+      <orientation>
+         <x> 1 </x>
+         <y> 0 </y>
+         <z> 0 </z>
+         <inner-angle>160</inner-angle>
+         <outer-angle>200</outer-angle>
+         <outer-gain>0.7</outer-gain>
+      </orientation>
+      <reference-dist>100</reference-dist>
+      <max-dist>22000</max-dist>
   </engine>
 
   <engine>
@@ -86,6 +131,21 @@
     <offset>-0.7</offset>
     <factor>0.8</factor> <!-- 10-100% rpm == 0.1 - 1 factor -->
    </volume>
+      <position>
+       <x> 4.806 </x>
+       <y> 2.567 </y>
+       <z> 0.438 </z>
+      </position>
+      <orientation>
+         <x> 1 </x>
+         <y> 0 </y>
+         <z> 0 </z>
+         <inner-angle>160</inner-angle>
+         <outer-angle>200</outer-angle>
+         <outer-gain>0.7</outer-gain>
+      </orientation>
+      <reference-dist>100</reference-dist>
+      <max-dist>22000</max-dist>
   </engine>
 
   <reverser>
@@ -238,32 +298,29 @@
       <max-dist>2000</max-dist>
   </flap>
 
-  <wind>
-   <name>wind</name>
-   <mode>looped</mode>
-   <path>Sounds/wind.wav</path>
-   <condition>
-   <property>/velocities/airspeed-kt</property>
-</condition>
-   <volume>
-    <property>/position/altitude-ft</property>
-    <factor>-0.000015</factor>
-    <offset>1.0</offset>
-    <min>0.1</min>
-    <max>1.0</max>
-   </volume>
-   <volume>
-     <property>/velocities/airspeed-kt</property>
-     <factor>0.0015</factor>
-     <min>0.03</min>
-     <max>0.25</max>
-   </volume>
-   <pitch>
-    <property>/velocities/airspeed-kt</property>
-    <factor>0.01</factor>
-    <offset>1.25</offset>
-   </pitch>
-  </wind>
+ <wind>
+      <name>wind</name>
+      <mode>looped</mode>
+      <path>Aircraft/AN-12BK/Sounds/wind.wav</path>
+      <property>/environment/wind-speed-kt</property>
+      <volume>
+        <property>/environment/wind-speed-kt</property>
+        <factor>0.0025</factor>
+        <min>0.00</min>
+        <max>0.20</max>
+      </volume>
+      <pitch>
+        <property>/environment/wind-speed-kt</property>
+        <factor>0.01</factor>
+        <offset>0.2</offset>
+        <max>0.70</max>
+      </pitch>
+      <reference-dist>10</reference-dist>
+      <max-dist>300</max-dist>
+    </wind>
+  
+  
+  
 
   <!-- Stall -->
  
@@ -301,10 +358,10 @@
       </condition>
       <volume>
         <property>/environment/metar/rain-norm</property>
-        <factor>1.00</factor>
+        <factor>0.80</factor>
         <offset>-0.2</offset>
         <min>0.0</min>
-        <max>0.6</max>
+        <max>0.5</max>
       </volume>
       <pitch>
         <property>/velocities/airspeed-kt</property>
@@ -321,10 +378,16 @@
       <mode>looped</mode>
       <path>Aircraft/Be-200Altair/Sounds/dinamik_pr2.wav</path>
       <condition>
+	<and>
         <greater-than>
           <property>instrumentation/airspeed-indicator/true-speed-kt</property>
           <value>405</value>
         </greater-than>
+	<greater-than>
+	 <property>/sim/time/elapsed-sec</property>
+	 <value>100</value>
+       </greater-than>
+       </and>
       </condition> 
       <volume>
         <offset>1.0</offset>
@@ -416,10 +479,16 @@
       <name>Cargodoor</name>
       <path>Aircraft/Be-200Altair/Sounds/door_closed.wav</path>
       <condition>
+	<and>
         <equals>
           <property>sim/multiplay/generic/float[2]</property>
           <value>0.0</value>
         </equals>
+	<greater-than>
+	 <property>/sim/time/elapsed-sec</property>
+	 <value>100</value>
+       </greater-than>
+       </and>
       </condition>
       <volume>
         <factor>0.35</factor>
