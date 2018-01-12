@@ -1,8 +1,17 @@
 # Be-200Altair
-for Flightgear Flightsimulator by Herbert Wagner
+
+for FlightGear Flightsimulator by Herbert Wagner
 
 Amphibian Fire Fighting Water Bomber
 
+++++++++++++++++++++++++++++++++
+Thanks
+
+Gerard Robin 2009 for PBY-Catalina which I took as basics in many files.
+++++++++++++++++++++++++++++++++
+
 LICENSE: This aircraft is released under the GNU GPL v2 License, see COPYING file.
 
-Instalation: Unzip and copy into the aircraft folder.
+Installation: Unzip and copy into the aircraft folder.
+
+See aircraft help for detailed instructions.
