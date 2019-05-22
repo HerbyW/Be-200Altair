@@ -1,81 +1,95 @@
 <?xml version="1.0"?>
 
 <!--
- 
+
 HerbyW 2015
 
 -->
 
 <PropertyList>
-	<particlesystem>
-		<name>DFlux1</name>
-		
-		<texture>particleG.rgb</texture>
-		
-		<emissive>false</emissive>
-		<lighting>false</lighting>
-		<align>billboard</align>
-		<attach>world</attach>
-		<placer>
-			<type>point</type>
-		</placer>
-		<shooter>
-			<theta-min-deg>89</theta-min-deg>
-			<theta-max-deg>91</theta-max-deg>
-			<phi-min-deg>-2</phi-min-deg>
-			<phi-max-deg> 2</phi-max-deg>
-			<speed-mps>
-				<value>3.2</value>
-				<spread>2.5</spread>
-			</speed-mps>
-			<rotation-speed>
-				<x-min-deg-sec>0</x-min-deg-sec>
-				<y-min-deg-sec>0</y-min-deg-sec>
-				<z-min-deg-sec>0</z-min-deg-sec>
-				<x-max-deg-sec>0</x-max-deg-sec>
-				<y-max-deg-sec>0</y-max-deg-sec>
-				<z-max-deg-sec>0</z-max-deg-sec>
-			</rotation-speed>
-		</shooter>
-		<counter>
-			<particles-per-sec>
-				<value>20</value>
-				<spread>3</spread>
-			</particles-per-sec>
-		</counter>
-		<particle>
-			<start>
-				<color>
-					<red><value>1</value></red>
-					<green><value>1</value></green>
-					<blue><value>1</value></blue>
-					<alpha><value>1</value></alpha>
-				</color>
-				<size>
-					<value>0.5</value>
-				</size>
-			</start>
-			<end>
-				<color>
-					<red><value>1</value></red>
-					<green><value>1</value></green>
-					<blue><value>1</value></blue>
-					<alpha><value>0.4</value></alpha>
-				</color>
-				<size>
-					<value>3.0</value>
-				</size>
-			</end>
-			<life-sec>
-				<value>7</value>
-			</life-sec>
-			<mass-kg>0.35</mass-kg>
-			<radius-m>0.40</radius-m>
-		</particle>
-		<program>
-			<fluid>air</fluid>
-			<gravity>true</gravity>
-			<wind>true</wind>
-		</program>
-	</particlesystem>
+    <particlesystem>
+        <name>DFlux1</name>
+        
+        <texture>particleG.rgb</texture>
+        
+        <emissive>false</emissive>
+        <lighting>false</lighting>
+        <align>billboard</align>
+        
+        <condition>
+            <and>
+                <equals>
+                    <property>sim/multiplay/generic/float[7]</property>
+                    <value>1.0</value>
+                </equals>
+                <equals>
+                    <property>sim/multiplay/generic/float[12]</property>
+                    <value>1</value>
+                </equals>
+            </and>
+        </condition>
+        
+        <attach>world</attach>
+        <placer>
+            <type>point</type>
+        </placer>
+        <shooter>
+            <theta-min-deg>89</theta-min-deg>
+            <theta-max-deg>91</theta-max-deg>
+            <phi-min-deg>-2</phi-min-deg>
+            <phi-max-deg> 2</phi-max-deg>
+            <speed-mps>
+                <value>3.2</value>
+                <spread>2.5</spread>
+            </speed-mps>
+            <rotation-speed>
+                <x-min-deg-sec>0</x-min-deg-sec>
+                <y-min-deg-sec>0</y-min-deg-sec>
+                <z-min-deg-sec>0</z-min-deg-sec>
+                <x-max-deg-sec>0</x-max-deg-sec>
+                <y-max-deg-sec>0</y-max-deg-sec>
+                <z-max-deg-sec>0</z-max-deg-sec>
+            </rotation-speed>
+        </shooter>
+        <counter>
+            <particles-per-sec>
+                <value>20</value>
+                <spread>3</spread>
+            </particles-per-sec>
+        </counter>
+        <particle>
+            <start>
+                <color>
+                    <red><value>1</value></red>
+                    <green><value>1</value></green>
+                    <blue><value>1</value></blue>
+                    <alpha><value>1</value></alpha>
+                </color>
+                <size>
+                    <value>0.5</value>
+                </size>
+            </start>
+            <end>
+                <color>
+                    <red><value>1</value></red>
+                    <green><value>1</value></green>
+                    <blue><value>1</value></blue>
+                    <alpha><value>0.4</value></alpha>
+                </color>
+                <size>
+                    <value>3.0</value>
+                </size>
+            </end>
+            <life-sec>
+                <value>7</value>
+            </life-sec>
+            <mass-kg>0.35</mass-kg>
+            <radius-m>0.40</radius-m>
+        </particle>
+        <program>
+            <fluid>air</fluid>
+            <gravity>true</gravity>
+            <wind>true</wind>
+        </program>
+    </particlesystem>
 </PropertyList>

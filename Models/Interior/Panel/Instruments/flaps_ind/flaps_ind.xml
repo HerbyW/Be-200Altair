@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!--
-        from TU154b
+        from IL-76TD
     ###################################################################################
     Antonov-Aircrafts and SpaceShuttle :: Herbert Wagner November2014-March2015
     Development is ongoing, see latest version: www.github.com/HerbyW
@@ -60,13 +60,11 @@
   <object-name>block1</object-name>
   <property>controls/flight/flaps</property>
   <interpolation>
-   <entry><ind> 0.0</ind><dep>  -65</dep></entry> 
-   <entry><ind> 0.17</ind><dep> -58</dep></entry>
-   <entry><ind> 0.34</ind><dep> -51</dep></entry>
-   <entry><ind> 0.5</ind><dep>  -38</dep></entry>
-   <entry><ind> 0.67</ind><dep> -25</dep></entry>
-   <entry><ind> 0.84</ind><dep> -15</dep></entry>
-   <entry><ind>    1</ind><dep>  -5</dep></entry>
+   <entry><ind>  0.0</ind><dep>    -68</dep></entry> 
+   <entry><ind> 0.25</ind><dep>  -45</dep></entry>
+   <entry><ind> 0.5</ind><dep>  -35</dep></entry>
+   <entry><ind> 0.75</ind><dep> -15</dep></entry>
+   <entry><ind> 1</ind><dep>  0</dep></entry>
   </interpolation>
   <center>
    <x-m>0.000</x-m>
@@ -85,13 +83,11 @@
   <object-name>block2</object-name>
   <property>controls/flight/flaps</property>
   <interpolation>
-   <entry><ind> 0.0</ind><dep>  -65</dep></entry> 
-   <entry><ind> 0.17</ind><dep> -58</dep></entry>
-   <entry><ind> 0.34</ind><dep> -51</dep></entry>
-   <entry><ind> 0.5</ind><dep>  -38</dep></entry>
-   <entry><ind> 0.67</ind><dep> -25</dep></entry>
-   <entry><ind> 0.84</ind><dep> -15</dep></entry>
-   <entry><ind>    1</ind><dep>  -5</dep></entry>
+   <entry><ind>  0.0</ind><dep>    -68</dep></entry> 
+   <entry><ind> 0.25</ind><dep>  -45</dep></entry>
+   <entry><ind> 0.5</ind><dep>  -35</dep></entry>
+   <entry><ind>0.75</ind><dep>  -15</dep></entry>
+   <entry><ind> 1</ind><dep>  0</dep></entry>
   </interpolation>
   <center>
    <x-m>0.000</x-m>
@@ -110,8 +106,11 @@
   <object-name>block3</object-name>
   <property>controls/flight/flaps</property>
   <interpolation>
-   <entry><ind>  0.0</ind><dep>    -75</dep></entry>  
-   <entry><ind> 1.0</ind><dep>  -74</dep></entry>
+   <entry><ind>  0.0</ind><dep>    -68</dep></entry>  
+   <entry><ind> 0.25</ind><dep>  -50</dep></entry>  
+   <entry><ind> 0.5</ind><dep>  -32</dep></entry>
+   <entry><ind> 0.75</ind><dep> -19</dep></entry>
+   <entry><ind> 1</ind><dep>  -5</dep></entry>
   </interpolation>
   <center>
    <x-m>0.000</x-m>
@@ -130,8 +129,11 @@
   <object-name>block4</object-name>
   <property>controls/flight/flaps</property>
   <interpolation>
-   <entry><ind>  0.0</ind><dep>    -75</dep></entry>  
-   <entry><ind> 1.0</ind><dep>  -74</dep></entry>
+   <entry><ind>  0.0</ind><dep>    -68</dep></entry>  
+   <entry><ind> 0.25</ind><dep>  -50</dep></entry>  
+   <entry><ind> 0.5</ind><dep>  -32</dep></entry>
+   <entry><ind> 0.75</ind><dep> -19</dep></entry>
+   <entry><ind> 1</ind><dep>  -5</dep></entry>
   </interpolation>
   <center>
    <x-m>0.000</x-m>

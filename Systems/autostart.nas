@@ -1,5 +1,5 @@
 #
-# Autostart for TU-95MR
+# Autostart for Be-200
 #
 #    ###################################################################################
 #    Antonov-Aircrafts and SpaceShuttle :: Herbert Wagner November2014-March2015
@@ -68,6 +68,9 @@ setlistener("/controls/electric/battery-switch", func
         setprop("/controls/lighting/nav-lights", 0);
 	setprop("/controls/lighting/beacon", 0);
 	setprop("/controls/lighting/strobe", 0);
+	setprop("/controls/switches/headlight-mode",1);
+    setprop("/sim/multiplay/generic/int[10]",0);
+    setprop("/sim/multiplay/generic/int[18]",0);
 	
 	setprop("sim/messages/copilot", "Main power and lights are off");
 	

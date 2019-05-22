@@ -136,11 +136,11 @@
                     <independentVar lookup="row" >gear/unit[0]/wheel-speed-fps</independentVar>
                     <tableData>
                                         0       1
-			 0.0           15      55
+		            	 0.0           15      55
                         30.0           15      55
                         40.0           10      35
                         45.0            8      25
-			60.0            5      15
+		            	60.0            5      15
                     </tableData>
                 </table>
                 <output>fcs/steer-pos-deg</output>

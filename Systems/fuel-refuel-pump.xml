@@ -14,7 +14,7 @@
 	<channel name="Tank Capacity">
 	    
 	    <switch name="systems/tanks/tank_wings">
-                <default value="11360"/>
+                <default value="9315"/>
                 <test logic="OR" value="3000">
                     /sim/model/waterloading == 1
 		    fcs/water-tank-capacity gt 1
@@ -24,8 +24,8 @@
             </switch>
 	    
 	    <switch name="systems/tanks/tank_center">
-                <default value="9000"/>
-                <test logic="OR" value="3000">
+                <default value="4000"/>
+                <test logic="OR" value="3480">
                     /sim/model/waterloading == 1
 		    fcs/water-tank-capacity gt 1
                 </test>
@@ -292,7 +292,7 @@
 		<input>inertia/pointmass-weight-lbs[4]</input>
 		<clipto>
                     <min>0</min>
-                    <max>40720</max>
+                    <max>26630</max>
                 </clipto>
             </summer>
 	    

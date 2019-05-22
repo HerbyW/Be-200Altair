@@ -55,7 +55,7 @@
 	  <desc>Nose Wheel Steering</desc>
 	</key>
 <text>
-WATER BOMBER Be-200 Altair Version: 3.0.2 by Herbert Wagner (HerbyW) 2015-2018
+WATER BOMBER Be-200 Altair Version: 3.1.0 by Herbert Wagner (HerbyW) 2015-2019
 
 Press s for autostart.
 
@@ -107,7 +107,22 @@ Additional rudder-function in water.
 
 All animations in multiplayer!
 
-Have fun! HerbyW 2016
+Have fun! HerbyW 2016-2019, latest version https://github.com/HerbyW/
+
+Startgewicht max. 37.200 kg = 82011 lbs von Land
+                       43.000 kg = 94798 lbs von Wasser
+                  
+Hoechstgeschwindigkeit 750 km/h in 7.000 m
+Reisegeschwindigkeit             550-610 km/h
+Landegeschwindigkeit                   185 km/h
+Startgeschwindigkeit                     220 km/h
+Geschwindigkeit zur Wasseraufnahme 160-190 km/h
+
+Landestrecke  1.050 m Land  1.300 m Wasser
+Startstrecke       700 m Land  1.000 m Wasser
+Dienstgipfelhoehe                           8.000 m
+Reichweite mit 7,5 t Last 1.700 km
+Überführungsreichweite 3.850 km
 </text>
 
 </PropertyList>

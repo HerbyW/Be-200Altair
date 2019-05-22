@@ -21,7 +21,7 @@
                 <default value="1"/>
                 <test  logic="AND" value="0">
                     environment/terrain-solid == 0                    
-                    position/h-agl-ft  LT 12
+                    position/h-agl-ft  LT 12.35
                 </test>
 	</switch>
     </channel>

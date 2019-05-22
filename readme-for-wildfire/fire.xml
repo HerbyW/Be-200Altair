@@ -42,7 +42,7 @@
   <counter>
    <particles-per-sec>
     <value>0.1</value>
-    <spread>10</spread>
+    <spread>1</spread>
    </particles-per-sec>
   </counter>
 

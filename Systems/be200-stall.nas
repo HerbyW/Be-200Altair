@@ -1,6 +1,7 @@
 ## Learjet 35-A, stall and overspeed warning
 ## PH-JBO 20120130p
-# modified by Herbert Wagner for Be-200 Altair 12/2016
+# modified by Herbert Wagner for Be-200 Altair 12/2016-2019
+# Slats are now also included
 
 var aoaStall = 15;
 setprop("/instrumentation/alerts/aoaStall",15);
@@ -10,7 +11,7 @@ var warning = func {
   
   ## get variables
   var aoa = getprop("/orientation/alpha-deg");
-  var flaps = getprop("/controls/flight/flaps") * -4;
+  var flaps = getprop("/controls/flight/flaps") * -2;
   var gear = getprop("/controls/gear/gear-down") * -0.75;
   var stalling = 0;
   var gearalt = getprop("/position/altitude-agl-ft");

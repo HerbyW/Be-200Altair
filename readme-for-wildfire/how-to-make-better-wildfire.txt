@@ -1,6 +1,6 @@
-By HerbyW 10-2015
+By HerbyW 11-2018
  
-For Version 3.4.0 and 3.4.1 of Flightgear:
+For Version 3.4.0 and 3.4.1 and 2016.x.x and 2017.x.x and 2018.x.x of Flightgear:
 
 Copy
      wildfire.nas
@@ -13,9 +13,10 @@ Copy
                         >>>>>>into fgdata/Models/Effects/Wildfire
                         
 The nas-file will give you some information from the copilot: If there is a fire around you and if you have deleted it.
+My change is very little: only one message to the copilot in line: 904
 
 The 3 other files make the wildfire a little bit less consuming your framerate,
-so that it should be possible to fight fire until 20 fires are comming up,
+so that it should be possible to fight fire until 120 fires are comming up,
 then you have to deactivate the wildfire settings and enable them again.
 
 Maybe in the future I try to adjust the nas-file to a much more less consuming version.

@@ -2,7 +2,7 @@
 
 <!--
         
-    HerbyW 2015
+    HerbyW 2015-2019
 
 -->
 
@@ -12,7 +12,7 @@
 <channel name="gear position">
   
 <switch  name="gear unit z-position0">
-                <default value="-209.448819216"/>
+                <default value="-208.748819216"/>
                 <test  logic="AND" value="-110">
                     simulation/terrain_sw == 0
                 </test>
@@ -20,7 +20,7 @@
 </switch>
 
 <switch  name="gear unit z-position1">
-                <default value="-211.811023944"/>
+                <default value="-207.411023944"/>
                 <test  logic="AND" value="-112">
                     simulation/terrain_sw == 0
                 </test>
@@ -28,7 +28,7 @@
 </switch>
 
 <switch  name="gear unit z-position2">
-                <default value="-211.811023944"/>
+                <default value="-207.411023944"/>
                 <test  logic="AND" value="-112">
                     simulation/terrain_sw == 0
                 </test>

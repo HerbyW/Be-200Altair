@@ -1,150 +1,156 @@
 <?xml version="1.0"?>
 
 <PropertyList>
-  
+    
     <gear>
-      <gear n="0">
-	<tyre-smoke type="int">0</tyre-smoke>
-	<sprayspeed-ms type="double">0</sprayspeed-ms>
-	<spray-density type="double">0</spray-density>
-	<caster-angle-deg-damped type="double">0</caster-angle-deg-damped>
-      </gear>
-      <gear n="1">
-	<tyre-smoke type="int">0</tyre-smoke>
-	<sprayspeed-ms type="double">0</sprayspeed-ms>
-	<spray-density type="double">0</spray-density>
-      </gear>
-      <gear n="2">
-	<tyre-smoke type="int">0</tyre-smoke>
-	<sprayspeed-ms type="double">0</sprayspeed-ms>
-	<spray-density type="double">0</spray-density>
-      </gear>
-      
+        <gear n="0">
+            <tyre-smoke type="int">0</tyre-smoke>
+            <sprayspeed-ms type="double">0</sprayspeed-ms>
+            <spray-density type="double">0</spray-density>
+            <caster-angle-deg-damped type="double">0</caster-angle-deg-damped>
+        </gear>
+        <gear n="1">
+            <tyre-smoke type="int">0</tyre-smoke>
+            <sprayspeed-ms type="double">0</sprayspeed-ms>
+            <spray-density type="double">0</spray-density>
+        </gear>
+        <gear n="2">
+            <tyre-smoke type="int">0</tyre-smoke>
+            <sprayspeed-ms type="double">0</sprayspeed-ms>
+            <spray-density type="double">0</spray-density>
+        </gear>
+        
     </gear>
     
     <scenery><share-events type="bool">true</share-events></scenery>
     
-    <fdm><jsbsim><fcs><water-intake-cmd-norm type="int">0</water-intake-cmd-norm></fcs></jsbsim></fdm>
-      
-      <instrumentation>
-	  
-	  <dme n="0">
-	    <frequencies>
-	      <source type="string">/instrumentation/dme[0]/frequencies/selected-mhz</source>
-	    </frequencies>
-	    <switch-position n="0" type="int">0</switch-position>
-	    <switch-position n="1" type="int">0</switch-position>
-	    <switch-position n="2" type="int">0</switch-position>
-	    <switch-position n="3" type="int">0</switch-position>
-	    <serviceable type="bool">true</serviceable>
-	  </dme>
-	  <dme n="1">
-	    <frequencies>
-	      <source type="string">/instrumentation/dme[1]/frequencies/selected-mhz</source>
-	    </frequencies>
-	    <switch-position n="0" type="int">0</switch-position>
-	    <switch-position n="1" type="int">0</switch-position>
-	    <switch-position n="2" type="int">0</switch-position>
-	    <switch-position n="3" type="int">0</switch-position>
-	    <serviceable type="bool">true</serviceable>
-	  </dme>
-	  
-	  <inst-vertical-speed-indicator>
-	    <serviceable type="bool">true</serviceable>
-	  </inst-vertical-speed-indicator>
-	  <altimeter>
-	    <decision-height type="double">0</decision-height>
-	    <setting-hapa type="double">0</setting-hapa>
-	  </altimeter>
-	  <airspeed-indicator>
-	    <index-marker type="double">100</index-marker>
-	  </airspeed-indicator>
-	  
-	  <drift type="double">0</drift>
-	  
-	  <heading-indicator n="0">
-	    <serviceable type="int">0</serviceable>
-	  </heading-indicator>
-	  
-	  <adf n="0">
-	    <mode>adf</mode>
-	    <serviceable type="bool">false</serviceable>
-	    <frequencies>
-	      <selected-khz type="int">490</selected-khz>  <!-- NDB "DVI" (Donaueschingen) -->
-	      <standby-khz type="int">401</standby-khz>    <!-- EDTM ancient military airbase -->
-	    </frequencies>
-	    <error-deg type="double">0</error-deg>
-	    <power-btn type="bool">false</power-btn>
-	    <operable type="bool">true</operable>
-	    <volume type="double">0.10</volume>
-	  </adf>
-	  
-	  <adf n="1">  
-	    <mode>adf</mode>  
-	    <serviceable type="bool">false</serviceable>
-	    <frequencies>
-	      <selected-khz type="int">0</selected-khz>  <!--442 EDNY near the lake of constance -->
-	      <standby-khz type="int">0</standby-khz>    <!-- 473 EDSN ancient military airbase -->
-	    </frequencies>
-	    <error-deg type="double">0</error-deg>
-	    <power-btn type="bool">false</power-btn>
-	    <operable type="bool">true</operable>
-	    <volume type="double">0.10</volume>
-	    <indicated-bearing-deg type="double">90</indicated-bearing-deg>
-	  </adf>
-	  
-	  <nav n="0">
-	    
-	    <volume type="double">0.10</volume>
-	    <radials>
-	      <reciprocal-radial-deg type="double">90</reciprocal-radial-deg>    
-	    </radials>
-	    <power-btn type="bool">false</power-btn>
-	    <serviceable type="bool">false</serviceable>
-	    <operable type="bool">false</operable>  
-	  </nav>
-	  
-	  <nav n="1">
-	    
-	    <volume type="double">0.10</volume>
-	    <radials>
-	      <reciprocal-radial-deg type="double">90</reciprocal-radial-deg>
-	    </radials>
-	    <power-btn type="bool">false</power-btn>
-	    <serviceable type="bool">false</serviceable>
-	    <operable type="bool">false</operable>  
-	  </nav>
-	  
-	  <iku>  
-	    <heading-deg-1 type="double">90</heading-deg-1>
-	    <heading-deg-2 type="double">90</heading-deg-2>
-	  </iku>
-	  
-	  <transponder>  
-	    <serviceable type="bool">false</serviceable>
-	  </transponder>
-	  
-	  <ushdb><compass type="double">0</compass></ushdb>
-	  <mapcase><page type="int">1</page></mapcase>
-	  
-	  <!-- B707 Stopwatch  -->
-	  <stopwatch>
-	    <running type="bool">0</running>
-	    <btn-mode type="bool">0</btn-mode>
-	    <btn-reset type="bool">0</btn-reset>
-	    <btn-start-stop type="bool">0</btn-start-stop>
-	    <flight-time>
-	      <start-time type="double">0</start-time>
-	      <accu type="double">0</accu>
-	      <total type="double">0</total>
-	      <hours type="int">0</hours>
-	      <minutes type="int">0</minutes>
-	      <seconds type="int">0</seconds>
-	    </flight-time>
-	  </stopwatch>
-	  
-	  </instrumentation>
-      
-      
-      
-      </PropertyList>
+    <fdm>
+        <jsbsim>
+            <fcs>
+                <water-intake-cmd-norm type="int">0</water-intake-cmd-norm>
+            </fcs>
+        </jsbsim>
+    </fdm>
+    
+    <instrumentation>
+        
+        <dme n="0">
+            <frequencies>
+                <source type="string">/instrumentation/dme[0]/frequencies/selected-mhz</source>
+            </frequencies>
+            <switch-position n="0" type="int">0</switch-position>
+            <switch-position n="1" type="int">0</switch-position>
+            <switch-position n="2" type="int">0</switch-position>
+            <switch-position n="3" type="int">0</switch-position>
+            <serviceable type="bool">true</serviceable>
+        </dme>
+        <dme n="1">
+            <frequencies>
+                <source type="string">/instrumentation/dme[1]/frequencies/selected-mhz</source>
+            </frequencies>
+            <switch-position n="0" type="int">0</switch-position>
+            <switch-position n="1" type="int">0</switch-position>
+            <switch-position n="2" type="int">0</switch-position>
+            <switch-position n="3" type="int">0</switch-position>
+            <serviceable type="bool">true</serviceable>
+        </dme>
+        
+        <inst-vertical-speed-indicator>
+            <serviceable type="bool">true</serviceable>
+        </inst-vertical-speed-indicator>
+        <altimeter>
+            <decision-height type="double">0</decision-height>
+            <setting-hapa type="double">0</setting-hapa>
+        </altimeter>
+        <airspeed-indicator>
+            <index-marker type="double">100</index-marker>
+        </airspeed-indicator>
+        
+        <drift type="double">0</drift>
+        
+        <heading-indicator n="0">
+            <serviceable type="int">0</serviceable>
+        </heading-indicator>
+        
+        <adf n="0">
+            <mode>adf</mode>
+            <serviceable type="bool">false</serviceable>
+            <frequencies>
+                <selected-khz type="int">490</selected-khz>  <!-- NDB "DVI" (Donaueschingen) -->
+                <standby-khz type="int">401</standby-khz>    <!-- EDTM ancient military airbase -->
+            </frequencies>
+            <error-deg type="double">0</error-deg>
+            <power-btn type="bool">false</power-btn>
+            <operable type="bool">true</operable>
+            <volume type="double">0.10</volume>
+        </adf>
+        
+        <adf n="1">  
+            <mode>adf</mode>  
+            <serviceable type="bool">false</serviceable>
+            <frequencies>
+                <selected-khz type="int">0</selected-khz>  <!--442 EDNY near the lake of constance -->
+                <standby-khz type="int">0</standby-khz>    <!-- 473 EDSN ancient military airbase -->
+            </frequencies>
+            <error-deg type="double">0</error-deg>
+            <power-btn type="bool">false</power-btn>
+            <operable type="bool">true</operable>
+            <volume type="double">0.10</volume>
+            <indicated-bearing-deg type="double">90</indicated-bearing-deg>
+        </adf>
+        
+        <nav n="0">
+            
+            <volume type="double">0.10</volume>
+            <radials>
+                <reciprocal-radial-deg type="double">90</reciprocal-radial-deg>    
+            </radials>
+            <power-btn type="bool">false</power-btn>
+            <serviceable type="bool">false</serviceable>
+            <operable type="bool">false</operable>  
+        </nav>
+        
+        <nav n="1">
+            
+            <volume type="double">0.10</volume>
+            <radials>
+                <reciprocal-radial-deg type="double">90</reciprocal-radial-deg>
+            </radials>
+            <power-btn type="bool">false</power-btn>
+            <serviceable type="bool">false</serviceable>
+            <operable type="bool">false</operable>  
+        </nav>
+        
+        <iku>  
+            <heading-deg-1 type="double">90</heading-deg-1>
+            <heading-deg-2 type="double">90</heading-deg-2>
+        </iku>
+        
+        <transponder>  
+            <serviceable type="bool">false</serviceable>
+        </transponder>
+        
+        <ushdb><compass type="double">0</compass></ushdb>
+        <mapcase><page type="int">1</page></mapcase>
+        
+        <!-- B707 Stopwatch  -->
+        <stopwatch>
+            <running type="bool">0</running>
+            <btn-mode type="bool">0</btn-mode>
+            <btn-reset type="bool">0</btn-reset>
+            <btn-start-stop type="bool">0</btn-start-stop>
+            <flight-time>
+                <start-time type="double">0</start-time>
+                <accu type="double">0</accu>
+                <total type="double">0</total>
+                <hours type="int">0</hours>
+                <minutes type="int">0</minutes>
+                <seconds type="int">0</seconds>
+            </flight-time>
+        </stopwatch>
+        
+    </instrumentation>
+    
+    
+    
+</PropertyList>

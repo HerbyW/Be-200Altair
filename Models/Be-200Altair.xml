@@ -1,891 +1,1150 @@
 <?xml version="1.0"?>
 <!--
-      
-HerbyW 2015-2016
+
+HerbyW 2015-2019
 
 -->
 
 
 <PropertyList>
-
-    <path>be200-40.ac</path>
-
+    
+    <path>be200-46.ac</path>
+    
     <!--Gears-->
-  <model>        
-    <path>Aircraft/Be-200Altair/Models/Be-200Gears.xml</path>
-          <offsets>
-	    <x-m> 0.4 </x-m>
-	    <y-m> 0 </y-m>
-	    <z-m> 0.0 </z-m>	    
-	  </offsets>
-  </model>  
-  
-      <!--Liveboat-->
-   <model>        
-    <path>Aircraft/Be-200Altair/Models/Liveboat/D_Class_IRB-onboard.xml</path>
-          <offsets>
-	    <x-m> -7.5 </x-m>
-	    <y-m> 0.0 </y-m>
-	    <z-m> -3.2 </z-m>            
-	    <pitch-deg>-0.5</pitch-deg>
-	  </offsets>
-  </model>    
-      
-  <model>
-    <name>D_Class</name>
-    <path>Aircraft/Be-200Altair/Models/Liveboat/D_Class_IRB.xml</path>
-          <offsets>
-	    <x-m> -11.5 </x-m>
-	    <y-m> 2.85 </y-m>
-	    <z-m> -3.5 </z-m>            
-	    <pitch-deg>-0.5</pitch-deg>
-	  </offsets>
-  </model>
-  
-  <animation>
-    <object-name>D_Class</object-name>
-    <type>rotate</type>
-    <property>orientation/roll-deg</property>
-    <factor>1.0</factor>
-    <center>
-      <x-m>0.0</x-m>
-      <y-m>0.0</y-m>
-      <z-m>0.0</z-m>
-    </center>
-    <axis>
-      <x>1</x>
-      <y>0</y>
-      <z>0</z>
-    </axis>
-  </animation> 
-  
-  <model>        
-    <path>Aircraft/Be-200Altair/Models/fueltruck/F_T_short_VolvoFM-set.xml</path>
-    <condition>
-      <greater-than>
-	<property>sim/multiplay/generic/float[19]</property>
-	<value>0</value>
-      </greater-than>
-    </condition>
+    <model>        
+        <path>Aircraft/Be-200Altair/Models/Be-200Gears.xml</path>
+        <offsets>
+            <x-m> 0.4 </x-m>
+            <y-m> 0 </y-m>
+            <z-m> 0.0 </z-m>	    
+        </offsets>
+    </model>  
     
-          <offsets>
-	    <x-m> -2.5 </x-m>
-	    <y-m> 17.35 </y-m>
-	    <z-m> -5.3 </z-m>            
-	    <pitch-deg>0</pitch-deg>
-	  </offsets>
-  </model> 
-  
-  <model>        
-    <path>Aircraft/Be-200Altair/Models/fueltruck/tube.xml</path>
-    <condition>
-      <greater-than>
-	<property>sim/multiplay/generic/float[19]</property>
-	<value>0</value>
-      </greater-than>
-    </condition>
-          <offsets>
-	    <x-m> -3.5 </x-m>
-	    <y-m> -2.35 </y-m>
-	    <z-m> -2.5 </z-m>            
-	    <pitch-deg>0</pitch-deg>
-	  </offsets>
-  </model>
-
-  
+    <!--Liveboat-->
+    <model>        
+        <path>Aircraft/Be-200Altair/Models/Liveboat/D_Class_IRB-onboard.xml</path>
+        <offsets>
+            <x-m> -7.5 </x-m>
+            <y-m> 0.0 </y-m>
+            <z-m> -3.2 </z-m>            
+            <pitch-deg>-0.5</pitch-deg>
+        </offsets>
+    </model>    
+    
+    <model>
+        <name>D_Class</name>
+        <path>Aircraft/Be-200Altair/Models/Liveboat/D_Class_IRB.xml</path>
+        <offsets>
+            <x-m> -11.5 </x-m>
+            <y-m> 2.85 </y-m>
+            <z-m> -3.5 </z-m>            
+            <pitch-deg>-0.5</pitch-deg>
+        </offsets>
+    </model>
+    
+    <animation>
+        <object-name>D_Class</object-name>
+        <type>rotate</type>
+        <property>orientation/roll-deg</property>
+        <factor>1.0</factor>
+        <center>
+            <x-m>0.0</x-m>
+            <y-m>0.0</y-m>
+            <z-m>0.0</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation> 
+    
+    <model>        
+        <path>Aircraft/Be-200Altair/Models/fueltruck/F_T_short_VolvoFM-set.xml</path>
+        <condition>
+            <greater-than>
+                <property>sim/multiplay/generic/float[19]</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+        
+        <offsets>
+            <x-m> -2.5 </x-m>
+            <y-m> 17.35 </y-m>
+            <z-m> -5.3 </z-m>            
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model> 
+    
+    <model>        
+        <path>Aircraft/Be-200Altair/Models/fueltruck/tube.xml</path>
+        <condition>
+            <greater-than>
+                <property>sim/multiplay/generic/float[19]</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+        <offsets>
+            <x-m> -3.5 </x-m>
+            <y-m> -2.35 </y-m>
+            <z-m> -2.5 </z-m>            
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+    
+    
     <!-- Interior -->
-  <model>
-<path>Aircraft/Be-200Altair/Models/Interior/Panel/panel.xml</path>
-<offsets>
-<x-m> -15.98 </x-m>
-<y-m>   0.00 </y-m>
-<z-m>  -1.72 </z-m>
-</offsets>
-</model>
-  
-  <animation>
-    <object-name>windowsfront</object-name>
-    <object-name>windowsleft</object-name>
-</animation>
-
-<animation>
-<type>noshadow</type>
-    <object-name>windowsfront</object-name>
-    <object-name>windowsleft</object-name>
-</animation>
-
-<animation>
-    <type>material</type>
-       <object-name>windowsfront</object-name>       
-       <emission>
-    <factor-prop>sim/multiplay/generic/int[5]</factor-prop>
-      <red>   0.15 </red>
-      <green> 0.5 </green>
-      <blue>  0.15 </blue>
-    </emission>
-</animation>
-
-<animation>
-    <type>material</type>       
-       <object-name>windowsleft</object-name>
-       <emission>
-    <factor-prop>sim/multiplay/generic/int[5]</factor-prop>
-      <red>   0.15 </red>
-      <green> 0.5 </green>
-      <blue>  0.15 </blue>
-    </emission>
-</animation>
-  
-<animation>
-   <type>noshadow</type>
-    <object-name>windowsfront</object-name>
-    <object-name>windowsleft</object-name>
-  </animation>
-
-  <!-- working for Rembrandt -->
-      
-  <effect>
-    <inherits-from>Effects/model-transparent</inherits-from>
-    <condition>
-      <property>sim/rendering/rembrandt/enabled</property>
-    </condition>
-    <object-name>windowsfront</object-name>
-    <object-name>windowsleft</object-name>
-  </effect>
-  
-  <animation>
-    <object-name>windowsfront</object-name>
-    <object-name>windowsleft</object-name>
-</animation>  
-  
-
-<animation>
-    
-    <object-name>Box01</object-name>
-    <object-name>Box02</object-name>    
-    <object-name>Box04</object-name>
-    <object-name>Box05</object-name>
-    <object-name>Box06</object-name>
-    <object-name>Box07</object-name>
-    <object-name>Box08</object-name>
-    <object-name>Box09</object-name>
-    <object-name>Box10</object-name>
-    <object-name>Box11</object-name>
-    <object-name>Box12</object-name>
-    <object-name>Box13</object-name>
-    <object-name>Plane</object-name>
-    <object-name>Capsule01</object-name>
-    <object-name>Capsule02</object-name>
-    <object-name>Capsule03</object-name>
-    <object-name>ChamferBox</object-name>
-    <object-name>Line01</object-name>
-    <object-name>Line03</object-name>
-    <object-name>Line04</object-name>
-    <object-name>Sphere01</object-name>
-    <object-name>Sphere02</object-name>
-    <!--<object-name>Sphere01.001</object-name>
-    <object-name>Sphere02.001</object-name>-->
-    <object-name>door-left</object-name>
-    <object-name>door-left.001</object-name>
-    <object-name>geardoor-f-l</object-name>
-    <object-name>geardoor-f-r</object-name>
-    <object-name>gdll</object-name>
-    <object-name>gdrr</object-name>
-    <object-name>gdlr</object-name>
-    <object-name>gdrl</object-name>
-    <object-name>doorlo</object-name>
-    <object-name>doorlu</object-name>
-    <object-name>doorro</object-name>
-    <object-name>doorru</object-name>
-    
-  </animation>
-
-  <animation>
-    <type>material</type>
-    <object-name>Box01</object-name>
-    <object-name>Box02</object-name>    
-    <object-name>Box04</object-name>
-    <object-name>Box05</object-name>
-    <object-name>Box06</object-name>
-    <object-name>Box07</object-name>
-    <object-name>Box08</object-name>
-    <object-name>Box09</object-name>
-    <object-name>Box10</object-name>
-    <object-name>Box11</object-name>
-    <object-name>Box12</object-name>
-    <object-name>Box13</object-name>
-    <object-name>Plane</object-name>
-    <object-name>Capsule01</object-name>
-    <object-name>Capsule02</object-name>
-    <object-name>Capsule03</object-name>
-    <object-name>ChamferBox</object-name>
-    <object-name>Line01</object-name>
-    <object-name>Line03</object-name>
-    <object-name>Line04</object-name>
-    <object-name>Sphere01</object-name>
-    <object-name>Sphere02</object-name>
-    <!--<object-name>Sphere01.001</object-name>
-    <object-name>Sphere02.001</object-name>-->
-    <object-name>door-left</object-name>
-    <object-name>door-left.001</object-name>
-    <object-name>geardoor-f-l</object-name>
-    <object-name>geardoor-f-r</object-name>
-    <object-name>gdll</object-name>
-    <object-name>gdrr</object-name>
-    <object-name>gdlr</object-name>
-    <object-name>gdrl</object-name>
-    <object-name>doorlo</object-name>
-    <object-name>doorlu</object-name>
-    <object-name>doorro</object-name>
-    <object-name>doorru</object-name>
-    
-    <emission>
-      <factor-prop>sim/time/sun-angle-rad</factor-prop>
-      <red>   0.05 </red>
-      <green> 0.05 </green>
-      <blue>  0.05 </blue>
-    </emission>
-  </animation> 
-  
-  <animation>
-	<type>select</type>
-    <object-name>Capsule01.001</object-name>
-	<condition>
-    	<property>sim/current-view/internal</property>
-	</condition>
-</animation>
-
-  <sound>
-      <path>Aircraft/Be-200Altair/Sounds/Be-200-sound-MP.xml</path>
-  </sound>
-  
-  <!--Anker-->
-  <model>        
-    <path>Aircraft/Be-200Altair/Models/Ankor.xml</path>
-    <offsets>
-	    <x-m> 5 </x-m>
-	    <y-m> 0 </y-m>
-	    <z-m> -1.5 </z-m>
-	    <pitch-deg>0.1</pitch-deg>
-	    <heading-deg>180</heading-deg>
-	  </offsets>
-  </model>
-
-  <!--Waterdropping-->
-  <model>        
-    <path>Aircraft/Be-200Altair/Models/Effects/Waterdropping/water-bomb.xml</path>
-      <offsets>
-	<x-m> 3 </x-m>
-	<y-m> 0 </y-m>
-	<z-m> -7 </z-m>
-	<pitch-deg>-5</pitch-deg>
-      </offsets>
+    <model>
+        <path>Aircraft/Be-200Altair/Models/Interior/Panel/panel.xml</path>
+        <offsets>
+            <x-m> -15.98 </x-m>
+            <y-m>   0.00 </y-m>
+            <z-m>  -1.72 </z-m>
+        </offsets>
     </model>
     
-    <model>        
-    <path>Aircraft/Be-200Altair/Models/Effects/Waterdropping/water-bomb-ru1.xml</path>
-      <offsets>
-	<x-m> 3 </x-m>
-	<y-m> 0 </y-m>
-	<z-m> -7 </z-m>
-	<pitch-deg>-5</pitch-deg>
-      </offsets>
-    </model>
-    <model>        
-    <path>Aircraft/Be-200Altair/Models/Effects/Waterdropping/water-bomb-ru2.xml</path>
-      <offsets>
-	<x-m> 3 </x-m>
-	<y-m> 0 </y-m>
-	<z-m> -7 </z-m>
-	<pitch-deg>-5</pitch-deg>
-      </offsets>
-    </model>
-    <model>        
-    <path>Aircraft/Be-200Altair/Models/Effects/Waterdropping/water-bomb-ru3.xml</path>
-      <offsets>
-	<x-m> 3 </x-m>
-	<y-m> 0 </y-m>
-	<z-m> -7 </z-m>
-	<pitch-deg>-5</pitch-deg>
-      </offsets>
-    </model>
-  
-  <!--Floats-->
-  <animation>
-    <type>select</type>
-    <object-name>Capsule02</object-name>
-   <object-name>Capsule03</object-name>
-    <condition>
-      
-        <property>sim/multiplay/generic/float[7]</property>
+    <animation>
+        <object-name>windowsfront</object-name>
+        <object-name>windowsleft</object-name>
+    </animation>
+    
+    <animation>
+        <type>noshadow</type>
+        <object-name>windowsfront</object-name>
+        <object-name>windowsleft</object-name>
+    </animation>
+    
+    <animation>
+        <type>material</type>
+        <object-name>windowsfront</object-name>       
+        <emission>
+            <factor-prop>sim/multiplay/generic/int[5]</factor-prop>
+            <red>   0.15 </red>
+            <green> 0.5 </green>
+            <blue>  0.15 </blue>
+        </emission>
+    </animation>
+    
+    <animation>
+        <type>material</type>       
+        <object-name>windowsleft</object-name>
+        <emission>
+            <factor-prop>sim/multiplay/generic/int[5]</factor-prop>
+            <red>   0.15 </red>
+            <green> 0.5 </green>
+            <blue>  0.15 </blue>
+        </emission>
+    </animation>
+    
+    <animation>
+        <type>noshadow</type>
+        <object-name>windowsfront</object-name>
+        <object-name>windowsleft</object-name>
+    </animation>
+    
+    <!-- working for Rembrandt -->
+    
+    <effect>
+        <inherits-from>Effects/model-transparent</inherits-from>
+        <condition>
+            <property>sim/rendering/rembrandt/enabled</property>
+        </condition>
+        <object-name>windowsfront</object-name>
+        <object-name>windowsleft</object-name>
+    </effect>
+    
+    <animation>
+        <object-name>windowsfront</object-name>
+        <object-name>windowsleft</object-name>
+    </animation>  
+    
+    
+    <animation>
         
-    </condition>
-  </animation>
-  
-  <!--Watereffects-->
-  <model>
-    <name>Effets</name>
-    <path>Aircraft/Be-200Altair/Models/Effects/Smoke/Effects.xml</path>
-  </model>
-  
-<!--Lights red green-->
-        <model>            
-            <path>Aircraft/Be-200Altair/Models/Lights/GreenLight.xml</path>
-            <offsets>
-                <x-m>3.0</x-m>
-                <y-m>16.32</y-m>
-                <z-m>-0.557</z-m>
-                <heading-deg>0</heading-deg>
-            </offsets>
-        </model>
-
-        <model>            
-            <path>Aircraft/Be-200Altair/Models/Lights/RedLight.xml</path>
-            <offsets>
-                <x-m>3.0</x-m>
-                <y-m>-16.42</y-m>
-                <z-m>-0.557</z-m>
-                <heading-deg>0</heading-deg>
-            </offsets>
-        </model>
-
+        <object-name>Box01</object-name>
+        <object-name>Box02</object-name>    
+        <object-name>Box04</object-name>
+        <object-name>Box05</object-name>
+        <object-name>Box06</object-name>
+        <object-name>Box07</object-name>
+        <object-name>Box08</object-name>
+        <object-name>Box09</object-name>
+        <object-name>Box10</object-name>
+        <object-name>Box11</object-name>
+        <object-name>Box12</object-name>
+        <object-name>Box13</object-name>
+        <object-name>Plane</object-name>
+        <object-name>Capsule01</object-name>
+        <object-name>Capsule02</object-name>
+        <object-name>Capsule03</object-name>
+        <object-name>ChamferBox</object-name>
+        <object-name>Line01</object-name>
+        <object-name>Line03</object-name>
+        <object-name>Line04</object-name>
+        <object-name>Sphere01</object-name>
+        <object-name>Sphere02</object-name>
+        <object-name>door-left</object-name>
+        <object-name>door-left.001</object-name>
+        <object-name>geardoor-f-l</object-name>
+        <object-name>geardoor-f-r</object-name>
+        <object-name>gdll</object-name>
+        <object-name>gdrr</object-name>
+        <object-name>gdlr</object-name>
+        <object-name>gdrl</object-name>
+        <object-name>doorlo</object-name>
+        <object-name>doorlu</object-name>
+        <object-name>doorro</object-name>
+        <object-name>doorru</object-name>
+        <object-name>SlatsR</object-name>
+        <object-name>SlatsL</object-name>
         
-<!--Lights beacon-->        
-        <model>            
-            <path>Aircraft/Be-200Altair/Models/Lights/beacon.xml</path>
-            <offsets>
-                <x-m>11.62</x-m>
-                <y-m>0</y-m>
-                <z-m>4.35</z-m>
-                <heading-deg>0</heading-deg>
-            </offsets>
-        </model>       
-	
-	<model>            
-            <path>Aircraft/Be-200Altair/Models/Lights/beacon.xml</path>
-            <offsets>
-                <x-m>2.31</x-m>
-                <y-m>0</y-m>
-                <z-m>-4.13</z-m>
-                <heading-deg>0</heading-deg>
-            </offsets>
-        </model>
-	
-<!--Lights white steady-->
-
-	 <model>            
-            <path>Aircraft/Be-200Altair/Models/Lights/WhiteLight.xml</path>
-            <offsets>
-                <x-m>17.07</x-m>
-                <y-m>0</y-m>
-                <z-m>3.91</z-m>
-                <heading-deg>0</heading-deg>
-            </offsets>
-        </model>
-
-<!--Lights strobes-->
-
-	<model>
-	  <path>Aircraft/Be-200Altair/Models/Lights/StrobeLight.xml</path>
-	  <offsets>
-	    <x-m>  13.55 </x-m>
-	    <y-m> 0.0 </y-m>
-	    <z-m>  -1.601 </z-m>
-	  </offsets>
-	</model>
-	
-	<model>
-	  <path>Aircraft/Be-200Altair/Models/Lights/StrobeLight.xml</path>
-	  <offsets>
-	    <x-m>3.20</x-m>
-                <y-m>-16.38</y-m>
-                <z-m>-0.157</z-m>
-	  </offsets>
-	</model>
-	
-	<model>
-	  <path>Aircraft/Be-200Altair/Models/Lights/StrobeLight.xml</path>
-	  <offsets>
-	    <x-m>3.20</x-m>
-                <y-m>16.38</y-m>
-                <z-m>-0.157</z-m>
-	  </offsets>
-	</model>
-
-  <!-- NEW   Taxi and Landing lights-->
- 
- <model>
-    <path>Aircraft/Be-200Altair/Models/Lights/be-200lights.xml</path>
-    <offsets>
-      <x-m> 0 </x-m>
-      <y-m> 0 </y-m>
-      <z-m> 0 </z-m>
-    </offsets>
-  </model>
-	
+    </animation>
+    
+    <animation>
+        <type>material</type>
+        <object-name>Box01</object-name>
+        <object-name>Box02</object-name>    
+        <object-name>Box04</object-name>
+        <object-name>Box05</object-name>
+        <object-name>Box06</object-name>
+        <object-name>Box07</object-name>
+        <object-name>Box08</object-name>
+        <object-name>Box09</object-name>
+        <object-name>Box10</object-name>
+        <object-name>Box11</object-name>
+        <object-name>Box12</object-name>
+        <object-name>Box13</object-name>
+        <object-name>Plane</object-name>
+        <object-name>Capsule01</object-name>
+        <object-name>Capsule02</object-name>
+        <object-name>Capsule03</object-name>
+        <object-name>ChamferBox</object-name>
+        <object-name>Line01</object-name>
+        <object-name>Line03</object-name>
+        <object-name>Line04</object-name>
+        <object-name>Sphere01</object-name>
+        <object-name>Sphere02</object-name>
+        <object-name>door-left</object-name>
+        <object-name>door-left.001</object-name>
+        <object-name>geardoor-f-l</object-name>
+        <object-name>geardoor-f-r</object-name>
+        <object-name>gdll</object-name>
+        <object-name>gdrr</object-name>
+        <object-name>gdlr</object-name>
+        <object-name>gdrl</object-name>
+        <object-name>doorlo</object-name>
+        <object-name>doorlu</object-name>
+        <object-name>doorro</object-name>
+        <object-name>doorru</object-name>
+        <object-name>SlatsR</object-name>
+        <object-name>SlatsL</object-name>
+        
+        <emission>
+            <factor-prop>sim/time/sun-angle-rad</factor-prop>
+            <red>   0.05 </red>
+            <green> 0.05 </green>
+            <blue>  0.05 </blue>
+        </emission>
+    </animation>
+    
+    <effect>
+        <inherits-from>Aircraft/Be-200Altair/Models/Effects/c182sreflect-uber_body</inherits-from>
+        <condition>
+            <not><property>/sim/rendering/rembrandt/enabled</property></not>
+        </condition>
+        <object-name>Box01</object-name>
+        <object-name>Box02</object-name>    
+        <object-name>Box04</object-name>
+        <object-name>Box05</object-name>
+        <object-name>Box06</object-name>
+        <object-name>Box07</object-name>
+        <object-name>Box08</object-name>
+        <object-name>Box09</object-name>
+        <object-name>Box10</object-name>
+        <object-name>Box11</object-name>
+        <object-name>Box12</object-name>
+        <object-name>Box13</object-name>
+        <object-name>Plane</object-name>
+        <object-name>Capsule01</object-name>
+        <object-name>Capsule02</object-name>
+        <object-name>Capsule03</object-name>
+        <object-name>ChamferBox</object-name>
+        <object-name>Line01</object-name>
+        <object-name>Line03</object-name>
+        <object-name>Line04</object-name>
+        <object-name>Sphere01</object-name>
+        <object-name>Sphere02</object-name>
+        <object-name>door-left</object-name>
+        <object-name>door-left.001</object-name>
+        <object-name>geardoor-f-l</object-name>
+        <object-name>geardoor-f-r</object-name>
+        <object-name>gdll</object-name>
+        <object-name>gdrr</object-name>
+        <object-name>gdlr</object-name>
+        <object-name>gdrl</object-name>
+        <object-name>doorlo</object-name>
+        <object-name>doorlu</object-name>
+        <object-name>doorro</object-name>
+        <object-name>doorru</object-name>
+        <object-name>SlatsR</object-name>
+        <object-name>SlatsL</object-name>
+    </effect>  
+    
+    <effect>
+        <inherits-from>Effects/model-combined-deferred</inherits-from>
+        <condition>
+            <property>/sim/rendering/rembrandt/enabled</property>
+        </condition>  
+        <object-name>Box01</object-name>
+        <object-name>Box02</object-name>    
+        <object-name>Box04</object-name>
+        <object-name>Box05</object-name>
+        <object-name>Box06</object-name>
+        <object-name>Box07</object-name>
+        <object-name>Box08</object-name>
+        <object-name>Box09</object-name>
+        <object-name>Box10</object-name>
+        <object-name>Box11</object-name>
+        <object-name>Box12</object-name>
+        <object-name>Box13</object-name>
+        <object-name>Plane</object-name>
+        <object-name>Capsule01</object-name>
+        <object-name>Capsule02</object-name>
+        <object-name>Capsule03</object-name>
+        <object-name>ChamferBox</object-name>
+        <object-name>Line01</object-name>
+        <object-name>Line03</object-name>
+        <object-name>Line04</object-name>
+        <object-name>Sphere01</object-name>
+        <object-name>Sphere02</object-name>
+        <object-name>door-left</object-name>
+        <object-name>door-left.001</object-name>
+        <object-name>geardoor-f-l</object-name>
+        <object-name>geardoor-f-r</object-name>
+        <object-name>gdll</object-name>
+        <object-name>gdrr</object-name>
+        <object-name>gdlr</object-name>
+        <object-name>gdrl</object-name>
+        <object-name>doorlo</object-name>
+        <object-name>doorlu</object-name>
+        <object-name>doorro</object-name>
+        <object-name>doorru</object-name>
+        <object-name>SlatsR</object-name>
+        <object-name>SlatsL</object-name>
+    </effect> 
+    
+    
+    
+    <animation>
+        <type>select</type>
+        <object-name>Capsule01.001</object-name>
+        <condition>
+            <property>sim/current-view/internal</property>
+        </condition>
+    </animation>
+    
+    <sound>
+        <path>Aircraft/Be-200Altair/Sounds/Be-200-sound-MP.xml</path>
+    </sound>
+    
+    <!--Anker-->
+    <model>        
+        <path>Aircraft/Be-200Altair/Models/Ankor.xml</path>
+        <offsets>
+            <x-m> 5 </x-m>
+            <y-m> 0 </y-m>
+            <z-m> -1.5 </z-m>
+            <pitch-deg>0.1</pitch-deg>
+            <heading-deg>180</heading-deg>
+        </offsets>
+    </model>
+    
+    <!--Waterdropping-->
+    <model>        
+        <path>Aircraft/Be-200Altair/Models/Effects/Waterdropping/water-bomb.xml</path>
+        <offsets>
+            <x-m> 3 </x-m>
+            <y-m> 0 </y-m>
+            <z-m> -7 </z-m>
+            <pitch-deg>-5</pitch-deg>
+        </offsets>
+    </model>
+    
+    <model>        
+        <path>Aircraft/Be-200Altair/Models/Effects/Waterdropping/water-bomb-ru1.xml</path>
+        <offsets>
+            <x-m> 3 </x-m>
+            <y-m> 0 </y-m>
+            <z-m> -7 </z-m>
+            <pitch-deg>-5</pitch-deg>
+        </offsets>
+    </model>
+    <model>        
+        <path>Aircraft/Be-200Altair/Models/Effects/Waterdropping/water-bomb-ru2.xml</path>
+        <offsets>
+            <x-m> 3 </x-m>
+            <y-m> 0 </y-m>
+            <z-m> -7 </z-m>
+            <pitch-deg>-5</pitch-deg>
+        </offsets>
+    </model>
+    <model>        
+        <path>Aircraft/Be-200Altair/Models/Effects/Waterdropping/water-bomb-ru3.xml</path>
+        <offsets>
+            <x-m> 3 </x-m>
+            <y-m> 0 </y-m>
+            <z-m> -7 </z-m>
+            <pitch-deg>-5</pitch-deg>
+        </offsets>
+    </model>
+    
+    <!--Floats-->
+    <animation>
+        <type>select</type>
+        <object-name>Capsule02</object-name>
+        <object-name>Capsule03</object-name>
+        <condition>
+            
+            <property>sim/multiplay/generic/float[7]</property>
+            
+        </condition>
+    </animation>
+    
+    <!--Watereffects-->
+    <!--Sillage coque centre-->
+    <model>
+        <name>CFlux</name>
+        <path>Aircraft/Be-200Altair/Models/Effects/Smoke/Cflux.xml</path>
+        
+        <offsets>
+            <x-m>11</x-m>
+            <y-m>0</y-m>
+            <z-m>-2.5</z-m>
+            <pitch-deg>90.5</pitch-deg>
+            <heading-deg>0</heading-deg>
+            <roll-deg>0</roll-deg>
+        </offsets>
+    </model>
+    <!--Sillage coque coté Gauche LINKS-->
+    <model>
+        <name>GFlux</name>
+        <path>Aircraft/Be-200Altair/Models/Effects/Smoke/Gflux.xml</path>
+        
+        <offsets>
+            <x-m>5</x-m>
+            <y-m>-1.2</y-m>
+            <z-m>-2.5</z-m>
+            <pitch-deg>90.5</pitch-deg>
+            <heading-deg>-0.3</heading-deg>
+            <roll-deg>0</roll-deg>
+        </offsets>
+    </model>
+    <!--Sillage coque coté Droit RECHTS-->
+    <model>
+        <name>DFlux</name>
+        <path>Aircraft/Be-200Altair/Models/Effects/Smoke/Dflux.xml</path>
+        
+        <offsets>
+            <x-m>5</x-m>
+            <y-m>1.2</y-m>
+            <z-m>-2.5</z-m>
+            <pitch-deg>90.5</pitch-deg>
+            <heading-deg>0.3</heading-deg>
+            <roll-deg>0</roll-deg>
+        </offsets>
+    </model>
+    
+    <!--Rear Spray-->
+    <model>
+        <name>Effet</name>
+        <path>Aircraft/Be-200Altair/Models/Effects/Smoke/jetdo.xml</path>
+        
+        <offsets>
+            <x-m>10</x-m>
+            <y-m>0</y-m>
+            <z-m>-1</z-m>
+            <pitch-deg>90.5</pitch-deg>
+            <heading-deg>0</heading-deg>
+            <roll-deg>0</roll-deg>
+        </offsets>
+    </model>
+    
+    
+    <!--Sillage Flotteur Gauche Schwimmer Links-->
+    <model>
+        <name>GFlux1</name>
+        <path>Aircraft/Be-200Altair/Models/Effects/Smoke/Gflux1.xml</path>
+        
+        <offsets>
+            <x-m>3.30</x-m>
+            <y-m>-13.10</y-m>
+            <z-m>-2.0</z-m>
+            <pitch-deg>90</pitch-deg>
+            <heading-deg>0</heading-deg>
+            <roll-deg>0</roll-deg>
+        </offsets>
+    </model>
+    
+    <!--Sillage Flotteur Droite Schwimmer Rechts-->
+    <model>
+        <name>DFlux1</name>
+        <path>Aircraft/Be-200Altair/Models/Effects/Smoke/Dflux1.xml</path>
+        
+        <offsets>
+            <x-m>3.30</x-m>
+            <y-m>13.10</y-m>
+            <z-m>-2.0</z-m>
+            <pitch-deg>90</pitch-deg>
+            <heading-deg>0</heading-deg>
+            <roll-deg>0</roll-deg>
+        </offsets>
+    </model>
+    
+    
+    
+    <animation>
+        <type>translate</type>
+        <object-name>CFlux</object-name>
+        <object-name>GFlux</object-name>
+        <object-name>DFlux</object-name>
+        <object-name>Effet</object-name>
+        <property>sim/multiplay/generic/float[6]</property>
+        <interpolation>
+            <entry>
+                <ind>0</ind>
+                <dep>-10</dep>
+            </entry>
+            <entry>
+                <ind>10</ind>
+                <dep>-10</dep>
+            </entry>
+            <entry>
+                <ind>15</ind>
+                <dep>0</dep>
+            </entry>
+        </interpolation>
+        <axis>
+            <x>0</x>
+            <y>0.0</y>
+            <z>1</z>
+        </axis>
+    </animation>
+    
+    <!--Lights red green-->
+    <model>            
+        <path>Aircraft/Be-200Altair/Models/Lights/GreenLight.xml</path>
+        <offsets>
+            <x-m>3.0</x-m>
+            <y-m>16.32</y-m>
+            <z-m>-0.557</z-m>
+            <heading-deg>0</heading-deg>
+        </offsets>
+    </model>
+    
+    <model>            
+        <path>Aircraft/Be-200Altair/Models/Lights/RedLight.xml</path>
+        <offsets>
+            <x-m>3.0</x-m>
+            <y-m>-16.42</y-m>
+            <z-m>-0.557</z-m>
+            <heading-deg>0</heading-deg>
+        </offsets>
+    </model>
+    
+    
+    <!--Lights beacon-->        
+    <model>            
+        <path>Aircraft/Be-200Altair/Models/Lights/beacon.xml</path>
+        <offsets>
+            <x-m>11.62</x-m>
+            <y-m>0</y-m>
+            <z-m>4.35</z-m>
+            <heading-deg>0</heading-deg>
+        </offsets>
+    </model>       
+    
+    <model>            
+        <path>Aircraft/Be-200Altair/Models/Lights/beacon.xml</path>
+        <offsets>
+            <x-m>2.31</x-m>
+            <y-m>0</y-m>
+            <z-m>-4.13</z-m>
+            <heading-deg>0</heading-deg>
+        </offsets>
+    </model>
+    
+    <!--Lights white steady-->
+    
+    <model>            
+        <path>Aircraft/Be-200Altair/Models/Lights/WhiteLight.xml</path>
+        <offsets>
+            <x-m>17.07</x-m>
+            <y-m>0</y-m>
+            <z-m>3.91</z-m>
+            <heading-deg>0</heading-deg>
+        </offsets>
+    </model>
+    
+    <!--Lights strobes-->
+    
+    <model>
+        <path>Aircraft/Be-200Altair/Models/Lights/StrobeLight.xml</path>
+        <offsets>
+            <x-m>  13.55 </x-m>
+            <y-m> 0.0 </y-m>
+            <z-m>  -1.601 </z-m>
+        </offsets>
+    </model>
+    
+    <model>
+        <path>Aircraft/Be-200Altair/Models/Lights/StrobeLight.xml</path>
+        <offsets>
+            <x-m>3.20</x-m>
+            <y-m>-16.38</y-m>
+            <z-m>-0.157</z-m>
+        </offsets>
+    </model>
+    
+    <model>
+        <path>Aircraft/Be-200Altair/Models/Lights/StrobeLight.xml</path>
+        <offsets>
+            <x-m>3.20</x-m>
+            <y-m>16.38</y-m>
+            <z-m>-0.157</z-m>
+        </offsets>
+    </model>
+    
+    <!-- NEW   Taxi and Landing lights-->
+    
+    <model>
+        <path>Aircraft/Be-200Altair/Models/Lights/be-200lights.xml</path>
+        <offsets>
+            <x-m> 0 </x-m>
+            <y-m> 0 </y-m>
+            <z-m> 0 </z-m>
+        </offsets>
+    </model>
+    
     <!--Internal Cabin lights for Rembrand, switch: bano-->
- <model>
-  <path>Aircraft/Be-200Altair/Models/Lights/headlight-tiny.xml</path>
-  <name>tiny</name>
-   <condition>
-      <property>/sim/rendering/rembrandt/enabled</property>
-   </condition>
-  <offsets>
-      <x-m>-10.3</x-m>
-    <y-m>0.0</y-m>
-    <z-m>-1.3</z-m>
-   <pitch-deg>90</pitch-deg>
-  </offsets>
- </model>
+    <model>
+        <path>Aircraft/Be-200Altair/Models/Lights/headlight-tiny.xml</path>
+        <name>tiny</name>
+        <condition>
+            <property>/sim/rendering/rembrandt/enabled</property>
+        </condition>
+        <offsets>
+            <x-m>-10.3</x-m>
+            <y-m>0.0</y-m>
+            <z-m>-1.3</z-m>
+            <pitch-deg>90</pitch-deg>
+        </offsets>
+    </model>
     
     
     <!--Rudder-->    
-  <animation>
-    <type>rotate</type>
-    <object-name>Box01</object-name>
-    <property>surface-positions/rudder-pos-norm</property>
-    <factor> -15 </factor>
-    <axis>
-      <x1-m> 14.019 </x1-m>
-      <y1-m>  0.00000 </y1-m>
-      <z1-m>  3.255 </z1-m>
-      <x2-m> 11.901 </x2-m>
-      <y2-m>  0.00000 </y2-m>
-      <z2-m>  -0.441 </z2-m>
-    </axis>
-  </animation>
-
-  <!-- Elevator L+R-->
-  <animation>
-    <type>rotate</type>
-    <object-name>Box04</object-name>
-    <property>surface-positions/elevator-pos-norm</property>
-    <factor> -15 </factor>
-    <axis>
-      <x1-m> 14.541 </x1-m>
-      <y1-m>  -0.415 </y1-m>
-      <z1-m>  3.90 </z1-m>
-      <x2-m> 16.073 </x2-m>
-      <y2-m>  -4.673 </y2-m>
-      <z2-m>  3.959 </z2-m>
-    </axis>   
-  </animation>
-  
-  <animation>
-    <type>rotate</type>
-    <object-name>Box13</object-name>
-    <property>surface-positions/elevator-pos-norm</property>
-    <factor> 15 </factor>
-    <axis>
-      <x1-m> 14.541 </x1-m>
-      <y1-m>  0.415 </y1-m>
-      <z1-m>  3.90 </z1-m>
-      <x2-m> 16.073 </x2-m>
-      <y2-m>  4.673 </y2-m>
-      <z2-m>  3.959 </z2-m>
-    </axis>    
-  </animation>
-
-  <!-- Ailerons L+R-->
-  <animation>
-    <type>rotate</type>
-    <object-name>Box05</object-name>
-    <property>surface-positions/left-aileron-pos-norm</property>
-    <factor> 15 </factor>
-    <offset-deg>10</offset-deg>
-    <axis>
-      <x1-m>  2.281 </x1-m>
-      <y1-m> -13.005 </y1-m>
-      <z1-m>  -0.674 </z1-m>
-      <x2-m>  0.590 </x2-m>
-      <y2-m> -6.604 </y2-m>
-      <z2-m>  -0.802 </z2-m>
-    </axis>
-  </animation>
-
-  <animation>
-    <type>rotate</type>
-    <object-name>Box07</object-name>
-    <property>surface-positions/right-aileron-pos-norm</property>
-    <factor> -15 </factor>
-    <offset-deg>-10</offset-deg>
-    <axis>
-      <x1-m>  2.281 </x1-m>
-      <y1-m> 13.005 </y1-m>
-      <z1-m>  -0.674 </z1-m>
-      <x2-m>  0.590 </x2-m>
-      <y2-m> 6.604 </y2-m>
-      <z2-m>  -0.802 </z2-m>
-    </axis>
-  </animation>
-
-  <!-- Flaps -->
-  <animation>
-    <type>rotate</type>
-    <object-name>Box06</object-name>
-    <property>surface-positions/flap-pos-norm</property>
-    <factor> 45 </factor>
-    <offset-deg>10</offset-deg>
-    <axis>
-      <x1-m>  0.590 </x1-m>
-      <y1-m> -6.571 </y1-m>
-      <z1-m>  -0.873 </z1-m>
-      <x2-m>  -0.0021 </x2-m>
-      <y2-m>  -2.807 </y2-m>
-      <z2-m>  -0.762 </z2-m>
-    </axis>
-  </animation>
-
-  <animation>
-    <type>rotate</type>
-    <object-name>Box08</object-name>
-    <property>surface-positions/flap-pos-norm</property>
-    <factor> -45 </factor>
-    <offset-deg>-10</offset-deg>
-    <axis>
-      <x1-m>  0.590 </x1-m>
-      <y1-m>  6.571 </y1-m>
-      <z1-m>  -0.873 </z1-m>
-      <x2-m>  -0.0021 </x2-m>
-      <y2-m>   2.807 </y2-m>
-      <z2-m>  -0.762 </z2-m>
-    </axis>
-  </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>Box01</object-name>
+        <property>surface-positions/rudder-pos-norm</property>
+        <factor> -15 </factor>
+        <axis>
+            <x1-m> 14.019 </x1-m>
+            <y1-m>  0.00000 </y1-m>
+            <z1-m>  3.255 </z1-m>
+            <x2-m> 11.901 </x2-m>
+            <y2-m>  0.00000 </y2-m>
+            <z2-m>  -0.441 </z2-m>
+        </axis>
+    </animation>
+    
+    <!-- Elevator L+R-->
+    <animation>
+        <type>rotate</type>
+        <object-name>Box04</object-name>
+        <property>surface-positions/elevator-pos-norm</property>
+        <factor> -15 </factor>
+        <axis>
+            <x1-m> 14.541 </x1-m>
+            <y1-m>  -0.415 </y1-m>
+            <z1-m>  3.90 </z1-m>
+            <x2-m> 16.073 </x2-m>
+            <y2-m>  -4.673 </y2-m>
+            <z2-m>  3.959 </z2-m>
+        </axis>   
+    </animation>
+    
+    <animation>
+        <type>rotate</type>
+        <object-name>Box13</object-name>
+        <property>surface-positions/elevator-pos-norm</property>
+        <factor> 15 </factor>
+        <axis>
+            <x1-m> 14.541 </x1-m>
+            <y1-m>  0.415 </y1-m>
+            <z1-m>  3.90 </z1-m>
+            <x2-m> 16.073 </x2-m>
+            <y2-m>  4.673 </y2-m>
+            <z2-m>  3.959 </z2-m>
+        </axis>    
+    </animation>
+    
+    <!-- Ailerons L+R-->
+    <animation>
+        <type>rotate</type>
+        <object-name>Box05</object-name>
+        <property>surface-positions/left-aileron-pos-norm</property>
+        <factor> 15 </factor>
+        <offset-deg>0</offset-deg>
+        <axis>
+            <x1-m>  2.281 </x1-m>
+            <y1-m> -13.005 </y1-m>
+            <z1-m>  -0.674 </z1-m>
+            <x2-m>  0.590 </x2-m>
+            <y2-m> -6.604 </y2-m>
+            <z2-m>  -0.802 </z2-m>
+        </axis>
+    </animation>
+    
+    <animation>
+        <type>rotate</type>
+        <object-name>Box07</object-name>
+        <property>surface-positions/right-aileron-pos-norm</property>
+        <factor> -15 </factor>
+        <offset-deg>0</offset-deg>
+        <axis>
+            <x1-m>  2.281 </x1-m>
+            <y1-m> 13.005 </y1-m>
+            <z1-m>  -0.674 </z1-m>
+            <x2-m>  0.590 </x2-m>
+            <y2-m> 6.604 </y2-m>
+            <z2-m>  -0.802 </z2-m>
+        </axis>
+    </animation>
+    
+    <!-- Flaps -->
+    <animation>
+        <type>rotate</type>
+        <object-name>Box06</object-name>
+        <property>surface-positions/flap-pos-norm</property>
+        <factor> 45 </factor>
+        <offset-deg>0</offset-deg>
+        <axis>
+            <x1-m>  0.590 </x1-m>
+            <y1-m> -6.571 </y1-m>
+            <z1-m>  -0.873 </z1-m>
+            <x2-m>  -0.0021 </x2-m>
+            <y2-m>  -2.807 </y2-m>
+            <z2-m>  -0.762 </z2-m>
+        </axis>
+    </animation>
+    
+    <animation>
+        <type>rotate</type>
+        <object-name>Box08</object-name>
+        <property>surface-positions/flap-pos-norm</property>
+        <factor> -45 </factor>
+        <offset-deg>0</offset-deg>
+        <axis>
+            <x1-m>  0.590 </x1-m>
+            <y1-m>  6.571 </y1-m>
+            <z1-m>  -0.873 </z1-m>
+            <x2-m>  -0.0021 </x2-m>
+            <y2-m>   2.807 </y2-m>
+            <z2-m>  -0.762 </z2-m>
+        </axis>
+    </animation>
+    
+    <!-- Slats -->
+    <animation>
+        <type>rotate</type>
+        <object-name>SlatsR</object-name>
+        <property>surface-positions/flap-pos-norm</property>
+        <factor> -38 </factor>
+        <offset-deg>0</offset-deg>
+        <axis>
+            <x1-m>  -5.12154 </x1-m>
+            <y1-m>   2.16081 </y1-m>
+            <z1-m>  -0.81393 </z1-m>
+            <x2-m>  -2.75067 </x2-m>
+            <y2-m>   6.54309 </y2-m>
+            <z2-m>  -0.86243 </z2-m>
+        </axis>
+    </animation>
+    
+    <animation>
+        <type>rotate</type>
+        <object-name>SlatsL</object-name>
+        <property>surface-positions/flap-pos-norm</property>
+        <factor> 38 </factor>
+        <offset-deg>0</offset-deg>
+        <axis>
+            <x1-m>  -5.1215 </x1-m>
+            <y1-m>  -2.27505 </y1-m>
+            <z1-m>  -0.81393 </z1-m>
+            <x2-m>  -2.75062 </x2-m>
+            <y2-m>  -6.65732 </y2-m>
+            <z2-m>  -0.86243 </z2-m>
+        </axis>
+    </animation>
+    
+    <animation>
+        <type>translate</type>
+        <object-name>SlatsR</object-name>
+        <property>surface-positions/flap-pos-norm</property>
+        <factor> -0.28 </factor>        
+        <axis>
+            <x>1</x>
+            <y>0.0</y>
+            <z>1</z>
+        </axis>
+    </animation>
+    
+    <animation>
+        <type>translate</type>
+        <object-name>SlatsL</object-name>
+        <property>surface-positions/flap-pos-norm</property>
+        <factor> -0.28 </factor>        
+        <axis>
+            <x>1</x>
+            <y>0.0</y>
+            <z>1</z>
+        </axis>
+    </animation>
     
     
     <!--WheelSmoke-->
-  <model>
-    <path>Aircraft/Be-200Altair/Models/Effects/Ground/ground0.xml</path>
-    <offsets>
-      <x-m> -14.11 </x-m>
-      <y-m>    0.0 </y-m>
-      <z-m>  -5.32 </z-m>
-    </offsets>
-  </model>
-  <model>
-    <path>Aircraft/Be-200Altair/Models/Effects/Ground/ground1.xml</path>
-    <offsets>
-      <x-m> 1.78 </x-m>
-      <y-m> -2.0 </y-m>
-      <z-m> -5.38 </z-m>
-    </offsets>
-  </model>
-  <model>
-    <path>Aircraft/Be-200Altair/Models/Effects/Ground/ground2.xml</path>
-    <offsets>
-      <x-m> 1.78 </x-m>
-      <y-m>  2.0 </y-m>
-      <z-m> -5.38 </z-m>
-    </offsets>
-  </model>
+    <model>
+        <path>Aircraft/Be-200Altair/Models/Effects/Ground/ground0.xml</path>
+        <offsets>
+            <x-m> -14.11 </x-m>
+            <y-m>    0.0 </y-m>
+            <z-m>  -5.32 </z-m>
+        </offsets>
+    </model>
+    <model>
+        <path>Aircraft/Be-200Altair/Models/Effects/Ground/ground1.xml</path>
+        <offsets>
+            <x-m> 1.78 </x-m>
+            <y-m> -2.0 </y-m>
+            <z-m> -5.38 </z-m>
+        </offsets>
+    </model>
+    <model>
+        <path>Aircraft/Be-200Altair/Models/Effects/Ground/ground2.xml</path>
+        <offsets>
+            <x-m> 1.78 </x-m>
+            <y-m>  2.0 </y-m>
+            <z-m> -5.38 </z-m>
+        </offsets>
+    </model>
     
     <!-- Enginesmoke -->
     
-  <model>
-    <path>Aircraft/Be-200Altair/Models/Effects/Smoke/smoke_1.xml</path>
-    <offsets>
-      <x-m> 4.97 </x-m>
-      <y-m> -2.587 </y-m>
-      <z-m> 0.564 </z-m>
-      <pitch-deg>96</pitch-deg>
-    </offsets>
-  </model>
-  <model>
-    <path>Aircraft/Be-200Altair/Models/Effects/Smoke/smoke_2.xml</path>
-    <offsets>
-      <x-m> 4.97 </x-m>
-      <y-m> 2.587 </y-m>
-      <z-m> 0.564 </z-m>
-      <pitch-deg>96</pitch-deg>
-    </offsets>
-  </model>
-  
-  <!--Waterdoors-->
-  <!-- Waterdropping-Doors  lo-lu-ro-ru -->
-  <animation>
-    <type>rotate</type>
-    <object-name>doorlo</object-name>
-    <property>sim/multiplay/generic/float[5]</property>
-    <factor> -110 </factor>
-    <axis>
-      <x1-m>  -0.860 </x1-m>
-      <y1-m> -1.158 </y1-m>
-      <z1-m> -3.662 </z1-m>
-      <x2-m>  2.419 </x2-m>
-      <y2-m> -1.158 </y2-m>
-      <z2-m> -3.520 </z2-m>
-    </axis>
-  </animation>
-  
-  <animation>
-    <type>rotate</type>
-    <object-name>doorro</object-name>
-    <property>sim/multiplay/generic/float[5]</property>
-    <factor> 110 </factor>
-    <axis>
-      <x1-m>  -0.860 </x1-m>
-      <y1-m>  1.157 </y1-m>
-      <z1-m> -3.662 </z1-m>
-      <x2-m>  2.419 </x2-m>
-      <y2-m>  1.157 </y2-m>
-      <z2-m> -3.520 </z2-m>
-    </axis>
-  </animation>
-  
-  <animation>
-    <type>rotate</type>
-    <object-name>doorlu</object-name>
-    <property>sim/multiplay/generic/float[5]</property>
-    <factor> 110 </factor>
-    <axis>
-      <x1-m>  -0.860 </x1-m>
-      <y1-m> -0.435 </y1-m>
-      <z1-m> -4.036 </z1-m>
-      <x2-m>  2.419 </x2-m>
-      <y2-m> -0.435 </y2-m>
-      <z2-m> -3.875 </z2-m>
-    </axis>
-  </animation>
-  
-  <animation>
-    <type>rotate</type>
-    <object-name>doorru</object-name>
-    <property>sim/multiplay/generic/float[5]</property>
-    <factor> -110 </factor>
-    <axis>
-      <x1-m>  -0.860 </x1-m>
-      <y1-m>  0.433 </y1-m>
-      <z1-m> -4.036 </z1-m>
-      <x2-m>  2.419 </x2-m>
-      <y2-m>  0.433 </y2-m>
-      <z2-m> -3.875 </z2-m>
-    </axis>
-  </animation>
-  
-  <!-- Water-in-Tubes -->
-  
-  <animation>
-    <type>select</type>
-    <object-name>Ecopef</object-name>
-    <object-name>Ecoper</object-name>
-    <condition>
-      <and>
-	<less-than>	
-	  <property>sim/multiplay/generic/float[16]</property>
-	  <value>11990</value>      
-	</less-than>
-	<equals>
-	  <property>sim/multiplay/generic/int[9]</property>
-	  <value>1</value>
-	</equals>
-      </and>
-    </condition>
-  </animation>
-  
-  <animation>
-    <type>translate</type>
-    <object-name>Ecopef</object-name>
-    <object-name>Ecoper</object-name>
-    <property>sim/multiplay/generic/int[9]</property>
-    <interpolation>
-      <entry><ind> 0.00 </ind><dep> 0.60 </dep></entry>      
-      <entry><ind> 1.00 </ind><dep>  0.0 </dep></entry>
-    </interpolation>
-    <axis>
-      <x> 0 </x>
-      <y> 0 </y>
-      <z> 1 </z>
-    </axis>
-  </animation>
-  
-  <!-- Frontgearsdoor -->
-  <animation>
-    <type>rotate</type>
-    <object-name>geardoor-f-l</object-name>
-    <property>gear/gear[0]/position-norm</property>    
-    <interpolation>
-      <entry><ind> 0.00 </ind><dep> 0.0 </dep></entry>      
-      <entry><ind> 0.07 </ind><dep> -80.0 </dep></entry>
-      <entry><ind> 1.00 </ind><dep> -80.0 </dep></entry>
-    </interpolation>
-    <axis>
-      <x1-m>  -14.664 </x1-m>
-      <y1-m> -0.376 </y1-m>
-      <z1-m> -3.778 </z1-m>
-      <x2-m>  -12.668 </x2-m>
-      <y2-m> -0.402 </y2-m>
-      <z2-m> -3.837 </z2-m>
-    </axis>
-  </animation>
-  
-  <animation>
-    <type>rotate</type>
-    <object-name>geardoor-f-r</object-name>
-    <property>gear/gear[0]/position-norm</property>
-    <interpolation>
-      <entry><ind> 0.00 </ind><dep> 0.0 </dep></entry>      
-      <entry><ind> 0.07 </ind><dep> 80.0 </dep></entry>
-      <entry><ind> 1.00 </ind><dep> 80.0 </dep></entry>
-    </interpolation>
-    <axis>
-      <x1-m>  -14.664 </x1-m>
-      <y1-m> 0.375 </y1-m>
-      <z1-m> -3.778 </z1-m>
-      <x2-m>  -12.668 </x2-m>
-      <y2-m> 0.400 </y2-m>
-      <z2-m> -3.837 </z2-m>
-    </axis>
-  </animation>
-  
-  <!--Cargo-Door-Front-Left -->
-  <animation>
-    <type>rotate</type>
-    <object-name>door-left</object-name>
-    <object-name>door-left.001</object-name>
-    <property>sim/multiplay/generic/float[2]</property>    
-    <interpolation>
-      <entry><ind> 0.00 </ind><dep> 0.0 </dep></entry>      
-      <entry><ind> 0.20 </ind><dep> -3.0 </dep></entry>
-      <entry><ind> 1.00 </ind><dep> -110.0 </dep></entry>
-    </interpolation>
-    <axis>
-      <x1-m>  -11.466 </x1-m>
-      <y1-m> 0.809 </y1-m>
-      <z1-m> -0.876 </z1-m>
-      <x2-m>  -13.568 </x2-m>
-      <y2-m> 0.774 </y2-m>
-      <z2-m> -0.854 </z2-m>
-    </axis>
-  </animation>
-  
-  <animation>
-    <type>pick</type>
-    <object-name>door-left</object-name>
-    <object-name>door-left.001</object-name>
-    <visible>true</visible>
-    <action>
-      <button>0</button>
-      <repeatable>false</repeatable>
-      <binding>
-	<command>nasal</command>
-	<script>doors.cargo.toggle();</script>
-      </binding>
-    </action>
-  </animation>
-  
-  <!-- Reargearsdoor gdll-gdlr-gdrl-gdrr-->
-  <animation>
-    <type>rotate</type>
-    <object-name>gdll</object-name>
-    <property>gear/gear[1]/position-norm</property>    
-    <interpolation>
-      <entry><ind> 0.00 </ind><dep> 0.0 </dep></entry>      
-      <entry><ind> 0.07 </ind><dep> -90.0 </dep></entry>
-      <entry><ind> 1.00 </ind><dep> -90.0 </dep></entry>
-    </interpolation>
-    <axis>
-      <x1-m>  -2.385 </x1-m>
-      <y1-m> -2.319 </y1-m>
-      <z1-m> -1.535 </z1-m>
-      <x2-m>  2.915 </x2-m>
-      <y2-m> -2.319 </y2-m>
-      <z2-m> -1.535 </z2-m>
-    </axis>
-  </animation>
-  
-  <animation>
-    <type>rotate</type>
-    <object-name>gdrr</object-name>
-    <property>gear/gear[2]/position-norm</property>    
-    <interpolation>
-      <entry><ind> 0.00 </ind><dep> 0.0 </dep></entry>      
-      <entry><ind> 0.07 </ind><dep> 90.0 </dep></entry>
-      <entry><ind> 1.00 </ind><dep> 90.0 </dep></entry>
-    </interpolation>
-    <axis>
-      <x1-m>  -2.385 </x1-m>
-      <y1-m> 2.319 </y1-m>
-      <z1-m> -1.535 </z1-m>
-      <x2-m>  2.915 </x2-m>
-      <y2-m> 2.319 </y2-m>
-      <z2-m> -1.535 </z2-m>
-    </axis>
-  </animation>
-  
-  <animation>
-    <type>rotate</type>
-    <object-name>gdlr</object-name>
-    <property>gear/gear[1]/position-norm</property>    
-    <interpolation>
-      <entry><ind> 0.00 </ind><dep> 0.0 </dep></entry>      
-      <entry><ind> 0.07 </ind><dep> 90.0 </dep></entry>
-      <entry><ind> 1.00 </ind><dep> 90.0 </dep></entry>
-    </interpolation>
-    <axis>
-      <x1-m>  -2.385 </x1-m>
-      <y1-m> -1.593 </y1-m>
-      <z1-m> -1.535 </z1-m>
-      <x2-m>  2.915 </x2-m>
-      <y2-m> -1.593 </y2-m>
-      <z2-m> -1.535 </z2-m>
-    </axis>
-  </animation>
-  
-  <animation>
-    <type>rotate</type>
-    <object-name>gdrl</object-name>
-    <property>gear/gear[2]/position-norm</property>    
-    <interpolation>
-      <entry><ind> 0.00 </ind><dep> 0.0 </dep></entry>      
-      <entry><ind> 0.07 </ind><dep> -90.0 </dep></entry>
-      <entry><ind> 1.00 </ind><dep> -90.0 </dep></entry>
-    </interpolation>
-    <axis>
-      <x1-m>  -2.385 </x1-m>
-      <y1-m> 1.593 </y1-m>
-      <z1-m> -1.535 </z1-m>
-      <x2-m>  2.915 </x2-m>
-      <y2-m> 1.593 </y2-m>
-      <z2-m> -1.535 </z2-m>
-    </axis>
-  </animation>
-  
-  <!--runway effect -->
-
-<model> 
- <path>Aircraft/Be-200Altair/Models/Effects/tyres.xml</path>
- <offsets>
-      <x-m> 1.78 </x-m>
-      <y-m> -2.0 </y-m>
-      <z-m> -5.2 </z-m>
-    </offsets>
-</model>
-
-<model> 
- <path>Aircraft/Be-200Altair/Models/Effects/tyres.xml</path>
- <offsets>
-      <x-m> 1.78 </x-m>
-      <y-m> 2.0 </y-m>
-      <z-m> -5.2 </z-m>
-    </offsets>
-</model>
-
-<model> 
- <path>Aircraft/Be-200Altair/Models/Effects/Ground/touch.xml</path>
- <offsets>
-      <x-m> 1.78 </x-m>
-      <y-m> -2.0 </y-m>
-      <z-m> -5.2 </z-m>
-    </offsets>
-</model>
-
-<model> 
- <path>Aircraft/Be-200Altair/Models/Effects/Ground/touch.xml</path>
- <offsets>
-      <x-m> 1.78 </x-m>
-      <y-m> 2.0 </y-m>
-      <z-m> -5.2 </z-m>
-    </offsets>
-</model>
+    <model>
+        <path>Aircraft/Be-200Altair/Models/Effects/Smoke/smoke_1.xml</path>
+        <offsets>
+            <x-m> 4.97 </x-m>
+            <y-m> -2.587 </y-m>
+            <z-m> 0.564 </z-m>
+            <pitch-deg>96</pitch-deg>
+        </offsets>
+    </model>
+    <model>
+        <path>Aircraft/Be-200Altair/Models/Effects/Smoke/smoke_2.xml</path>
+        <offsets>
+            <x-m> 4.97 </x-m>
+            <y-m> 2.587 </y-m>
+            <z-m> 0.564 </z-m>
+            <pitch-deg>96</pitch-deg>
+        </offsets>
+    </model>
+    
+    <!--Waterdoors-->
+    <!-- Waterdropping-Doors  lo-lu-ro-ru -->
+    <animation>
+        <type>rotate</type>
+        <object-name>doorlo</object-name>
+        <property>sim/multiplay/generic/float[5]</property>
+        <factor> -110 </factor>
+        <axis>
+            <x1-m>  -0.860 </x1-m>
+            <y1-m> -1.158 </y1-m>
+            <z1-m> -3.662 </z1-m>
+            <x2-m>  2.419 </x2-m>
+            <y2-m> -1.158 </y2-m>
+            <z2-m> -3.520 </z2-m>
+        </axis>
+    </animation>
+    
+    <animation>
+        <type>rotate</type>
+        <object-name>doorro</object-name>
+        <property>sim/multiplay/generic/float[5]</property>
+        <factor> 110 </factor>
+        <axis>
+            <x1-m>  -0.860 </x1-m>
+            <y1-m>  1.157 </y1-m>
+            <z1-m> -3.662 </z1-m>
+            <x2-m>  2.419 </x2-m>
+            <y2-m>  1.157 </y2-m>
+            <z2-m> -3.520 </z2-m>
+        </axis>
+    </animation>
+    
+    <animation>
+        <type>rotate</type>
+        <object-name>doorlu</object-name>
+        <property>sim/multiplay/generic/float[5]</property>
+        <factor> 110 </factor>
+        <axis>
+            <x1-m>  -0.860 </x1-m>
+            <y1-m> -0.435 </y1-m>
+            <z1-m> -4.036 </z1-m>
+            <x2-m>  2.419 </x2-m>
+            <y2-m> -0.435 </y2-m>
+            <z2-m> -3.875 </z2-m>
+        </axis>
+    </animation>
+    
+    <animation>
+        <type>rotate</type>
+        <object-name>doorru</object-name>
+        <property>sim/multiplay/generic/float[5]</property>
+        <factor> -110 </factor>
+        <axis>
+            <x1-m>  -0.860 </x1-m>
+            <y1-m>  0.433 </y1-m>
+            <z1-m> -4.036 </z1-m>
+            <x2-m>  2.419 </x2-m>
+            <y2-m>  0.433 </y2-m>
+            <z2-m> -3.875 </z2-m>
+        </axis>
+    </animation>
+    
+    <!-- Water-in-Tubes -->
+    
+    <animation>
+        <type>select</type>
+        <object-name>Ecopef</object-name>
+        <object-name>Ecoper</object-name>
+        <condition>
+            <and>
+                <less-than>	
+                    <property>sim/multiplay/generic/float[16]</property>
+                    <value>11990</value>      
+                </less-than>
+                <equals>
+                    <property>sim/multiplay/generic/int[9]</property>
+                    <value>1</value>
+                </equals>
+            </and>
+        </condition>
+    </animation>
+    
+    <animation>
+        <type>translate</type>
+        <object-name>Ecopef</object-name>
+        <object-name>Ecoper</object-name>
+        <property>sim/multiplay/generic/int[9]</property>
+        <interpolation>
+            <entry><ind> 0.00 </ind><dep> 0.60 </dep></entry>      
+            <entry><ind> 1.00 </ind><dep>  0.0 </dep></entry>
+        </interpolation>
+        <axis>
+            <x> 0 </x>
+            <y> 0 </y>
+            <z> 1 </z>
+        </axis>
+    </animation>
+    
+    <!-- Frontgearsdoor -->
+    <animation>
+        <type>rotate</type>
+        <object-name>geardoor-f-l</object-name>
+        <property>gear/gear[0]/position-norm</property>    
+        <interpolation>
+            <entry><ind> 0.00 </ind><dep> 0.0 </dep></entry>      
+            <entry><ind> 0.07 </ind><dep> -80.0 </dep></entry>
+            <entry><ind> 1.00 </ind><dep> -80.0 </dep></entry>
+        </interpolation>
+        <axis>
+            <x1-m>  -14.664 </x1-m>
+            <y1-m> -0.376 </y1-m>
+            <z1-m> -3.778 </z1-m>
+            <x2-m>  -12.668 </x2-m>
+            <y2-m> -0.402 </y2-m>
+            <z2-m> -3.837 </z2-m>
+        </axis>
+    </animation>
+    
+    <animation>
+        <type>rotate</type>
+        <object-name>geardoor-f-r</object-name>
+        <property>gear/gear[0]/position-norm</property>
+        <interpolation>
+            <entry><ind> 0.00 </ind><dep> 0.0 </dep></entry>      
+            <entry><ind> 0.07 </ind><dep> 80.0 </dep></entry>
+            <entry><ind> 1.00 </ind><dep> 80.0 </dep></entry>
+        </interpolation>
+        <axis>
+            <x1-m>  -14.664 </x1-m>
+            <y1-m> 0.375 </y1-m>
+            <z1-m> -3.778 </z1-m>
+            <x2-m>  -12.668 </x2-m>
+            <y2-m> 0.400 </y2-m>
+            <z2-m> -3.837 </z2-m>
+        </axis>
+    </animation>
+    
+    <!--Cargo-Door-Front-Left -->
+    <animation>
+        <type>rotate</type>
+        <object-name>door-left</object-name>
+        <object-name>door-left.001</object-name>
+        <property>sim/multiplay/generic/float[2]</property>    
+        <interpolation>
+            <entry><ind> 0.00 </ind><dep> 0.0 </dep></entry>      
+            <entry><ind> 0.20 </ind><dep> -3.0 </dep></entry>
+            <entry><ind> 1.00 </ind><dep> -110.0 </dep></entry>
+        </interpolation>
+        <axis>
+            <x1-m>  -11.466 </x1-m>
+            <y1-m> 0.809 </y1-m>
+            <z1-m> -0.876 </z1-m>
+            <x2-m>  -13.568 </x2-m>
+            <y2-m> 0.774 </y2-m>
+            <z2-m> -0.854 </z2-m>
+        </axis>
+    </animation>
+    
+    <animation>
+        <type>pick</type>
+        <object-name>door-left</object-name>
+        <object-name>door-left.001</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>doors.cargo.toggle();</script>
+            </binding>
+        </action>
+    </animation>
+    
+    <!-- Reargearsdoor gdll-gdlr-gdrl-gdrr-->
+    <animation>
+        <type>rotate</type>
+        <object-name>gdll</object-name>
+        <property>gear/gear[1]/position-norm</property>    
+        <interpolation>
+            <entry><ind> 0.00 </ind><dep> 0.0 </dep></entry>      
+            <entry><ind> 0.07 </ind><dep> -90.0 </dep></entry>
+            <entry><ind> 1.00 </ind><dep> -90.0 </dep></entry>
+        </interpolation>
+        <axis>
+            <x1-m>  -2.385 </x1-m>
+            <y1-m> -2.319 </y1-m>
+            <z1-m> -1.535 </z1-m>
+            <x2-m>  2.915 </x2-m>
+            <y2-m> -2.319 </y2-m>
+            <z2-m> -1.535 </z2-m>
+        </axis>
+    </animation>
+    
+    <animation>
+        <type>rotate</type>
+        <object-name>gdrr</object-name>
+        <property>gear/gear[2]/position-norm</property>    
+        <interpolation>
+            <entry><ind> 0.00 </ind><dep> 0.0 </dep></entry>      
+            <entry><ind> 0.07 </ind><dep> 90.0 </dep></entry>
+            <entry><ind> 1.00 </ind><dep> 90.0 </dep></entry>
+        </interpolation>
+        <axis>
+            <x1-m>  -2.385 </x1-m>
+            <y1-m> 2.319 </y1-m>
+            <z1-m> -1.535 </z1-m>
+            <x2-m>  2.915 </x2-m>
+            <y2-m> 2.319 </y2-m>
+            <z2-m> -1.535 </z2-m>
+        </axis>
+    </animation>
+    
+    <animation>
+        <type>rotate</type>
+        <object-name>gdlr</object-name>
+        <property>gear/gear[1]/position-norm</property>    
+        <interpolation>
+            <entry><ind> 0.00 </ind><dep> 0.0 </dep></entry>      
+            <entry><ind> 0.07 </ind><dep> 90.0 </dep></entry>
+            <entry><ind> 1.00 </ind><dep> 90.0 </dep></entry>
+        </interpolation>
+        <axis>
+            <x1-m>  -2.385 </x1-m>
+            <y1-m> -1.593 </y1-m>
+            <z1-m> -1.535 </z1-m>
+            <x2-m>  2.915 </x2-m>
+            <y2-m> -1.593 </y2-m>
+            <z2-m> -1.535 </z2-m>
+        </axis>
+    </animation>
+    
+    <animation>
+        <type>rotate</type>
+        <object-name>gdrl</object-name>
+        <property>gear/gear[2]/position-norm</property>    
+        <interpolation>
+            <entry><ind> 0.00 </ind><dep> 0.0 </dep></entry>      
+            <entry><ind> 0.07 </ind><dep> -90.0 </dep></entry>
+            <entry><ind> 1.00 </ind><dep> -90.0 </dep></entry>
+        </interpolation>
+        <axis>
+            <x1-m>  -2.385 </x1-m>
+            <y1-m> 1.593 </y1-m>
+            <z1-m> -1.535 </z1-m>
+            <x2-m>  2.915 </x2-m>
+            <y2-m> 1.593 </y2-m>
+            <z2-m> -1.535 </z2-m>
+        </axis>
+    </animation>
+    
+    <!--runway effect -->
+    
+    <model> 
+        <path>Aircraft/Be-200Altair/Models/Effects/tyres.xml</path>
+        <offsets>
+            <x-m> 1.78 </x-m>
+            <y-m> -2.0 </y-m>
+            <z-m> -5.1 </z-m>
+        </offsets>
+    </model>
+    
+    <model> 
+        <path>Aircraft/Be-200Altair/Models/Effects/tyres.xml</path>
+        <offsets>
+            <x-m> 1.78 </x-m>
+            <y-m> 2.0 </y-m>
+            <z-m> -5.1 </z-m>
+        </offsets>
+    </model>
+    
+    <model> 
+        <path>Aircraft/Be-200Altair/Models/Effects/Ground/touch.xml</path>
+        <offsets>
+            <x-m> 1.78 </x-m>
+            <y-m> -2.0 </y-m>
+            <z-m> -5.1 </z-m>
+        </offsets>
+    </model>
+    
+    <model> 
+        <path>Aircraft/Be-200Altair/Models/Effects/Ground/touch.xml</path>
+        <offsets>
+            <x-m> 1.78 </x-m>
+            <y-m> 2.0 </y-m>
+            <z-m> -5.1 </z-m>
+        </offsets>
+    </model>
     
 </PropertyList>

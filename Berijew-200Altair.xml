@@ -122,7 +122,7 @@
     <ixx unit="SLUG*FT2">    878901 </ixx>
     <iyy unit="SLUG*FT2">    748670 </iyy>
     <izz unit="SLUG*FT2">   1924278 </izz>
-    <emptywt unit="LBS" >     55390 </emptywt>
+    <emptywt unit="LBS" >     55380 </emptywt>
     <location name="CG" unit="M"><!--auf flügelmitte, etwas mehr mittig als AERORP -->
       <x> 0.50 </x><!--  0.2 -->
       <y> 0.0 </y><!--  0 -->
@@ -130,7 +130,7 @@
     </location>
     
         <pointmass name="Watertank">
-            <weight unit="LBS">00</weight> <!--W-Tank max (10000) 26500-->
+            <weight unit="LBS">0</weight> <!--W-Tank max (12000) 26455 -->
             <location unit="M">
                 <x>  0.50 </x><!--  -0.5 -->
 	        <y>  0.00 </y>
@@ -138,7 +138,7 @@
             </location>
         </pointmass>
 	 <pointmass name="MainLeft-tank">
-	    <weight unit="LBS">3000</weight> <!--  Tank number 1 max (2260) 11360-->
+	    <weight unit="LBS">3000</weight> <!--  Tank number 1 max 9315 -->
 	    <location name="Main Tank" unit="M">
 		<x> 0.48 </x>
 	        <y>-1.98 </y>
@@ -146,7 +146,7 @@
 	    </location>
 	</pointmass>
 	<pointmass name="Left-WT-tank">
-	    <weight unit="LBS">3000</weight> <!--  W-Tank number 2 max (3500) 9000-->
+	    <weight unit="LBS">3000</weight> <!--  W-Tank number 2 max 4000 -->
 	    <location name="LWT Tank" unit="M"> 
 		<x> 1.50 </x>
 	        <y>-1.00 </y>
@@ -154,7 +154,7 @@
 	    </location>
 	</pointmass>
 	<pointmass name="Right-WT-tank">
-	    <weight unit="LBS">3000</weight>  <!--  W-Tank number 3 max (3500) 9000-->
+	    <weight unit="LBS">3000</weight>  <!--  W-Tank number 3 max 4000 -->
 	    <location name="RWT Tank" unit="M"> 
 		<x> 1.50 </x>
 	        <y> 1.00 </y>
@@ -162,7 +162,7 @@
 	    </location>
 	</pointmass>
 	<pointmass name="MainRight-tank"> 
-	    <weight unit="LBS">3000</weight> <!--  Tank number 4 max (2260) 11360-->
+	    <weight unit="LBS">3000</weight> <!--  Tank number 4 max 9315 -->
 	    <location name="Main Tank" unit="M"> 
 		<x> 0.48 </x>
 	        <y> 1.98 </y>
@@ -202,7 +202,7 @@
 	<location unit="M">
 	  <x>  2.28 </x>
 	  <y> -2.00 </y>
-	  <z> -5.38 </z>
+	  <z> -5.35 </z>
 	</location>
 	<static_friction>  0.80 </static_friction>
 	<dynamic_friction> 0.50 </dynamic_friction>
@@ -218,7 +218,7 @@
 	<location unit="M">
 	  <x>  2.28 </x>
 	  <y>  2.00 </y>
-	  <z> -5.38 </z>
+	  <z> -5.35 </z>
 	</location>
 	<static_friction>  0.80 </static_friction>
 	<dynamic_friction> 0.50 </dynamic_friction>

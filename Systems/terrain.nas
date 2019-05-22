@@ -131,7 +131,7 @@ setlistener("/sim/model/bomb-signal", func {
 
 setlistener("/controls/switches/liveboat", func { 
   
-  if (getprop("/fdm/jsbsim/environment/terrain-solid") != 0)
+  if ((getprop("/controls/switches/liveboat") == 1) and (getprop("/fdm/jsbsim/environment/terrain-solid") != 0))
   {
           setprop("/controls/switches/liveboat", 0);
 	  setprop("sim/messages/copilot", "The liveboat is working only on water!");

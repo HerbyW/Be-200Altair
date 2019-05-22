@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!-- Be-200 custom flight recorder configuration
-     HerbyW, 08-2015 
+     HerbyW, 08-2015 - 2019
+     all animations are now recorded, only water dropping is not shown
 -->
 <PropertyList>
     <!-- selected active flight recorder configuration for replay system -->
     <replay-config type="int">0</replay-config>
-
+    
     <config n="0">
         <name type="string">Be-200 Flight Recorder</name>
         <!-- include generic stuff -->
@@ -21,91 +22,160 @@
         </signals>
         <signals include="/Aircraft/Generic/flightrecorder/components/tanks.xml">
             <count type="int">4</count>
-        </signals>
-             
-     
-        <signals>  <!-- now the custom properties -->
-
-            
+        </signals>        
+        
+        <signals>  <!-- now the custom properties -->            
             
             <signal>
                 <type>float</type><property type="string">/fdm/jsbsim/aero/function/kCDge</property>
             </signal>
             <signal>
                 <type>float</type><property type="string">/fdm/jsbsim/aero/function/kCLge</property>
-            </signal>
-	    
-	    <signal>
+            </signal>            
+            <signal>
                 <type>float</type><property type="string">/fdm/jsbsim/hydro/function/kRHump</property>
             </signal>
             <signal>
                 <type>float</type><property type="string">/fdm/jsbsim/hydro/function/kCHump</property>
             </signal>
             <signal>
-            <type>float</type><property type="string">/fdm/jsbsim/hydro/function/CfHWTurb</property>
+                <type>float</type><property type="string">/fdm/jsbsim/hydro/function/CfHWTurb</property>
+            </signal>            
+            <signal>  
+                <type>float</type><property type="string">/fdm/jsbsim/aero/coefficient/CDhumpC</property>
+            </signal>            
+            <signal>  
+                <type>float</type><property type="string">/fdm/jsbsim/aero/coefficient/CDhumpR</property>
+            </signal>            
+            <signal>  
+                <type>float</type><property type="string">/fdm/jsbsim/aero/coefficient/CDhumpN</property>
+            </signal>            
+            <signal>  
+                <type>float</type><property type="string">/fdm/jsbsim/aero/coefficient/CD0</property>
+            </signal>            
+            <signal>  
+                <type>float</type><property type="string">/fdm/jsbsim/aero/coefficient/CLalpha</property>
+            </signal>            
+            <signal>
+                <type>float</type><property type="string">/fdm/jsbsim/aero/coefficient/CmHumpR</property>
+            </signal>            
+            <signal>
+                <type>float</type><property type="string">/fdm/jsbsim/aero/coefficient/CmHumpC</property>
+            </signal>            
+            <signal>  
+                <type>float</type><property type="string">/fdm/jsbsim/aero/coefficient/CmHumpAV</property>
+            </signal>            
+            <signal>
+                <type>float</type><property type="string">/fdm/jsbsim/aero/coefficient/Cmo</property>
             </signal>
-	      
-	    <signal>  
-	    <type>float</type><property type="string">/fdm/jsbsim/aero/coefficient/CDhumpC</property>
+            <signal>  
+                <type>float</type><property type="string">/fdm/jsbsim/aero/coefficient/Cmalpha</property>
+            </signal>            
+            <signal>
+                <type>float</type><property type="string">/fdm/jsbsim/aero/coefficient/Cmde</property>
+            </signal>            
+            <signal>
+                <type>float</type><property type="string">/fdm/jsbsim/aero/coefficient/Cmq</property>
+            </signal>            
+            <signal>
+                <type>float</type><property type="string">/fdm/jsbsim/aero/coefficient/Cmadot</property>
+            </signal>            
+            <signal>
+                <type>float</type><property type="string">/fdm/jsbsim/aero/coefficient/Cmgear_water</property>
             </signal>
-	      
-	    <signal>  
-	    <type>float</type><property type="string">/fdm/jsbsim/aero/coefficient/CDhumpR</property>
+            <signal>
+                <type>float</type><property type="string">/fdm/jsbsim/fcs/steer-pos-deg</property>
             </signal>
-	      
-	    <signal>  
-	    <type>float</type><property type="string">/fdm/jsbsim/aero/coefficient/CDhumpN</property>
+            <signal>
+                <type>float</type><property type="string">/sim/model/door-positions/cargo/position-norm</property>
             </signal>
-	      
-	    <signal>  
-	    <type>float</type><property type="string">/fdm/jsbsim/aero/coefficient/CD0</property>
+            <signal>
+                <type>float</type><property type="string">/engines/engine[0]/thrust_lb</property>
             </signal>
-	      
-	    <signal>  
-	    <type>float</type><property type="string">/fdm/jsbsim/aero/coefficient/CLalpha</property>
+            <signal>
+                <type>float</type><property type="string">/engines/engine[1]/thrust_lb</property>
             </signal>
-	    
-	    <signal>
-	    <type>float</type><property type="string">/fdm/jsbsim/aero/coefficient/CmHumpR</property>
+            <signal>
+                <type>float</type><property type="string">/fdm/jsbsim/fcs/water-door-pos-norm</property>
             </signal>
-	    
-	    <signal>
-	    <type>float</type><property type="string">/fdm/jsbsim/aero/coefficient/CmHumpC</property>
+            <signal>
+                <type>float</type><property type="string">/velocities/groundspeed-kt</property>
             </signal>
-	    
-	    <signal>  
-	    <type>float</type><property type="string">/fdm/jsbsim/aero/coefficient/CmHumpAV</property>
+            <signal>
+                <type>float</type><property type="string">/fdm/jsbsim/animation/floats-pos-norm</property>
             </signal>
-	    
-	    <signal>
-	    <type>float</type><property type="string">/fdm/jsbsim/aero/coefficient/Cmo</property>
+            <signal>
+                <type>float</type><property type="string">/controls/rightwakecontrol</property>
             </signal>
-	    
-	    <signal>  
-            <type>float</type><property type="string">/fdm/jsbsim/aero/coefficient/Cmalpha</property>
+            <signal>
+                <type>float</type><property type="string">/controls/leftwakecontrol</property>
             </signal>
-	    
-	    <signal>
-	    <type>float</type><property type="string">/fdm/jsbsim/aero/coefficient/Cmde</property>
+            <signal>
+                <type>float</type><property type="string">/sim/time/elapsed-sec</property>
             </signal>
-	    
-	    <signal>
-	    <type>float</type><property type="string">/fdm/jsbsim/aero/coefficient/Cmq</property>
+            <signal>
+                <type>float</type><property type="string">/fdm/jsbsim/fcs/mooring-cmd-norm</property>
             </signal>
-	    
-	    <signal>
-	    <type>float</type><property type="string">/fdm/jsbsim/aero/coefficient/Cmadot</property>
+            <signal>
+                <type>float</type><property type="string">/controls/rightfloatwakecontrol</property>
             </signal>
-	    
-	    <signal>
-	    <type>float</type><property type="string">/fdm/jsbsim/aero/coefficient/Cmgear_water</property>
+            <signal>
+                <type>float</type><property type="string">/controls/leftfloatwakecontrol</property>
+            </signal>
+            <signal>
+                <type>float</type><property type="string">/fdm/jsbsim/systems/floats-controll</property>
+            </signal>
+            <signal>
+                <type>float</type><property type="string">/fdm/jsbsim/fcs/float-down-cmd-norm</property>
             </signal>
             
-            
-            
-	    
+            <signal>
+                <type>float</type><property type="string">/controls/switches/startpanel-cover</property>
+            </signal>
+            <signal>
+                <type>float</type><property type="string">/controls/gear/runway</property>
+            </signal>
+            <signal>
+                <type>float</type><property type="string">/fdm/jsbsim/fcs/water-qty-liters</property>
+            </signal>
+            <signal>
+                <type>float</type><property type="string">/fdm/jsbsim/fcs/water-sw</property>
+            </signal>
+            <signal>
+                <type>float</type><property type="string">/fdm/jsbsim/controls/fueltruck</property>
+            </signal>            
+            <signal>
+                <type>int8</type><property type="string">/gear/gear[9]/wow</property>
+            </signal>
+            <signal>
+                <type>int8</type><property type="string">/controls/watercolor</property>
+            </signal>
+            <signal>
+                <type>int8</type><property type="string">/controls/switches/gauge-light</property>
+            </signal>
+            <signal>
+                <type>int8</type><property type="string">/controls/lighting/beacon-state/state</property>
+            </signal>
+            <signal>
+                <type>int8</type><property type="string">/controls/lighting/strobe-state/state</property>
+            </signal>
+            <signal>
+                <type>int8</type><property type="string">/controls/lighting/nav-lights</property>
+            </signal>
+            <signal>
+                <type>int8</type><property type="string">/fdm/jsbsim/fcs/water-intake-cmd-norm</property>
+            </signal>
+            <signal>
+                <type>int8</type><property type="string">/controls/lighting/taxi-lights</property>
+            </signal>
+            <signal>
+                <type>int8</type><property type="string">/engines/engine/reversed</property>
+            </signal>
+            <signal>
+                <type>int8</type><property type="string">/controls/switches/liveboat</property>
+            </signal>
         </signals>
-
+        
     </config>
-
+    
 </PropertyList>

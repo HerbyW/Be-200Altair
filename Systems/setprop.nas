@@ -1,7 +1,7 @@
 
 
 #    ###################################################################################
-#    Antonov-Aircrafts and SpaceShuttle :: Herbert Wagner November2014-March2015
+#    Antonov-Aircrafts and SpaceShuttle :: Herbert Wagner November2014-2019
 #    Development is ongoing, see latest version: www.github.com/HerbyW
 #    This file is licenced under the terms of the GNU General Public Licence V3 or later
 #    ###################################################################################
@@ -471,3 +471,30 @@ setlistener("controls/gear/brake-parking", func
   }
 }
 );
+
+###########################################################################################################
+# Animation of water effect, linking to new properties
+#
+
+setprop("controls/rightwakecontrol",0);
+setprop("controls/leftwakecontrol",0);
+setprop("controls/rightfloatwakecontrol",0);
+setprop("controls/leftfloatwakecontrol",0);
+
+
+
+
+var wake = maketimer(0.25, func
+
+{ 
+ 
+  setprop("controls/rightwakecontrol", getprop("fdm/jsbsim/fcs/right-wake-control"));
+  setprop("controls/leftwakecontrol", getprop("fdm/jsbsim/fcs/left-wake-control"));
+  setprop("controls/rightfloatwakecontrol", getprop("fdm/jsbsim/fcs/right-float-wake-control"));
+  setprop("controls/leftfloatwakecontrol", getprop("fdm/jsbsim/fcs/left-float-wake-control"));
+  
+}
+);
+
+# start the timer (with 0.7 second inverval)
+wake.start();

@@ -1,30 +1,19 @@
 <?xml version="1.0"?>
 
 <!--
- 
+
 HerbyW 2015
 
 -->
 
 
 <PropertyList>
-
-<!--Sillage coque centre-->
+    
+    <!--Sillage coque centre-->
     <model>
         <name>CFlux</name>
         <path>Aircraft/Be-200Altair/Models/Effects/Smoke/Cflux.xml</path>
-	<condition>            
-                <or>
-                    <greater-than>
-                        <property>sim/multiplay/generic/float[8]</property>
-                        <value>0.5</value>
-                    </greater-than>
-                    <greater-than>
-                        <property>sim/multiplay/generic/float[9]</property>
-                        <value>0.5</value>
-                    </greater-than>
-                </or>           
-        </condition>
+        
         <offsets>
             <x-m>11</x-m>
             <y-m>0</y-m>
@@ -38,18 +27,7 @@ HerbyW 2015
     <model>
         <name>GFlux</name>
         <path>Aircraft/Be-200Altair/Models/Effects/Smoke/Gflux.xml</path>
-	<condition>            
-                <or>
-                    <greater-than>
-                        <property>sim/multiplay/generic/float[8]</property>
-                        <value>0.5</value>
-                    </greater-than>
-                    <greater-than>
-                        <property>sim/multiplay/generic/float[9]</property>
-                        <value>0.5</value>
-                    </greater-than>
-                </or>           
-        </condition>
+        
         <offsets>
             <x-m>5</x-m>
             <y-m>-1.2</y-m>
@@ -63,18 +41,7 @@ HerbyW 2015
     <model>
         <name>DFlux</name>
         <path>Aircraft/Be-200Altair/Models/Effects/Smoke/Dflux.xml</path>
-	<condition>            
-                <or>
-                    <greater-than>
-                        <property>sim/multiplay/generic/float[8]</property>
-                        <value>0.5</value>
-                    </greater-than>
-                    <greater-than>
-                        <property>sim/multiplay/generic/float[9]</property>
-                        <value>0.5</value>
-                    </greater-than>
-                </or>           
-        </condition>
+        
         <offsets>
             <x-m>5</x-m>
             <y-m>1.2</y-m>
@@ -84,24 +51,13 @@ HerbyW 2015
             <roll-deg>0</roll-deg>
         </offsets>
     </model>
-
+    
     <!--Rear Spray-->
     <model>
         <name>Effet</name>
         <path>Aircraft/Be-200Altair/Models/Effects/Smoke/jetdo.xml</path>
-	<condition>            
-                <or>
-                    <greater-than>
-                        <property>sim/multiplay/generic/float[8]</property>
-                        <value>0.5</value>
-                    </greater-than>
-                    <greater-than>
-                        <property>sim/multiplay/generic/float[9]</property>
-                        <value>0.5</value>
-                    </greater-than>
-                </or>           
-        </condition>
-	<offsets>
+        
+        <offsets>
             <x-m>10</x-m>
             <y-m>0</y-m>
             <z-m>-1</z-m>
@@ -110,24 +66,13 @@ HerbyW 2015
             <roll-deg>0</roll-deg>
         </offsets>
     </model>
-
-
+    
+    
     <!--Sillage Flotteur Gauche Schwimmer Links-->
     <model>
         <name>GFlux1</name>
         <path>Aircraft/Be-200Altair/Models/Effects/Smoke/Gflux1.xml</path>
-	<condition>
-            <and>
-                <equals>
-                    <property>sim/multiplay/generic/float[7]</property>
-                    <value>1.0</value>
-                </equals>
-                <equals>
-                    <property>sim/multiplay/generic/float[13]</property>
-                    <value>1</value>
-                </equals>
-            </and>
-        </condition>
+        
         <offsets>
             <x-m>3.30</x-m>
             <y-m>-13.10</y-m>
@@ -137,23 +82,12 @@ HerbyW 2015
             <roll-deg>0</roll-deg>
         </offsets>
     </model>
-
+    
     <!--Sillage Flotteur Droite Schwimmer Rechts-->
     <model>
         <name>DFlux1</name>
         <path>Aircraft/Be-200Altair/Models/Effects/Smoke/Dflux1.xml</path>
-	<condition>
-            <and>
-                <equals>
-                    <property>sim/multiplay/generic/float[7]</property>
-                    <value>1.0</value>
-                </equals>
-                <equals>
-                    <property>sim/multiplay/generic/float[12]</property>
-                    <value>1</value>
-                </equals>
-            </and>
-        </condition>
+        
         <offsets>
             <x-m>3.30</x-m>
             <y-m>13.10</y-m>
@@ -163,14 +97,14 @@ HerbyW 2015
             <roll-deg>0</roll-deg>
         </offsets>
     </model>
-
-
-
+    
+    
+    
     <animation>
         <type>translate</type>
         <object-name>CFlux</object-name>
-	<object-name>GFlux</object-name>
-	<object-name>DFlux</object-name>
+        <object-name>GFlux</object-name>
+        <object-name>DFlux</object-name>
         <object-name>Effet</object-name>
         <property>sim/multiplay/generic/float[6]</property>
         <interpolation>
@@ -193,7 +127,7 @@ HerbyW 2015
             <z>1</z>
         </axis>
     </animation>
-
-
-
+    
+    
+    
 </PropertyList>
