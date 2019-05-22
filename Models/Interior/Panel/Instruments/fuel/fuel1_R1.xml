@@ -53,11 +53,11 @@
    <expression>
      <table>
      <sum>
-       <property>/consumables/fuel/tank[2]/level-kg</property>
-       <property>/consumables/fuel/tank[3]/level-kg</property>
+       <property>fdm/jsbsim/inertia/pointmass-weight-lbs[3]</property>
+       <property>fdm/jsbsim/inertia/pointmass-weight-lbs[4]</property>
      </sum>
      <entry><ind>  0</ind><dep>0</dep></entry> 
-     <entry><ind> 21700</ind><dep>  263</dep></entry>
+     <entry><ind> 53000</ind><dep>  300</dep></entry>
      </table>
    </expression>
    
@@ -83,12 +83,10 @@
   <expression>
      <table>
      <sum>
-       <property>engines/engine[2]/fuel-flow-gph</property>
-       <property>engines/engine[3]/fuel-flow-gph</property>
+       <property>fdm/jsbsim/propulsion/engine[1]/fuel-flow-rate-gph</property>
      </sum>
      <entry><ind>  0</ind><dep>0</dep></entry> 
-     <entry><ind> 1600</ind><dep>  265</dep></entry>
-     <entry><ind> 3200</ind><dep>  335</dep></entry>
+     <entry><ind> 2550</ind><dep>  335</dep></entry>
      </table>
    </expression>
 

@@ -45,12 +45,10 @@
  <animation>
   <type>rotate</type>
   <object-name>n1</object-name>
-  <property>consumables/fuel/total-fuel-kg</property>
+  <property>fdm/jsbsim/propulsion/tanks-pointmass-qty</property>
   <interpolation>
-   <entry><ind>  0.0</ind><dep> 0.0 </dep></entry> 
-
-   <entry><ind> 25000</ind><dep>  270</dep></entry>
-   <entry><ind> 30000</ind><dep>  274</dep></entry>
+   <entry><ind>  0.0</ind><dep> 0.0 </dep></entry>
+   <entry><ind> 61000</ind><dep>  300</dep></entry>
   </interpolation>
   <center>
    <x-m>0.0</x-m>
@@ -69,11 +67,10 @@
  <animation>
   <type>rotate</type>
   <object-name>n2</object-name>
-  <property>consumables/fuel/total-fuel-norm</property>
+  <property>fdm/jsbsim/propulsion/tanks-pointmass-qty</property>
   <interpolation>
-    <entry><ind>  0.0</ind><dep> 0.0 </dep></entry> 
-
-   <entry><ind> 0.700</ind><dep>  270</dep></entry>
+    <entry><ind>  0.0</ind><dep> 0.0 </dep></entry>
+   <entry><ind> 20600</ind><dep>  300</dep></entry>
   </interpolation>
   <center>
    <x-m>0.0</x-m>

@@ -14,7 +14,7 @@
 <turbine_engine name="IwtschenkoProgressD-436TP">
   <milthrust> 16536.3 </milthrust>
   <bypassratio>     1.0 </bypassratio>
-  <tsfc>            0.32 </tsfc>
+  <tsfc>            0.46 </tsfc>
   <bleed>           0.03</bleed>
   <idlen1>         30.0 </idlen1>
   <idlen2>         60.0 </idlen2>
